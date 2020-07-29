@@ -156,7 +156,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SDL_Demo
+CMAKE_PROJECT_NAME:STATIC=pcSdl
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/lhbspace/tool/mingw64/bin/ranlib.exe
@@ -243,6 +243,12 @@ SDL_Demo_BINARY_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug
 
 //Value Computed by CMake
 SDL_Demo_SOURCE_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl
+
+//Value Computed by CMake
+pcSdl_BINARY_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug
+
+//Value Computed by CMake
+pcSdl_SOURCE_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl
 
 
 ########################

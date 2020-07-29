@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2019.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -110,44 +110,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named SDL_Demo
+# Target rules for targets named pcSdl
 
 # Build rule for target.
-SDL_Demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 SDL_Demo
-.PHONY : SDL_Demo
+pcSdl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 pcSdl
+.PHONY : pcSdl
 
 # fast build rule for target.
-SDL_Demo/fast:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/build
-.PHONY : SDL_Demo/fast
+pcSdl/fast:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/build
+.PHONY : pcSdl/fast
 
-main.obj: main.cpp.obj
+src/bsp/display_sdl.obj: src/bsp/display_sdl.cpp.obj
 
-.PHONY : main.obj
+.PHONY : src/bsp/display_sdl.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/bsp/display_sdl.cpp.obj:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/bsp/display_sdl.cpp.obj
+.PHONY : src/bsp/display_sdl.cpp.obj
 
-main.i: main.cpp.i
+src/bsp/display_sdl.i: src/bsp/display_sdl.cpp.i
 
-.PHONY : main.i
+.PHONY : src/bsp/display_sdl.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/bsp/display_sdl.cpp.i:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/bsp/display_sdl.cpp.i
+.PHONY : src/bsp/display_sdl.cpp.i
 
-main.s: main.cpp.s
+src/bsp/display_sdl.s: src/bsp/display_sdl.cpp.s
 
-.PHONY : main.s
+.PHONY : src/bsp/display_sdl.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/bsp/display_sdl.cpp.s:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/bsp/display_sdl.cpp.s
+.PHONY : src/bsp/display_sdl.cpp.s
+
+src/user/main.obj: src/user/main.cpp.obj
+
+.PHONY : src/user/main.obj
+
+# target to build an object file
+src/user/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/user/main.cpp.obj
+.PHONY : src/user/main.cpp.obj
+
+src/user/main.i: src/user/main.cpp.i
+
+.PHONY : src/user/main.i
+
+# target to preprocess a source file
+src/user/main.cpp.i:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/user/main.cpp.i
+.PHONY : src/user/main.cpp.i
+
+src/user/main.s: src/user/main.cpp.s
+
+.PHONY : src/user/main.s
+
+# target to generate assembly for a file
+src/user/main.cpp.s:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/src/user/main.cpp.s
+.PHONY : src/user/main.cpp.s
 
 # Help Target
 help:
@@ -155,12 +182,15 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... SDL_Demo
-	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... pcSdl
+	@echo ... edit_cache
+	@echo ... src/bsp/display_sdl.obj
+	@echo ... src/bsp/display_sdl.i
+	@echo ... src/bsp/display_sdl.s
+	@echo ... src/user/main.obj
+	@echo ... src/user/main.i
+	@echo ... src/user/main.s
 .PHONY : help
 
 

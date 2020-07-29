@@ -64,39 +64,39 @@ CMAKE_SOURCE_DIR = C:\lhbspace\diy\LZUI\pc_sdl
 CMAKE_BINARY_DIR = C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/SDL_Demo.dir
+# Target rules for target CMakeFiles/pcSdl.dir
 
 # All Build rule for target.
-CMakeFiles/SDL_Demo.dir/all:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/depend
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target SDL_Demo"
-.PHONY : CMakeFiles/SDL_Demo.dir/all
+CMakeFiles/pcSdl.dir/all:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/depend
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target pcSdl"
+.PHONY : CMakeFiles/pcSdl.dir/all
 
 # Include target in all.
-all: CMakeFiles/SDL_Demo.dir/all
+all: CMakeFiles/pcSdl.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SDL_Demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/SDL_Demo.dir/all
+CMakeFiles/pcSdl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug\CMakeFiles 3
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/pcSdl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/SDL_Demo.dir/rule
+.PHONY : CMakeFiles/pcSdl.dir/rule
 
 # Convenience name for target.
-SDL_Demo: CMakeFiles/SDL_Demo.dir/rule
+pcSdl: CMakeFiles/pcSdl.dir/rule
 
-.PHONY : SDL_Demo
-
-# clean rule for target.
-CMakeFiles/SDL_Demo.dir/clean:
-	$(MAKE) -f CMakeFiles\SDL_Demo.dir\build.make CMakeFiles/SDL_Demo.dir/clean
-.PHONY : CMakeFiles/SDL_Demo.dir/clean
+.PHONY : pcSdl
 
 # clean rule for target.
-clean: CMakeFiles/SDL_Demo.dir/clean
+CMakeFiles/pcSdl.dir/clean:
+	$(MAKE) -f CMakeFiles\pcSdl.dir\build.make CMakeFiles/pcSdl.dir/clean
+.PHONY : CMakeFiles/pcSdl.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/pcSdl.dir/clean
 
 .PHONY : clean
 

@@ -4,14 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/lhbspace/diy/LZUI/pc_sdl/bsp/display_sdl.cpp" "C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/bsp/display_sdl.cpp.obj"
-  "C:/lhbspace/diy/LZUI/pc_sdl/main.cpp" "C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/main.cpp.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl/src/bsp/display_sdl.cpp" "C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/src/bsp/display_sdl.cpp.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl/src/user/main.cpp" "C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/src/user/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
+  "../src/include"
   )
 
 # Targets to which this target links.

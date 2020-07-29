@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SDL_Demo.dir/main.cpp.obj"
+  "CMakeFiles/SDL_Demo.dir/bsp/display_sdl.cpp.obj"
   "SDL_Demo.pdb"
   "SDL_Demo.exe"
   "SDL_Demo.exe.manifest"
