@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2019.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\SDL2ForWindows.dir/objects.a
+C:\lhbspace\tool\mingw64\bin\ar.exe cr CMakeFiles\SDL2ForWindows.dir/objects.a @CMakeFiles\SDL2ForWindows.dir\objects1.rsp
+C:\lhbspace\tool\mingw64\bin\gcc.exe  -Wall -Werror -g   -Wl,--whole-archive CMakeFiles\SDL2ForWindows.dir/objects.a -Wl,--no-whole-archive  -o SDL2ForWindows.exe -Wl,--out-implib,libSDL2ForWindows.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SDL2ForWindows.dir\linklibs.rsp

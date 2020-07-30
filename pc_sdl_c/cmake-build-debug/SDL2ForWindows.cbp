@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SDL2ForWindows"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SDL2ForWindows">
+				<Option output="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/SDL2ForWindows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/lhbspace/diy/LZUI/pc_sdl_c/include"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 SDL2ForWindows"/>
+					<CompileFile command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SDL2ForWindows/fast">
+				<Option output="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/SDL2ForWindows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/lhbspace/diy/LZUI/pc_sdl_c/include"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/lhbspace/tool/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 SDL2ForWindows/fast"/>
+					<CompileFile command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/lhbspace/tool/mingw64/bin/mingw32-make.exe -f &quot;C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c">
+			<Option target="SDL2ForWindows"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
