@@ -4,6 +4,7 @@
 #include <lzui/ugui.h>
 #include "SDL2/SDL.h"
 #include "bsp/display_sdl.h"
+#include "../../include/SDL2/SDL_events.h"
 
 static uint8_t running = 1;
 
@@ -138,10 +139,10 @@ int main(int argc, char** argv) {
 
 				} break;
 				case SDL_MOUSEBUTTONDOWN: {
-
+					UG_TouchUpdate(event.button.x, event.button.y, TOUCH_STATE_PRESSED);
 				} break;
 				case SDL_MOUSEBUTTONUP: {
-
+					UG_TouchUpdate(event.button.x, event.button.y, TOUCH_STATE_RELEASED);
 				} break;
 			}
 		}

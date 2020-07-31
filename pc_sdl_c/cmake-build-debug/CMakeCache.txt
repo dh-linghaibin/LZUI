@@ -112,7 +112,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/pcSdl
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/LZUI
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/lhbspace/tool/mingw64/bin/ld.exe
@@ -243,18 +243,6 @@ LZUI_BINARY_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug
 
 //Value Computed by CMake
 LZUI_SOURCE_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c
-
-//Value Computed by CMake
-SDL2ForWindows_BINARY_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug
-
-//Value Computed by CMake
-SDL2ForWindows_SOURCE_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c
-
-//Value Computed by CMake
-pcSdl_BINARY_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug
-
-//Value Computed by CMake
-pcSdl_SOURCE_DIR:STATIC=C:/lhbspace/diy/LZUI/pc_sdl_c
 
 
 ########################
