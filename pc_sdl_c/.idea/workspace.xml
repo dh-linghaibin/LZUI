@@ -11,136 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/SDL_Demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/includes_CXX.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/SDL_Demo.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/includes_CXX.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/SDL_Demo.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/cmake-build-debug/pcSdl.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_assert.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_atomic.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_audio.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_bits.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_blendmode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_clipboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_cpuinfo.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_endian.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_error.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_events.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_filesystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_gamecontroller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_gesture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_haptic.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_hints.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_image.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_joystick.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_keyboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_keycode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_loadso.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_log.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_main.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_messagebox.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_mixer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_mouse.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_mutex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_name.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_opengl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_opengles.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_opengles2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_pixels.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_platform.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_power.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_quit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_rect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_render.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_revision.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_rwops.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_scancode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_shape.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_stdinc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_surface.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_system.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_syswm.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_assert.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_common.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_compare.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_crc32.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_font.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_fuzzer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_harness.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_images.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_log.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_md5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_test_random.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_thread.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_timer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_touch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_ttf.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_version.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/SDL_video.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/begin_code.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/include/SDL2/close_code.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/lib/pkgconfig/sdl2.pc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/src/bsp/display_sdl.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/src/include/bsp/display_sdl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/src/include/user/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl/src/user/main.cpp" beforeDir="false" />
-    </list>
+    <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="" />
     <ignored path="SDL_Demo.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/../../../NDanq/Documents/Projects/SDL_Demo/cmake-build-debug/" />
@@ -182,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
+            <state relative-caret-position="832">
               <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
               <folding>
                 <element signature="e#1214#1326#0" />
@@ -196,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/include/user/config.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -204,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lzui/ugui.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="2153" column="18" lean-forward="true" selection-start-line="2153" selection-start-column="18" selection-end-line="2153" selection-end-column="18" />
+            <state relative-caret-position="34448">
+              <caret line="2153" column="18" selection-start-line="2153" selection-start-column="18" selection-end-line="2153" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -213,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
+            <state relative-caret-position="480">
               <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
               <folding>
                 <element signature="e#2089#2120#0" expanded="true" />
@@ -225,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui_config.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="368">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -246,7 +117,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="384">
               <caret line="24" column="49" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="49" />
             </state>
           </provider>
@@ -299,10 +170,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="196" />
-    <option name="y" value="12" />
-    <option name="width" value="1512" />
-    <option name="height" value="1024" />
+    <option name="x" value="1167" />
+    <option name="y" value="562" />
+    <option name="width" value="1513" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -310,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -327,6 +197,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,11 +273,12 @@
       <workItem from="1596092887850" duration="2000" />
       <workItem from="1596111817999" duration="2817000" />
       <workItem from="1596115463088" duration="2752000" />
+      <workItem from="1596156549875" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18999000" />
+    <option name="totallyTimeSpent" value="19005000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,9 +290,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="196" y="12" width="1512" height="1024" extended-state="0" />
+    <frame x="934" y="450" width="1210" height="820" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2093664" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2126736" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -477,33 +350,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_core.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_core.cpp" />
     <entry file="file://$PROJECT_DIR$/src/include/lzui/lzui_draw.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_objx.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_draw.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_objx.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_draw.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.cpp" />
     <entry file="file://$PROJECT_DIR$/../../../tool/mingw64/x86_64-w64-mingw32/include/stdint.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -512,10 +365,55 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/user/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/src/user/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="49" />
+        <state relative-caret-position="350">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+          <folding>
+            <element signature="e#1214#1326#0" />
+            <element signature="e#2522#3539#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/include/user/config.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lzui/ugui.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34448">
+          <caret line="2153" column="18" selection-start-line="2153" selection-start-column="18" selection-end-line="2153" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding>
+            <element signature="e#2089#2120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui_config.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -529,55 +427,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding>
-            <element signature="e#2089#2120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/ugui.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="2153" column="18" lean-forward="true" selection-start-line="2153" selection-start-column="18" selection-end-line="2153" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui_config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/user/config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-          <folding>
-            <element signature="e#1214#1326#0" />
-            <element signature="e#2522#3539#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="384">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="49" />
         </state>
       </provider>
     </entry>
