@@ -70,24 +70,122 @@ CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.s"
 	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\bsp\display_sdl.c -o CMakeFiles\LZUI.dir\src\bsp\display_sdl.c.s
 
-CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj: CMakeFiles/LZUI.dir/flags.make
-CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
-CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj: ../src/lzui/ugui.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj"
-	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\ugui.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\ugui.c
+CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj: ../src/lzui/lz_color.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_color.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_color.c
 
-CMakeFiles/LZUI.dir/src/lzui/ugui.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/ugui.c.i"
-	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\ugui.c > CMakeFiles\LZUI.dir\src\lzui\ugui.c.i
+CMakeFiles/LZUI.dir/src/lzui/lz_color.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_color.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_color.c > CMakeFiles\LZUI.dir\src\lzui\lz_color.c.i
 
-CMakeFiles/LZUI.dir/src/lzui/ugui.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/ugui.c.s"
-	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\ugui.c -o CMakeFiles\LZUI.dir\src\lzui\ugui.c.s
+CMakeFiles/LZUI.dir/src/lzui/lz_color.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_color.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_color.c -o CMakeFiles\LZUI.dir\src\lzui\lz_color.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: ../src/lzui/lz_draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_draw.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_draw.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_draw.c > CMakeFiles\LZUI.dir\src\lzui\lz_draw.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_draw.c -o CMakeFiles\LZUI.dir\src\lzui\lz_draw.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/lzui/lz_info.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_info.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_info.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_info.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_info.c > CMakeFiles\LZUI.dir\src\lzui\lz_info.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_info.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_info.c -o CMakeFiles\LZUI.dir\src\lzui\lz_info.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj: ../src/lzui/lz_mem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_mem.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_mem.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_mem.c > CMakeFiles\LZUI.dir\src\lzui\lz_mem.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_mem.c -o CMakeFiles\LZUI.dir\src\lzui\lz_mem.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj: ../src/lzui/lz_obj.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_obj.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj.c > CMakeFiles\LZUI.dir\src\lzui\lz_obj.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj.c -o CMakeFiles\LZUI.dir\src\lzui\lz_obj.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj: ../src/lzui/lz_obj_bar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_bar.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_bar.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_bar.c > CMakeFiles\LZUI.dir\src\lzui\lz_obj_bar.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_bar.c -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_bar.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: ../src/lzui/lz_obj_button.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_button.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_button.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_button.c > CMakeFiles\LZUI.dir\src\lzui\lz_obj_button.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_button.c -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_button.c.s
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: CMakeFiles/LZUI.dir/flags.make
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/lzui/lz_obj_lable.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_lable.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_lable.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.i"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_lable.c > CMakeFiles\LZUI.dir\src\lzui\lz_obj_lable.c.i
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.s"
+	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui\lz_obj_lable.c -o CMakeFiles\LZUI.dir\src\lzui\lz_obj_lable.c.s
 
 CMakeFiles/LZUI.dir/src/user/main.c.obj: CMakeFiles/LZUI.dir/flags.make
 CMakeFiles/LZUI.dir/src/user/main.c.obj: CMakeFiles/LZUI.dir/includes_C.rsp
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/user/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/LZUI.dir/src/user/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/LZUI.dir/src/user/main.c.obj"
 	C:\lhbspace\tool\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\LZUI.dir\src\user\main.c.obj   -c C:\lhbspace\diy\LZUI\pc_sdl_c\src\user\main.c
 
 CMakeFiles/LZUI.dir/src/user/main.c.i: cmake_force
@@ -101,20 +199,34 @@ CMakeFiles/LZUI.dir/src/user/main.c.s: cmake_force
 # Object files for target LZUI
 LZUI_OBJECTS = \
 "CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.obj" \
-"CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj" \
+"CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj" \
 "CMakeFiles/LZUI.dir/src/user/main.c.obj"
 
 # External object files for target LZUI
 LZUI_EXTERNAL_OBJECTS =
 
 LZUI.exe: CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.obj
-LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj
+LZUI.exe: CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj
 LZUI.exe: CMakeFiles/LZUI.dir/src/user/main.c.obj
 LZUI.exe: CMakeFiles/LZUI.dir/build.make
 LZUI.exe: CMakeFiles/LZUI.dir/linklibs.rsp
 LZUI.exe: CMakeFiles/LZUI.dir/objects1.rsp
 LZUI.exe: CMakeFiles/LZUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable LZUI.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable LZUI.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LZUI.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

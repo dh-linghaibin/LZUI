@@ -6,10 +6,11 @@
 #define SDL_DEMO_DISPLAY_SDL_H
 
 #include "SDL2/SDL.h"
-#include "user/config.h"
+#include "lzui/lz_config.h"
 
 void display_sdl( void );
 void display_sdl_up_data( void );
 void display_sdl_draw_point( uint16_t x, uint16_t y, uint16_t color);
+void display_sdl_fill(int x, int y, int width, int length, uint16_t * color);
 
 #endif //SDL_DEMO_DISPLAY_SDL_H

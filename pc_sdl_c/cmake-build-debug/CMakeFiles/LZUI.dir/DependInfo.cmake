@@ -5,7 +5,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/bsp/display_sdl.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.obj"
-  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/ugui.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/ugui.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_color.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_draw.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_info.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_mem.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_bar.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_button.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/user/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

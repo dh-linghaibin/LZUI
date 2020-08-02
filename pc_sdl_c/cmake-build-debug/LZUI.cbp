@@ -87,7 +87,55 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/bsp/display_sdl.c">
 			<Option target="LZUI"/>
 		</Unit>
-		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/ugui.c">
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_color.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_config.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_draw.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_mem.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_bar.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_button.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_lable.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_types.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_color.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_draw.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_info.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_mem.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_bar.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_button.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c">

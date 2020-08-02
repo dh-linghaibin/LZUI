@@ -41,6 +41,14 @@ void display_sdl( void ) {
 	display_sdl_up_data();
 }
 
+void display_sdl_fill(int x, int y, int width, int length, uint16_t * color) {
+	for(int j = y; j < y+length; j++) {
+		for(int i = x; i < x+width; i++) {
+			screen[j*LCD_WIDTH+i] = *color++;
+		}
+	}
+}
+
 void display_sdl_up_data() {
 	display_sdl_update_texture();
 	display_sdl_render_texture();
