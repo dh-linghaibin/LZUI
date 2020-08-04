@@ -11,10 +11,10 @@ static void lui_bar_event(lui_touch_val_t *val);
 
 lui_obj_t * lui_create_bar(int x, int y) {
 	lui_bar_t * bar = lui_malloc(sizeof(lui_bar_t));
-	bar->val = 1;
-	bar->b_color.color.rgb565 = lui_color_888_to_565(lui_color_white);
+	bar->val = 20;
+	bar->b_color.color.rgb565 = lui_color_888_to_565(0x07DBFF);
 	bar->b_color.alpha = 100;
-	bar->t_color.color.rgb565 = lui_color_888_to_565(lui_color_white);
+	bar->t_color.color.rgb565 = lui_color_888_to_565(lui_color_red);
 	bar->t_color.alpha = LUI_COLOR_ALPHA_FALL;
 	bar->on_event = NULL;
 	lui_obj_t * obj = lui_create_obj(x,y,150,10,bar,lui_bar_design);

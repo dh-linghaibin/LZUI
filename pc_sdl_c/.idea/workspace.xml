@@ -12,59 +12,112 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_color.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_config.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_draw.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_mem.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_bar.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_types.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_color.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_draw.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_info.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_mem.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_chart.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_icon.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_icon.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SDL_Demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SDL_Demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/linklibs.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bsp/display_sdl.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/bsp/display_sdl.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/bsp/display_sdl.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/bsp/display_sdl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lzui_core.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lzui_draw.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lzui_objx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/ugui.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/ugui_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/user/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/ugui.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_assert.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_assert.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_atomic.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_atomic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_audio.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_audio.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_bits.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_bits.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_blendmode.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_blendmode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_clipboard.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_clipboard.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_cpuinfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_cpuinfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_endian.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_endian.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_error.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_error.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_events.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_events.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_filesystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_filesystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_gamecontroller.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_gamecontroller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_gesture.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_gesture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_haptic.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_haptic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_hints.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_hints.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_image.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_image.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_joystick.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_joystick.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_keyboard.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_keyboard.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_keycode.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_keycode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_loadso.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_loadso.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_log.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_log.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_main.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_messagebox.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_messagebox.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_mixer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_mixer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_mouse.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_mouse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_mutex.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_mutex.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_name.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_name.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_opengl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_opengl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_opengles.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_opengles.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_opengles2.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_opengles2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_pixels.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_pixels.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_platform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_power.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_power.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_quit.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_quit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_rect.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_rect.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_render.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_render.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_revision.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_revision.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_rwops.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_rwops.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_scancode.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_scancode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_shape.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_shape.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_stdinc.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_stdinc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_surface.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_surface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_system.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_system.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_syswm.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_syswm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_assert.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_assert.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_common.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_common.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_compare.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_compare.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_crc32.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_crc32.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_font.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_font.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_fuzzer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_fuzzer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_harness.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_harness.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_images.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_images.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_log.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_log.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_md5.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_md5.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_test_random.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_test_random.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_thread.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_thread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_timer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_touch.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_touch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_ttf.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_ttf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_version.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_version.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/SDL_video.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/SDL_video.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/begin_code.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/begin_code.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SDL2/close_code.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SDL2/close_code.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pkgconfig/sdl2.pc" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pkgconfig/sdl2.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_draw.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_draw.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_draw.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_info.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_info.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/main.c" afterDir="false" />
     </list>
-    <ignored path="SDL_Demo.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/../../../NDanq/Documents/Projects/SDL_Demo/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,91 +134,6 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FavoritesManager">
-    <favorites_list name="SDL_Demo" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/main.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lzui/lz_draw.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1307">
-              <caret line="328" column="18" selection-start-line="328" selection-start-column="5" selection-end-line="328" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj_bar.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <element signature="e#93#117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lzui/lz_obj_lable.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-              <folding>
-                <element signature="e#40#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_draw.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <element signature="e#87#113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="28" />
-              <folding>
-                <element signature="e#97#121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lzui/lz_info.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="328" column="46" selection-start-line="328" selection-start-column="46" selection-end-line="328" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>CACHE_WIDTH</find>
@@ -206,112 +174,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/bsp/display_sdl.cpp" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lzui_objx.h" />
-        <option value="$PROJECT_DIR$/src/bsp/display_sdl.cpp" />
-        <option value="$PROJECT_DIR$/src/user/main.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/include/lzui/ugui.h" />
-        <option value="$PROJECT_DIR$/src/lzui/ugui.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/ugui_config.h" />
-        <option value="$PROJECT_DIR$/src/include/user/config.h" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_types.h" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_mem.h" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_mem.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_obj.h" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_obj.c" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_color.c" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_draw.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_obj_bar.h" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_color.h" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_draw.h" />
-        <option value="$PROJECT_DIR$/src/bsp/display_sdl.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_obj_button.c" />
-        <option value="$PROJECT_DIR$/src/include/bsp/display_sdl.h" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_config.h" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_info.c" />
-        <option value="$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h" />
-        <option value="$PROJECT_DIR$/src/user/main.c" />
-        <option value="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" />
-      </list>
-    </option>
-  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="711" />
-    <option name="width" value="1423" />
-    <option name="height" value="1047" />
-  </component>
+  <component name="ProjectId" id="1fZJaQCKN4hfoQxLy3vQSIUVSDq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-              <item name="lzui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lzui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LZUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pc_sdl_c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -322,30 +200,18 @@
       <recent name="C:\lhbspace\diy\LZUI\pc_sdl\src\user" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="CMake Application.LZUI">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="pcSdl" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="pcSdl">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="pcSdl" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="pcSdl">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LZUI" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="LZUI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="LZUI">
+    <configuration name="LZUI" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="LZUI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="LZUI">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="SDL_Demo" CONFIG_NAME="Debug">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="SDL_Demo" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -380,11 +246,11 @@
       <workItem from="1596156549875" duration="6000" />
       <workItem from="1596190017829" duration="445000" />
       <workItem from="1596331258369" duration="18148000" />
+      <workItem from="1596419749052" duration="3870000" />
+      <workItem from="1596455629785" duration="2090000" />
+      <workItem from="1596461415176" duration="5263000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,34 +261,8 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="711" y="0" width="1423" height="1047" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23330888" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Favorites" order="2" weight="0.3298611" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.21686748" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3975225" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.3298611" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="CMake" order="9" weight="0.27639753" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3298611" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.33406353" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -432,271 +272,50 @@
       <collection />
     </option>
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/bin/cmake/win/share/cmake-3.13/Modules/CMakeTestCCompiler.cmake" />
-    <entry file="file://$PROJECT_DIR$/../../../tool/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="3873" column="3" selection-start-line="3873" selection-start-column="3" selection-end-line="3873" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SDL_Demo.cbp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/zlui_objx.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/zlui_objx.h" />
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lzui_core.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_core.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lzui_draw.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_objx.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/lzui/lzui_draw.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.cpp" />
-    <entry file="file://$PROJECT_DIR$/../../../tool/mingw64/x86_64-w64-mingw32/include/stdint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui_config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/ugui.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1508">
-          <caret line="587" column="2" selection-start-line="587" selection-start-column="2" selection-end-line="587" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/ugui.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="5845" column="19" selection-start-line="5845" selection-start-column="5" selection-end-line="5845" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lzui_objx.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_mem.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="e#840#1611#0" />
-            <element signature="e#1613#1878#0" />
-            <element signature="e#1880#2510#0" />
-            <element signature="e#2513#2546#0" />
-            <element signature="e#2548#2804#0" />
-            <element signature="e#2806#3083#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_mem.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="e#105#117#0" expanded="true" />
-            <element signature="e#191#210#0" expanded="true" />
-            <element signature="e#4580#4598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_color.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="178" column="35" selection-start-line="178" selection-start-column="35" selection-end-line="178" selection-end-column="35" />
-          <folding>
-            <element signature="e#89#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_obj.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_obj_button.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="31" />
-          <folding>
-            <element signature="e#40#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj_button.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#99#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/user/config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bsp/display_sdl.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/bsp/display_sdl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#104#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_types.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#109#121#0" expanded="true" />
-            <element signature="e#597#792#0" expanded="true" />
-            <element signature="e#1317#1455#0" expanded="true" />
-            <element signature="e#1621#1639#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_color.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_obj_bar.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_info.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="328" column="46" selection-start-line="328" selection-start-column="46" selection-end-line="328" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj_bar.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#93#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_draw.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1307">
-          <caret line="328" column="18" selection-start-line="328" selection-start-column="5" selection-end-line="328" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_draw.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#87#113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lzui/lz_obj_lable.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="e#40#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state width="1495" height="120" key="GridCell.Tab.0.bottom" timestamp="1596551885206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="129" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424464334" />
+    <state width="1495" height="120" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596551885206" />
+    <state width="1495" height="120" key="GridCell.Tab.0.center" timestamp="1596551885206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="129" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424464334" />
+    <state width="1495" height="120" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596551885206" />
+    <state width="1495" height="120" key="GridCell.Tab.0.left" timestamp="1596551885206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="129" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424464334" />
+    <state width="1495" height="120" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596551885206" />
+    <state width="1495" height="120" key="GridCell.Tab.0.right" timestamp="1596551885206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="129" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424464334" />
+    <state width="1495" height="120" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596551885206" />
+    <state width="1495" height="260" key="GridCell.Tab.1.bottom" timestamp="1596424463929">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
+    <state width="1495" height="260" key="GridCell.Tab.1.center" timestamp="1596424463929">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="260" key="GridCell.Tab.1.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
+    <state width="1495" height="260" key="GridCell.Tab.1.left" timestamp="1596424463929">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="260" key="GridCell.Tab.1.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
+    <state width="1495" height="260" key="GridCell.Tab.1.right" timestamp="1596424463929">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
+    <state x="307" y="58" key="SettingsEditor" timestamp="1596464140088">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="307" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596464140088" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1596456679064">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596456679064" />
   </component>
 </project>

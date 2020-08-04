@@ -13,7 +13,7 @@ extern const struct font_t mac_font_20_english;
 
 lui_obj_t * lui_create_lable(int x,int y) {
 	lui_text_t * obj_text = lui_malloc(sizeof(lui_text_t));
-	obj_text->color = lui_color_888_to_565(lui_color_lightpink);
+	obj_text->color = lui_color_888_to_565(lui_color_red);
 	obj_text->font_val = mac_font_20_english;
 	sprintf(obj_text->text,"123456.VA");
 	lui_obj_t * obj = lui_create_obj(x,y,50,50,obj_text,lui_text_design);

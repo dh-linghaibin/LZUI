@@ -46,7 +46,7 @@ stdarg.h
 stdint.h
 -
 
-../src/include/lzui/lz_obj_lable.h
+../src/include/lzui/lz_obj_button.h
 lzui/lz_obj.h
 ../src/include/lzui/lzui/lz_obj.h
 lzui/lz_color.h
@@ -56,9 +56,9 @@ lzui/lz_color.h
 stdint.h
 -
 
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c
-lzui/lz_obj_lable.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_obj_lable.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_button.c
+lzui/lz_obj_button.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_obj_button.h
 lzui/lz_draw.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_draw.h
 

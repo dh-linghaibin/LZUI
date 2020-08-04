@@ -7,11 +7,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_obj_bar.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj"
+  "CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj"
+  "CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj"
   "CMakeFiles/LZUI.dir/src/user/main.c.obj"
-  "LZUI.pdb"
   "LZUI.exe"
   "LZUI.exe.manifest"
+  "LZUI.pdb"
   "libLZUI.dll.a"
 )
 

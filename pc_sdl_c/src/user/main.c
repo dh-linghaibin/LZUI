@@ -8,11 +8,13 @@
 #include "lzui/lz_obj_bar.h"
 #include "lzui/lz_obj_button.h"
 #include "lzui/lz_obj_lable.h"
+#include "lzui/lz_obj_icon.h"
 
 void lui_loop(void);
 
 static uint8_t running = 1;
 uint8_t touch_flag = 0;
+extern const struct png_t usb_in_png_v;
 
 int main(int argc, char** argv) {
 	display_sdl();
@@ -28,6 +30,10 @@ int main(int argc, char** argv) {
 
 	lui_obj_t * lable = lui_create_lable(100,10);
 	lui_obj_add_child(lui_get_root(),lable);
+
+    lui_obj_t * pngxx = lui_create_icon(10,10);
+    lui_icon_set_val(pngxx, usb_in_png_v);
+    lui_obj_add_child(lui_get_root(),pngxx);
 
 	lui_loop();
 

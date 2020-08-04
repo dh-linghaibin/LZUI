@@ -10,7 +10,7 @@ static void lui_button_event(lui_touch_val_t *val);
 
 lui_obj_t * lui_create_button(int x,int y) {
 	lui_button_t * but = lui_malloc(sizeof(lui_button_t));
-	but->color.color.rgb565 = lui_color_888_to_565(lui_color_white);
+	but->color.color.rgb565 = lui_color_888_to_565(0x07DBFF);
 	but->color.alpha = 0;
 	but->on_click = NULL;
 	but->on_click_down = NULL;
@@ -55,6 +55,7 @@ static void lui_button_design (struct _lui_obj_t * obj, lui_point_t *point) {
 	               obj->layout.size.width,
 	               obj->layout.size.length,
 	               but->color);
+    lui_draw_line(20,20,120,20, 0x00);
 }
 
 static void lui_button_event(lui_touch_val_t *val) {

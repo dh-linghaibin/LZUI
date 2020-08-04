@@ -381,11 +381,15 @@ void lui_draw_font(int x, int y, uint8_t wighth, uint8_t length, uint16_t color,
 			for(int y_i = y1*cache.coordinate.size.width; y_i < y2*cache.coordinate.size.width; y_i += cache.coordinate.size.width) {
 				for(int x_j = x1; x_j < x2; x_j++) {
 					if(mate[ptr] != 0) {
+					    uint16_t color_rel = 0;
 						if(mate[ptr] == 0xff) {
-							cache.array[y_i+x_j] = color;
+//							cache.array[y_i+x_j] = color;
+                            color_rel = color;
 						} else {
-							cache.array[y_i+x_j] = lui_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
+//							cache.array[y_i+x_j] = lui_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
+                            color_rel = lui_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
 						}
+                        cache.array[y_i+x_j] = lui_color_alpha_blend(color_rel,cache.array[y_i+x_j],255);
 					}
 					ptr++;
 				}
@@ -469,7 +473,7 @@ void lui_draw_jpg(int x, int y, int width, int length, uint8_t * material) {
 	}
 }
 
-void lui_draw_png(int x, int y, int width, int length, uint8_t * material) {
+void lui_draw_png(int x, int y, int width, int length, const unsigned char * material) {
 	int maxX1 = x + width;
 	int maxY1 = y + length;
 	int maxX2 = cache.coordinate.point.x + cache.coordinate.size.width;
@@ -668,7 +672,7 @@ uint8_t lui_draw_check_layout(int x, int y, int width, int length) {
 
 void lui_drawcache_size_set(int x, int y, int width, int length) {
 	for(int i = 0; i < CACHE_SIZE; i++) {
-		cache.array[i] = 0x00;
+		cache.array[i] = 0xffff;
 	}
 	cache.coordinate.point.x = x;
 	cache.coordinate.point.y = y;
