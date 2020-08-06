@@ -73,12 +73,12 @@ clean: CMakeFiles/LZUI.dir/clean
 CMakeFiles/LZUI.dir/all:
 	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/depend
 	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target LZUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target LZUI"
 .PHONY : CMakeFiles/LZUI.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LZUI.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles 14
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/LZUI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\lhbspace\diy\LZUI\pc_sdl_c\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/LZUI.dir/rule

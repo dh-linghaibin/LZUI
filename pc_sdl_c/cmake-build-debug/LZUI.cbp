@@ -108,10 +108,16 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_button.h">
 			<Option target="LZUI"/>
 		</Unit>
-		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_icon.h">
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_chart.h">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_lable.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_png.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_tick.h">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_types.h">
@@ -141,13 +147,13 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.c">
 			<Option target="LZUI"/>
 		</Unit>
-		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.h">
-			<Option target="LZUI"/>
-		</Unit>
-		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_icon.c">
-			<Option target="LZUI"/>
-		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_png.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_tick.c">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c">

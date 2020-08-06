@@ -5,24 +5,24 @@
 #include "lzui/lz_obj_lable.h"
 #include "lzui/lz_draw.h"
 
-static void lui_text_design (struct _lui_obj_t * obj, lui_point_t *point);
-//static void lui_text_event(lui_touch_val_t *val);
+static void lui_text_design (struct _lz_obj_t * obj, lz_point_t *point);
+//static void lui_text_event(lz_touch_val_t *val);
 static int text_utf8_to_unicode(uint16_t * unicode, char *utf8);
 
 extern const struct font_t mac_font_20_english;
 
-lui_obj_t * lui_create_lable(int x,int y) {
-	lui_text_t * obj_text = lui_malloc(sizeof(lui_text_t));
-	obj_text->color = lui_color_888_to_565(lui_color_red);
+lz_obj_t * lz_create_lable(int x,int y) {
+	lz_text_t * obj_text = lz_malloc(sizeof(lz_text_t));
+	obj_text->color = lz_color_888_to_565(lui_color_red);
 	obj_text->font_val = mac_font_20_english;
 	sprintf(obj_text->text,"123456.VA");
-	lui_obj_t * obj = lui_create_obj(x,y,50,50,obj_text,lui_text_design);
-	lui_obj_set_event(obj,NULL);
+	lz_obj_t * obj = lz_create_obj(x,y,50,50,obj_text,lui_text_design);
+	lz_obj_set_event(obj,NULL);
 	return obj;
 }
 
-static void lui_text_design (struct _lui_obj_t * obj, lui_point_t *point) {
-	lui_text_t * obj_text = obj->val;
+static void lui_text_design (struct _lz_obj_t * obj, lz_point_t *point) {
+	lz_text_t * obj_text = obj->val;
 	uint8_t type = 0;
 	uint16_t adr = 0;
 	int ax = point->x;
@@ -51,11 +51,10 @@ static void lui_text_design (struct _lui_obj_t * obj, lui_point_t *point) {
 				for(; i < obj_text->font_val.num; i++) {
 					if(obj_text->font_val.text_val[i].text[0] == text[0]) {
 						uint8_t * addr = (uint8_t *)(obj_text->font_val.base_adr+i*obj_text->font_val.size);
-						lui_draw_font(ax, ay,obj_text->font_val.w, obj_text->font_val.h,obj_text->color, addr);
+						lz_draw_font(ax, ay,obj_text->font_val.w, obj_text->font_val.h,obj_text->color, addr);
 						break;
 					}
 				}
-
 				text += 1;
 				if(ax > (320 - obj_text->font_val.w) ) {
 					ay += obj_text->font_val.h;
@@ -64,41 +63,13 @@ static void lui_text_design (struct _lui_obj_t * obj, lui_point_t *point) {
 					ax += obj_text->font_val.w - 1;
 				}
 			} else {
-//				uint8_t i = 0;
-//				for(; i < display_val_v.china.num; i++) {
-//					if( (display_val_v.china.text_val[i].text[0] == text[0]) &&
-//					    (display_val_v.china.text_val[i].text[1] == text[1]) &&
-//					    (display_val_v.china.text_val[i].text[2] == text[2]) ) {
-//						lcd_open_window(ax, ay, display_val_v.china.w,display_val_v.china.h);
-//						uint8_t * addr = (uint8_t *)(display_val_v.china.base_adr+i*display_val_v.china.size);
-//						for(uint32_t add = 0; add < (display_val_v.china.size); add++) {
-//							uint16_t color_t = display_val_v.back_color;
-//							if(addr[add] != 0) {
-//								if(addr[add] == 0xff) {
-//									color_t = display_val_v.text_color;
-//								} else {
-//									color_t = lui_color_alpha_blend(display_val_v.text_color, display_val_v.back_color, (addr[add]) );
-//								}
-//							}
-//							display_write_color_565(color_t);
-//						}
-//						break;
-//					}
-//				}
-//
-//				text += 3;
-//				if(ax > (320 - display_val_v.china.w) ) {
-//					ay += display_val_v.china.h;
-//					ax = x;
-//				} else {
-//					ax += display_val_v.china.w + 2;
-//				}
+
 			}
 		}
 	}
 }
 
-//static void lui_text_event(lui_touch_val_t *val) {
+//static void lui_text_event(lz_touch_val_t *val) {
 //
 //}
 

@@ -63,8 +63,8 @@ CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: ../src/lzui/lz_draw.c
 
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_color.h
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj.h
-CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj_icon.h
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj_lable.h
+CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj_png.h
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/lzui/lz_info.c
 
 CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj: ../src/include/lzui/lz_mem.h
@@ -95,14 +95,14 @@ CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: ../src/include/lzui/lz_obj_but
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: ../src/include/lzui/lz_types.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj: ../src/lzui/lz_obj_button.c
 
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_color.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_config.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_draw.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_mem.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_obj.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_obj_icon.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/include/lzui/lz_types.h
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj: ../src/lzui/lz_obj_icon.c
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_color.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_config.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_draw.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_mem.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_obj.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_obj_chart.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_types.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/lzui/lz_obj_chart.c
 
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/include/lzui/lz_color.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/include/lzui/lz_config.h
@@ -112,6 +112,22 @@ CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/include/lzui/lz_obj_lable.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/include/lzui/lz_types.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj: ../src/lzui/lz_obj_lable.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_color.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_config.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_draw.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_mem.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_obj.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_obj_png.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/include/lzui/lz_types.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj: ../src/lzui/lz_obj_png.c
+
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/include/lzui/lz_config.h
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/include/lzui/lz_mem.h
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/include/lzui/lz_obj.h
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/include/lzui/lz_tick.h
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/include/lzui/lz_types.h
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj: ../src/lzui/lz_tick.c
 
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../include/SDL2/SDL.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../include/SDL2/SDL_assert.h
@@ -157,8 +173,10 @@ CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_mem.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_bar.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_button.h
-CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_icon.h
+CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_chart.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_lable.h
+CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_png.h
+CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_tick.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_types.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../include/SDL2/SDL_events.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../include/SDL2/SDL_gesture.h

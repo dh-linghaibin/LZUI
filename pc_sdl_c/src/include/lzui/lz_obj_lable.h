@@ -21,13 +21,13 @@ struct font_t {
 	const unsigned char * base_adr;
 };
 
-typedef struct _lui_text_t {
+typedef struct _lz_text_t {
 	char text[30];
 	uint16_t color;
 	struct font_t font_val;
-} lui_text_t;
+} lz_text_t;
 
 
-lui_obj_t * lui_create_lable(int x,int y);
+lz_obj_t * lz_create_lable(int x,int y);
 
 #endif //LZUI_LZ_OBJ_LABLE_H

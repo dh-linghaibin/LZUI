@@ -22,16 +22,16 @@ typedef union {
 		uint16_t b : 5;
 	} rgb;
 	uint16_t rgb565;
-} lui_color565_u;
+} lz_color565_u;
 
-typedef struct _lui_color5658_t {
-	lui_color565_u color;
+typedef struct _lz_color5658_t {
+	lz_color565_u color;
 	uint8_t      alpha;
-} lui_color5658_t;
+} lz_color5658_t;
 
-uint16_t lui_color_888_to_565(uint32_t rgb);
-uint16_t lui_color_rgb_to_565(uint8_t r, uint8_t g, uint8_t b);
-uint16_t lui_color_alpha_blend(uint16_t fr_c,uint16_t bk_c,uint8_t alpha);
+uint16_t lz_color_888_to_565(uint32_t rgb);
+uint16_t lz_color_rgb_to_565(uint8_t r, uint8_t g, uint8_t b);
+uint16_t lz_color_alpha_blend(uint16_t fr_c,uint16_t bk_c,uint8_t alpha);
 
 
 #define lui_color_white     0xffffff

@@ -64,8 +64,8 @@ CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj
  ../src/include/lzui/lz_color.h
  ../src/include/lzui/lz_obj.h
- ../src/include/lzui/lz_obj_icon.h
  ../src/include/lzui/lz_obj_lable.h
+ ../src/include/lzui/lz_obj_png.h
  C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_info.c
 CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj
  ../src/include/lzui/lz_mem.h
@@ -95,15 +95,15 @@ CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj
  ../src/include/lzui/lz_obj_button.h
  ../src/include/lzui/lz_types.h
  C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_button.c
-CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj
  ../src/include/lzui/lz_color.h
  ../src/include/lzui/lz_config.h
  ../src/include/lzui/lz_draw.h
  ../src/include/lzui/lz_mem.h
  ../src/include/lzui/lz_obj.h
- ../src/include/lzui/lz_obj_icon.h
+ ../src/include/lzui/lz_obj_chart.h
  ../src/include/lzui/lz_types.h
- C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_icon.c
+ C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.c
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj
  ../src/include/lzui/lz_color.h
  ../src/include/lzui/lz_config.h
@@ -113,6 +113,22 @@ CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj
  ../src/include/lzui/lz_obj_lable.h
  ../src/include/lzui/lz_types.h
  C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj
+ ../src/include/lzui/lz_color.h
+ ../src/include/lzui/lz_config.h
+ ../src/include/lzui/lz_draw.h
+ ../src/include/lzui/lz_mem.h
+ ../src/include/lzui/lz_obj.h
+ ../src/include/lzui/lz_obj_png.h
+ ../src/include/lzui/lz_types.h
+ C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_png.c
+CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj
+ ../src/include/lzui/lz_config.h
+ ../src/include/lzui/lz_mem.h
+ ../src/include/lzui/lz_obj.h
+ ../src/include/lzui/lz_tick.h
+ ../src/include/lzui/lz_types.h
+ C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_tick.c
 CMakeFiles/LZUI.dir/src/user/main.c.obj
  ../include/SDL2/SDL.h
  ../include/SDL2/SDL_assert.h
@@ -158,8 +174,10 @@ CMakeFiles/LZUI.dir/src/user/main.c.obj
  ../src/include/lzui/lz_obj.h
  ../src/include/lzui/lz_obj_bar.h
  ../src/include/lzui/lz_obj_button.h
- ../src/include/lzui/lz_obj_icon.h
+ ../src/include/lzui/lz_obj_chart.h
  ../src/include/lzui/lz_obj_lable.h
+ ../src/include/lzui/lz_obj_png.h
+ ../src/include/lzui/lz_tick.h
  ../src/include/lzui/lz_types.h
  C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/SDL_events.h
  C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/SDL_gesture.h

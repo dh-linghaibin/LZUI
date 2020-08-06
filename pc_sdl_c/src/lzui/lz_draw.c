@@ -7,21 +7,43 @@
 
 typedef struct _lcache {
 	uint16_t array[CACHE_SIZE];
-	lui_layout_t coordinate;
+	lz_layout_t coordinate;
 } lui_cache;
 
 static void (*updata)(int x, int y, int width, int length, uint16_t * color) = NULL;
 static lui_cache cache;
-lui_layout_t f_layout;
+lz_layout_t f_layout;
 
 static void l_point(int s_x, int s_y ,int m_x, int m_y, uint16_t color);
-static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lui_color5658_t color);
+static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lz_color5658_t color);
 
-void lui_draw_set_updata( void (*up)(int x, int y, int width, int length, uint16_t * color) ) {
+void lz_draw_set_updata( void (*up)(int x, int y, int width, int length, uint16_t * color) ) {
 	updata = up;
 }
 
-void lui_draw_frame(int x, int y, int width, int length, lui_color5658_t color) {
+/* 函数功能: 判断点(x, y)是否在有ploy_sides个顶点的多边形内 */
+/* 参数: poly_sides	测试多边形的顶点数
+**		 poly_x	测试多边形的各个顶点的X轴坐标
+**		 poly_y	测试多边形的各个顶点的Y轴坐标
+**		 x	测试点的X轴坐标
+**		 Y 	测试点的Y轴坐标 */
+/* 返回值: 返回0 表示不在多边形内部，返回1 表示在多边形内部 */
+/* 说明: 在多边形各边上的点默认不在多边形内部 */
+int in_or_not(int poly_sides, int * poly_x, int * poly_y, int x, int y) {
+    int i, j;
+    j = poly_sides - 1;
+    int res = 0;
+    for (i = 0; i < poly_sides; i++) {
+        if (( (poly_y[i] < y && poly_y[j] >= y) || (poly_y[j] < y && poly_y[i] >= y) ) &&
+            (poly_x[i] <= x || poly_x[j] <= x)) {
+            res ^= ((poly_x[i] + (y - poly_y[i]) / (poly_y[j] - poly_y[i]) * (poly_x[j] - poly_x[i])) < x);
+        }
+        j = i;
+    }
+    return res;
+}
+
+void lz_draw_frame(int x, int y, int width, int length, lz_color5658_t color) {
 	if(color.alpha < LUI_COLOR_ALPHA_FALL) {
 		int maxX1 = x + width;
 		int maxY1 = y + length;
@@ -33,29 +55,23 @@ void lui_draw_frame(int x, int y, int width, int length, lui_color5658_t color) 
 
 		if (!(maxX1 < f_layout.point.x || x > l_x
 		      || maxY1 < f_layout.point.y || y > l_y )) {
-
 			if (!(maxX1 < cache.coordinate.point.x || x > maxX2
 			      || maxY1 < cache.coordinate.point.y || y > maxY2)) {
 				int x1 = 0; int y1 = 0;
 				int x2 = cache.coordinate.size.width;
 				int y2 = cache.coordinate.size.length;
-
 				if(f_layout.point.x > x) {
 					x = f_layout.point.x;
 				}
-
 				if(f_layout.point.y > y) {
 					y = f_layout.point.y;
 				}
-
 				if(maxX1 > l_x) {
 					maxX1 = l_x;
 				}
-
 				if(maxY1 > l_y) {
 					maxY1 = l_y;
 				}
-
 				if(x >= cache.coordinate.point.x) {
 					x1 = x-cache.coordinate.point.x;
 				}
@@ -73,7 +89,7 @@ void lui_draw_frame(int x, int y, int width, int length, lui_color5658_t color) 
 						if(color.alpha == LUI_COLOR_ALPHA_NULL) {
 							cache.array[y_i+x_j] = color.color.rgb565;
 						} else {
-							cache.array[y_i+x_j] = lui_color_alpha_blend(cache.array[y_i+x_j],color.color.rgb565,color.alpha);
+							cache.array[y_i+x_j] = lz_color_alpha_blend(cache.array[y_i+x_j],color.color.rgb565,color.alpha);
 						}
 					}
 				}
@@ -82,7 +98,7 @@ void lui_draw_frame(int x, int y, int width, int length, lui_color5658_t color) 
 	}
 }
 
-void lui_draw_line(int s_x, int s_y, int e_x, int e_y, uint16_t color) {
+void lz_draw_line(int s_x, int s_y, int e_x, int e_y, uint16_t color) {
 	int maxx2 = cache.coordinate.point.x + cache.coordinate.size.width;
 	int maxy2 = cache.coordinate.point.y + cache.coordinate.size.length;
 	if (!((s_x + e_x) < cache.coordinate.point.x || s_x > maxx2 || (s_y + e_y) < cache.coordinate.point.y || s_y > maxy2)) {
@@ -129,14 +145,14 @@ void lui_draw_line(int s_x, int s_y, int e_x, int e_y, uint16_t color) {
 	}
 }
 
-void lui_draw_empty_frame( int x1, int y1, int x2, int y2, uint16_t color ) {
-	lui_draw_line(x1,y1,x2,y1,color);
-	lui_draw_line(x1,y2,x2,y2,color);
-	lui_draw_line(x1,y1,x1,y2,color);
-	lui_draw_line(x2,y1,x2,y2,color);
+void lz_draw_empty_frame( int x1, int y1, int x2, int y2, uint16_t color ) {
+	lz_draw_line(x1,y1,x2,y1,color);
+	lz_draw_line(x1,y2,x2,y2,color);
+	lz_draw_line(x1,y1,x1,y2,color);
+	lz_draw_line(x2,y1,x2,y2,color);
 }
 
-void lui_draw_arc( int x0, int y0, int r, int s, uint16_t color ) {
+void lz_draw_arc( int x0, int y0, int r, int s, uint16_t color ) {
 	int maxx2 = cache.coordinate.point.x + cache.coordinate.size.width;
 	int maxy2 = cache.coordinate.point.y + cache.coordinate.size.length;
 	int x,y,xd,yd,e;
@@ -185,7 +201,7 @@ void lui_draw_arc( int x0, int y0, int r, int s, uint16_t color ) {
 	}
 }
 
-void lui_draw_circle( int x0, int y0, int r, uint16_t c ) {
+void lz_draw_circle( int x0, int y0, int r, uint16_t c ) {
 	int maxx = cache.coordinate.point.x + cache.coordinate.size.width;
 	int maxy = cache.coordinate.point.y + cache.coordinate.size.length;
 	int x,y,xd,yd,e;
@@ -213,7 +229,7 @@ void lui_draw_circle( int x0, int y0, int r, uint16_t c ) {
 	}
 }
 
-void lui_draw_fill_circle( int x0, int y0, int r, uint16_t c ) {
+void lz_draw_fill_circle( int x0, int y0, int r, uint16_t c ) {
 	int x,y,xd;
 	if ( x0<0 ) return;
 	if ( y0<0 ) return;
@@ -223,12 +239,12 @@ void lui_draw_fill_circle( int x0, int y0, int r, uint16_t c ) {
 	y = r;
 	while ( x <= y ) {
 		if( y > 0 ) {
-			lui_draw_line(x0 - x, y0 - y,x0 - x, y0 + y, c);
-			lui_draw_line(x0 + x, y0 - y,x0 + x, y0 + y, c);
+			lz_draw_line(x0 - x, y0 - y,x0 - x, y0 + y, c);
+			lz_draw_line(x0 + x, y0 - y,x0 + x, y0 + y, c);
 		}
 		if( x > 0 ) {
-			lui_draw_line(x0 - y, y0 - x,x0 - y, y0 + x, c);
-			lui_draw_line(x0 + y, y0 - x,x0 + y, y0 + x, c);
+			lz_draw_line(x0 - y, y0 - x,x0 - y, y0 + x, c);
+			lz_draw_line(x0 + y, y0 - x,x0 + y, y0 + x, c);
 		}
 		if ( xd < 0 ) {
 			xd += (x << 2) + 6;
@@ -238,10 +254,10 @@ void lui_draw_fill_circle( int x0, int y0, int r, uint16_t c ) {
 		}
 		x++;
 	}
-	lui_draw_circle(x0, y0, r,c);
+	lz_draw_circle(x0, y0, r,c);
 }
 
-void lui_draw_round_frame( int x1, int y1, int x2, int y2, int r, uint16_t c ) {
+void lz_draw_round_frame( int x1, int y1, int x2, int y2, int r, uint16_t c ) {
 	int n;
 	if ( x2 < x1 ) {
 		n = x2;
@@ -255,17 +271,17 @@ void lui_draw_round_frame( int x1, int y1, int x2, int y2, int r, uint16_t c ) {
 	}
 	if ( r > x2 ) return;
 	if ( r > y2 ) return;
-	lui_draw_line(x1+r, y1, x2-r, y1, c);
-	lui_draw_line(x1+r, y2, x2-r, y2, c);
-	lui_draw_line(x1, y1+r, x1, y2-r, c);
-	lui_draw_line(x2, y1+r, x2, y2-r, c);
-	lui_draw_arc(x1+r, y1+r, r, 0x0C, c);
-	lui_draw_arc(x2-r, y1+r, r, 0x03, c);
-	lui_draw_arc(x1+r, y2-r, r, 0x30, c);
-	lui_draw_arc(x2-r, y2-r, r, 0xC0, c);
+	lz_draw_line(x1+r, y1, x2-r, y1, c);
+	lz_draw_line(x1+r, y2, x2-r, y2, c);
+	lz_draw_line(x1, y1+r, x1, y2-r, c);
+	lz_draw_line(x2, y1+r, x2, y2-r, c);
+	lz_draw_arc(x1+r, y1+r, r, 0x0C, c);
+	lz_draw_arc(x2-r, y1+r, r, 0x03, c);
+	lz_draw_arc(x1+r, y2-r, r, 0x30, c);
+	lz_draw_arc(x2-r, y2-r, r, 0xC0, c);
 }
 
-void lui_draw_fill_round_frame( int x1, int y1, int x2, int y2, int r, lui_color5658_t color ) {
+void lz_draw_fill_round_frame( int x1, int y1, int x2, int y2, int r, lz_color5658_t color ) {
 	int  x,y,xd;
 	x2 += x1;
 	y2 += y1;
@@ -281,15 +297,15 @@ void lui_draw_fill_round_frame( int x1, int y1, int x2, int y2, int r, lui_color
 	}
 	if ( r<=0 ) return;
 	xd = 3 - (r << 1); x = 0; y = r;
-	lui_draw_frame(x1 + r, y1, x2 - r - x1 - r, (y2-y1), color);
+	lz_draw_frame(x1 + r, y1, x2 - r - x1 - r, (y2-y1), color);
 	while ( x <= y ) {
 		if( y > 0 ) {
-			lui_draw_line(x2 + x - r, y1 - y + r, x2+ x - r, y + y2 - r, color.color.rgb565);
-			lui_draw_line(x1 - x + r, y1 - y + r, x1- x + r, y + y2 - r, color.color.rgb565);
+			lz_draw_line(x2 + x - r, y1 - y + r, x2+ x - r, y + y2 - r, color.color.rgb565);
+			lz_draw_line(x1 - x + r, y1 - y + r, x1- x + r, y + y2 - r, color.color.rgb565);
 		}
 		if( x > 0 ) {
-			lui_draw_line(x1 - y + r, y1 - x + r, x1 - y + r, x + y2 - r, color.color.rgb565);
-			lui_draw_line(x2 + y - r, y1 - x + r, x2 + y - r, x + y2 - r, color.color.rgb565);
+			lz_draw_line(x1 - y + r, y1 - x + r, x1 - y + r, x + y2 - r, color.color.rgb565);
+			lz_draw_line(x2 + y - r, y1 - x + r, x2 + y - r, x + y2 - r, color.color.rgb565);
 		}
 		if ( xd < 0 ) {
 			xd += (x << 2) + 6;
@@ -301,7 +317,7 @@ void lui_draw_fill_round_frame( int x1, int y1, int x2, int y2, int r, lui_color
 	}
 }
 
-void lui_draw_mesh( int x1, int y1, int x2, int y2, lui_color5658_t color ) {
+void lz_draw_mesh( int x1, int y1, int x2, int y2, lz_color5658_t color ) {
 	int maxx2 = cache.coordinate.point.x + cache.coordinate.size.width;
 	int maxy2 = cache.coordinate.point.y + cache.coordinate.size.length;
 	if (!((x1 + x2) < cache.coordinate.point.x || x1 > maxx2 || (y1 + y2) < cache.coordinate.point.y || y1 > maxy2)) {
@@ -326,7 +342,7 @@ void lui_draw_mesh( int x1, int y1, int x2, int y2, lui_color5658_t color ) {
 	}
 }
 
-void lui_draw_font(int x, int y, uint8_t wighth, uint8_t length, uint16_t color, uint8_t * mate) {
+void lz_draw_font(int x, int y, uint8_t wighth, uint8_t length, uint16_t color, uint8_t * mate) {
 	uint8_t font_w = wighth;
 	uint8_t font_l = length;
 
@@ -386,10 +402,10 @@ void lui_draw_font(int x, int y, uint8_t wighth, uint8_t length, uint16_t color,
 //							cache.array[y_i+x_j] = color;
                             color_rel = color;
 						} else {
-//							cache.array[y_i+x_j] = lui_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
-                            color_rel = lui_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
+//							cache.array[y_i+x_j] = lz_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
+                            color_rel = lz_color_alpha_blend(color,cache.array[y_i+x_j],mate[(ptr)]);
 						}
-                        cache.array[y_i+x_j] = lui_color_alpha_blend(color_rel,cache.array[y_i+x_j],255);
+                        cache.array[y_i+x_j] = lz_color_alpha_blend(color_rel,cache.array[y_i+x_j],255);
 					}
 					ptr++;
 				}
@@ -405,7 +421,7 @@ void lui_draw_font(int x, int y, uint8_t wighth, uint8_t length, uint16_t color,
 	}
 }
 
-void lui_draw_jpg(int x, int y, int width, int length, uint8_t * material) {
+void lz_draw_jpg(int x, int y, int width, int length, uint8_t * material) {
 	int maxX1 = x + width;
 	int maxY1 = y + length;
 	int maxX2 = cache.coordinate.point.x + cache.coordinate.size.width;
@@ -473,7 +489,7 @@ void lui_draw_jpg(int x, int y, int width, int length, uint8_t * material) {
 	}
 }
 
-void lui_draw_png(int x, int y, int width, int length, const unsigned char * material) {
+void lz_draw_png(int x, int y, int width, int length, const unsigned char * material) {
 	int maxX1 = x + width;
 	int maxY1 = y + length;
 	int maxX2 = cache.coordinate.point.x + cache.coordinate.size.width;
@@ -527,7 +543,7 @@ void lui_draw_png(int x, int y, int width, int length, const unsigned char * mat
 				for(int x_j = x1; x_j < x2; x_j++) {
 					if(material[ptr+2] != 0) {
 						uint16_t color = (uint16_t)( material[ptr+1]<<8)+material[ptr];
-						cache.array[y_i+x_j] = lui_color_alpha_blend(cache.array[y_i+x_j],color, 0xff-material[ptr+2]);
+						cache.array[y_i+x_j] = lz_color_alpha_blend(cache.array[y_i+x_j],color, 0xff-material[ptr+2]);
 					}
 					ptr += 3;
 				}
@@ -543,7 +559,7 @@ void lui_draw_png(int x, int y, int width, int length, const unsigned char * mat
 	}
 }
 
-void lui_draw_screen(int x, int y, int width, int length, uint32_t * material) {
+void lz_draw_screen(int x, int y, int width, int length, uint32_t * material) {
 	int maxX1 = x + width;
 	int maxY1 = y + length;
 	int maxX2 = cache.coordinate.point.x + cache.coordinate.size.width;
@@ -617,7 +633,7 @@ static void l_point(int s_x, int s_y ,int m_x, int m_y, uint16_t color) {
 	}
 }
 
-static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lui_color5658_t color) {
+static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lz_color5658_t color) {
 	if(color.alpha < LUI_COLOR_ALPHA_FALL) {
 		if( ( s_x  >= cache.coordinate.point.x && s_x  < m_x ) &&
 		    (  s_y >= cache.coordinate.point.y && s_y < m_y ) ) {
@@ -625,7 +641,7 @@ static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lui_colo
 			if(color.alpha == LUI_COLOR_ALPHA_NULL) {
 				cache.array[pos] = color.color.rgb565;
 			} else {
-				cache.array[pos] = lui_color_alpha_blend(cache.array[pos],color.color.rgb565,color.alpha);
+				cache.array[pos] = lz_color_alpha_blend(cache.array[pos],color.color.rgb565,color.alpha);
 			}
 		}
 	}
@@ -670,7 +686,7 @@ uint8_t lui_draw_check_layout(int x, int y, int width, int length) {
 	return 0;
 }
 
-void lui_drawcache_size_set(int x, int y, int width, int length) {
+void lz_drawcache_size_set(int x, int y, int width, int length) {
 	for(int i = 0; i < CACHE_SIZE; i++) {
 		cache.array[i] = 0xffff;
 	}
@@ -680,11 +696,11 @@ void lui_drawcache_size_set(int x, int y, int width, int length) {
 	cache.coordinate.size.length = length;
 }
 
-lui_layout_t * lui_draw_cache_size(void) {
+lz_layout_t * lui_draw_cache_size(void) {
 	return &cache.coordinate;
 }
 
-void lui_draw_cache_to_lcd(int x, int y, int width, int length) {
+void lz_draw_cache_to_lcd(int x, int y, int width, int length) {
 	if(updata != NULL) {
 		updata(x,y,width,length,cache.array);
 	}

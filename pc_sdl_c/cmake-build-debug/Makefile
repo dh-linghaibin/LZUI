@@ -365,33 +365,6 @@ src/lzui/lz_obj_chart.c.s:
 	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.s
 .PHONY : src/lzui/lz_obj_chart.c.s
 
-src/lzui/lz_obj_icon.obj: src/lzui/lz_obj_icon.c.obj
-
-.PHONY : src/lzui/lz_obj_icon.obj
-
-# target to build an object file
-src/lzui/lz_obj_icon.c.obj:
-	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.obj
-.PHONY : src/lzui/lz_obj_icon.c.obj
-
-src/lzui/lz_obj_icon.i: src/lzui/lz_obj_icon.c.i
-
-.PHONY : src/lzui/lz_obj_icon.i
-
-# target to preprocess a source file
-src/lzui/lz_obj_icon.c.i:
-	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.i
-.PHONY : src/lzui/lz_obj_icon.c.i
-
-src/lzui/lz_obj_icon.s: src/lzui/lz_obj_icon.c.s
-
-.PHONY : src/lzui/lz_obj_icon.s
-
-# target to generate assembly for a file
-src/lzui/lz_obj_icon.c.s:
-	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_icon.c.s
-.PHONY : src/lzui/lz_obj_icon.c.s
-
 src/lzui/lz_obj_lable.obj: src/lzui/lz_obj_lable.c.obj
 
 .PHONY : src/lzui/lz_obj_lable.obj
@@ -418,6 +391,60 @@ src/lzui/lz_obj_lable.s: src/lzui/lz_obj_lable.c.s
 src/lzui/lz_obj_lable.c.s:
 	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.s
 .PHONY : src/lzui/lz_obj_lable.c.s
+
+src/lzui/lz_obj_png.obj: src/lzui/lz_obj_png.c.obj
+
+.PHONY : src/lzui/lz_obj_png.obj
+
+# target to build an object file
+src/lzui/lz_obj_png.c.obj:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj
+.PHONY : src/lzui/lz_obj_png.c.obj
+
+src/lzui/lz_obj_png.i: src/lzui/lz_obj_png.c.i
+
+.PHONY : src/lzui/lz_obj_png.i
+
+# target to preprocess a source file
+src/lzui/lz_obj_png.c.i:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.i
+.PHONY : src/lzui/lz_obj_png.c.i
+
+src/lzui/lz_obj_png.s: src/lzui/lz_obj_png.c.s
+
+.PHONY : src/lzui/lz_obj_png.s
+
+# target to generate assembly for a file
+src/lzui/lz_obj_png.c.s:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.s
+.PHONY : src/lzui/lz_obj_png.c.s
+
+src/lzui/lz_tick.obj: src/lzui/lz_tick.c.obj
+
+.PHONY : src/lzui/lz_tick.obj
+
+# target to build an object file
+src/lzui/lz_tick.c.obj:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj
+.PHONY : src/lzui/lz_tick.c.obj
+
+src/lzui/lz_tick.i: src/lzui/lz_tick.c.i
+
+.PHONY : src/lzui/lz_tick.i
+
+# target to preprocess a source file
+src/lzui/lz_tick.c.i:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.i
+.PHONY : src/lzui/lz_tick.c.i
+
+src/lzui/lz_tick.s: src/lzui/lz_tick.c.s
+
+.PHONY : src/lzui/lz_tick.s
+
+# target to generate assembly for a file
+src/lzui/lz_tick.c.s:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.s
+.PHONY : src/lzui/lz_tick.c.s
 
 src/user/main.obj: src/user/main.c.obj
 
@@ -482,12 +509,15 @@ help:
 	@echo ... src/lzui/lz_obj_chart.obj
 	@echo ... src/lzui/lz_obj_chart.i
 	@echo ... src/lzui/lz_obj_chart.s
-	@echo ... src/lzui/lz_obj_icon.obj
-	@echo ... src/lzui/lz_obj_icon.i
-	@echo ... src/lzui/lz_obj_icon.s
 	@echo ... src/lzui/lz_obj_lable.obj
 	@echo ... src/lzui/lz_obj_lable.i
 	@echo ... src/lzui/lz_obj_lable.s
+	@echo ... src/lzui/lz_obj_png.obj
+	@echo ... src/lzui/lz_obj_png.i
+	@echo ... src/lzui/lz_obj_png.s
+	@echo ... src/lzui/lz_tick.obj
+	@echo ... src/lzui/lz_tick.i
+	@echo ... src/lzui/lz_tick.s
 	@echo ... src/user/main.obj
 	@echo ... src/user/main.i
 	@echo ... src/user/main.s

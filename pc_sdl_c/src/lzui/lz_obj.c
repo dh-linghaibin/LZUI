@@ -4,7 +4,7 @@
 #include "lzui/lz_obj.h"
 #include "lzui/lz_config.h"
 
-static lui_obj_t lui_root = {
+static lz_obj_t lui_root = {
 		.layout.point.x = 0,
 		.layout.point.y = 0,
 		.layout.size.width = LCD_LENGTH,
@@ -16,7 +16,7 @@ static lui_obj_t lui_root = {
 };
 
 /* touch  */
-static lui_touch_val_t touch_val = {
+static lz_touch_val_t touch_val = {
 		.obj = NULL,
 		.abs_x = 0,
 		.abs_y = 0,
@@ -26,22 +26,22 @@ static lui_touch_val_t touch_val = {
 		.event = NULL,
 };
 
-lui_layout_t f_layout;
+lz_layout_t f_layout;
 
-static lui_obj_t * last_stack = NULL;
-static lui_point_t stack_point;
+static lz_obj_t * last_stack = NULL;
+static lz_point_t stack_point;
 static int tree_layer = 0;
 static int last_tree_layer = 0;
-static lui_layout_t mlayout[20];
+static lz_layout_t mlayout[20];
 
-lui_obj_t *lui_get_root(void) {
+lz_obj_t *lz_get_root(void) {
 	return &lui_root;
 }
 
-lui_obj_t *lui_create_obj( int x, int y, int width, int length, void * val,
-                           void (*design) (struct _lui_obj_t * obj,lui_point_t *point) ) {
-	lui_obj_t * obj;
-	obj = (lui_obj_t *)lui_malloc(sizeof(lui_obj_t));
+lz_obj_t *lz_create_obj( int x, int y, int width, int length, void * val,
+                           void (*design) (struct _lz_obj_t * obj,lz_point_t *point) ) {
+	lz_obj_t * obj;
+	obj = (lz_obj_t *)lz_malloc(sizeof(lz_obj_t));
 	if( obj == NULL ) {
 		return NULL;
 	}
@@ -59,32 +59,32 @@ lui_obj_t *lui_create_obj( int x, int y, int width, int length, void * val,
 	return obj;
 }
 
-void lui_obj_set_event(lui_obj_t * obj, void (*event) (lui_touch_val_t *val)) {
+void lz_obj_set_event(lz_obj_t * obj, void (*event) (lz_touch_val_t *val)) {
 	obj->event = event;
 }
 
-void lui_obj_set_x(lui_obj_t * obj, int x) {
+void lz_obj_set_x(lz_obj_t * obj, int x) {
 	obj->layout.point.x = x;
 }
 
-int lui_obj_get_x(lui_obj_t * obj) {
+int lui_obj_get_x(lz_obj_t * obj) {
 	return obj->layout.point.x;
 }
 
 
-void lui_obj_set_y(lui_obj_t * obj, int y) {
+void lz_obj_set_y(lz_obj_t * obj, int y) {
 	obj->layout.point.y = y;
 }
 
-void lui_obj_set_width(lui_obj_t * obj, int width) {
+void lz_obj_set_width(lz_obj_t * obj, int width) {
 	obj->layout.size.width = width;
 }
 
-void lui_obj_set_length(lui_obj_t * obj, int length) {
+void lz_obj_set_length(lz_obj_t * obj, int length) {
 	obj->layout.size.length = length;
 }
 
-static lui_obj_t * _lui_get_last_brother(lui_obj_t * obj) {
+static lz_obj_t * _lui_get_last_brother(lz_obj_t * obj) {
 	if (obj->brother == NULL) {
 		return obj;
 	} else {
@@ -92,7 +92,7 @@ static lui_obj_t * _lui_get_last_brother(lui_obj_t * obj) {
 	}
 }
 
-static lui_obj_t * _lui_get_last_child(lui_obj_t * obj) {
+static lz_obj_t * _lui_get_last_child(lz_obj_t * obj) {
 	if (obj->child == NULL) {
 		return obj;
 	} else {
@@ -100,15 +100,15 @@ static lui_obj_t * _lui_get_last_child(lui_obj_t * obj) {
 	}
 }
 
-void lui_obj_add_brother(lui_obj_t * obj, lui_obj_t * brother) {
-	lui_obj_t * t;
+void lz_obj_add_brother(lz_obj_t * obj, lz_obj_t * brother) {
+	lz_obj_t * t;
 	t = _lui_get_last_brother(obj);
 	brother->father = obj->father;
 	t->brother = brother;
 }
 
-void lui_obj_add_child(lui_obj_t * obj, lui_obj_t * child) {
-	lui_obj_t * t;
+void lz_obj_add_child(lz_obj_t * obj, lz_obj_t * child) {
+	lz_obj_t * t;
 	t = _lui_get_last_child(obj);
 	child->father = obj;
 	if(obj->child == NULL) {
@@ -119,7 +119,7 @@ void lui_obj_add_child(lui_obj_t * obj, lui_obj_t * child) {
 }
 
 
-void lui_obj_find_up(lui_obj_t * root, lui_obj_t * obj) {
+void lui_obj_find_up(lz_obj_t * root, lz_obj_t * obj) {
 	if (root == NULL) {
 		return;
 	} else {
@@ -135,8 +135,8 @@ void lui_obj_find_up(lui_obj_t * root, lui_obj_t * obj) {
 	}
 }
 
-static void _lui_obj_distroy(lui_obj_t ** obj) {
-	lui_obj_t *pl, *pr;
+static void _lz_obj_distroy(lz_obj_t ** obj) {
+	lz_obj_t *pl, *pr;
 	if((*obj) == NULL) {
 		return ;
 	} else {
@@ -144,22 +144,22 @@ static void _lui_obj_distroy(lui_obj_t ** obj) {
 		pr = (*obj)->brother;
 		(*obj)->child = NULL;
 		(*obj)->brother = NULL;
-		lui_free((*obj)->val);
-		lui_free(*obj);
+		lz_free((*obj)->val);
+		lz_free(*obj);
 		(*obj) = NULL;
-		_lui_obj_distroy(&pl);
-		_lui_obj_distroy(&pr);
+		_lz_obj_distroy(&pl);
+		_lz_obj_distroy(&pr);
 	}
 }
 
-void lui_obj_distroy(lui_obj_t ** obj) {
+void lz_obj_distroy(lz_obj_t ** obj) {
 	if((*obj) != NULL) {
 		lui_obj_find_up(&lui_root,(*obj));
-		_lui_obj_distroy(&((*obj)->child));
+		_lz_obj_distroy(&((*obj)->child));
 	}
 }
 
-void lui_obj_traverse(lui_obj_t * obj) {
+void lz_obj_traverse(lz_obj_t * obj) {
 	if (obj == NULL) {
 		tree_layer --;
 		return;
@@ -233,7 +233,7 @@ void lui_obj_traverse(lui_obj_t * obj) {
 			}
 		}
 		if(obj->design != NULL) {
-			lui_point_t point;
+			lz_point_t point;
 			if(last_stack == obj) {
 				point.x = stack_point.x;
 				point.y = stack_point.y;
@@ -243,22 +243,22 @@ void lui_obj_traverse(lui_obj_t * obj) {
 			}
 			obj->design(obj,&point);
 		}
-		lui_obj_traverse(obj->child);
-		lui_obj_traverse(obj->brother);
+		lz_obj_traverse(obj->child);
+		lz_obj_traverse(obj->brother);
 	}
 }
 
-void lui_obj_coupoint(lui_obj_t * obj, lui_point_t * point) {
+void lz_obj_coupoint(lz_obj_t * obj, lz_point_t * point) {
 	if(obj->father == NULL) {
 		return;
 	} else {
 		point->x += obj->father->layout.point.x;
 		point->y += obj->father->layout.point.y;
-		lui_obj_coupoint(obj->father, point);
+		lz_obj_coupoint(obj->father, point);
 	}
 }
 
-void _lui_obj_even(lui_obj_t * obj, int x, int y, uint8_t flag) {
+void _lz_obj_even(lz_obj_t * obj, int x, int y, uint8_t flag) {
 	if (obj == NULL) {
 		tree_layer --;
 		return;
@@ -326,7 +326,7 @@ void _lui_obj_even(lui_obj_t * obj, int x, int y, uint8_t flag) {
 			}
 		}
 		if(obj->design != NULL) {
-			lui_point_t point;
+			lz_point_t point;
 			if(last_stack == obj) {
 				point.x = stack_point.x;
 				point.y = stack_point.y;
@@ -349,14 +349,14 @@ void _lui_obj_even(lui_obj_t * obj, int x, int y, uint8_t flag) {
 			}
 		}
 		if(obj->event_flag == 0) {
-			_lui_obj_even(obj->child,x,y,flag);
-			_lui_obj_even(obj->brother,x,y,flag);
+			_lz_obj_even(obj->child,x,y,flag);
+			_lz_obj_even(obj->brother,x,y,flag);
 		}
 	}
 }
 
 /* everything base time so need tick count even touch or sollow or other */
-void lui_obj_even(int x, int y, uint8_t flag) {
+void lz_obj_even(int x, int y, uint8_t flag) {
 	if((flag == 0 || flag == 1) && touch_val.event != NULL) {
 		touch_val.abs_x = x - (touch_val.rel_x - touch_val.abs_x);
 		touch_val.abs_y = y - (touch_val.rel_y - touch_val.abs_y);
@@ -366,7 +366,7 @@ void lui_obj_even(int x, int y, uint8_t flag) {
 	} else {
 		touch_val.obj = NULL;
 		touch_val.event = NULL;
-		_lui_obj_even(&lui_root,x,y,flag);
+		_lz_obj_even(&lui_root,x,y,flag);
 	}
 	if(touch_val.event != NULL) {
 		if(touch_val.falg == 2) {
