@@ -101,6 +101,7 @@ CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_draw.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_mem.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_obj_chart.h
+CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_tick.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/include/lzui/lz_types.h
 CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj: ../src/lzui/lz_obj_chart.c
 

@@ -14,8 +14,8 @@ lz_obj_t * lz_create_bar(int x, int y) {
 	bar->val = 20;
 	bar->b_color.color.rgb565 = lz_color_888_to_565(0x07DBFF);
 	bar->b_color.alpha = 100;
-	bar->t_color.color.rgb565 = lz_color_888_to_565(lui_color_red);
-	bar->t_color.alpha = LUI_COLOR_ALPHA_FALL;
+	bar->t_color.color.rgb565 = lz_color_888_to_565(lz_color_red);
+	bar->t_color.alpha = lz_color_ALPHA_FALL;
 	bar->on_event = NULL;
 	lz_obj_t * obj = lz_create_obj(x,y,150,10,bar,lz_design);
 	lz_obj_set_event(obj,lz_event);

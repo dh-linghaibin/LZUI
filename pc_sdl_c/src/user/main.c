@@ -22,6 +22,7 @@ static int tick_thread(void *data) {
     while(running) {
         SDL_Delay(1);
         lz_tick_inc(1);
+        lz_tick_loop();
     }
     return 0;
 }
@@ -33,17 +34,19 @@ void bt_event(struct _lz_tick_t * tick) {
     lz_obj_set_x(tick->obj, x);
     lz_obj_set_y(tick->obj, y);
     if(x < 320) {
-        x += 4;
+        x += 2;
     } else {
         x = 0;
     }
 
     if(y < 240) {
-        y += 4;
+        y += 2;
     } else {
         y = 0;
     }
 }
+
+extern  pos_t pos_val;
 
 int main(int argc, char** argv) {
 	display_sdl();
@@ -54,9 +57,6 @@ int main(int argc, char** argv) {
 //	lz_obj_t * bar = lz_create_bar(10,150);
 //	lz_obj_add_child(lz_get_root(),bar);
 
-	lz_obj_t * but = lz_create_button(10,10);
-	lz_obj_add_child(lz_get_root(),but);
-
 	lz_obj_t * lable = lz_create_lable(100,10);
 	lz_obj_add_child(lz_get_root(),lable);
 
@@ -64,10 +64,13 @@ int main(int argc, char** argv) {
     lz_icon_set_val(pngxx, usb_in_png_v);
     lz_obj_add_child(lz_get_root(),pngxx);
 
+    lz_obj_t * but = lz_create_button(10,10);
+    lz_obj_add_child(lz_get_root(),but);
+
     lz_obj_t * chart = lz_create_chart(50,100);
     lz_obj_add_child(lz_get_root(),chart);
 
-    lz_tick_create(but, bt_event, 5);
+//    lz_tick_create(but, bt_event, 50);
 
     SDL_CreateThread(tick_thread, "tick", NULL);
 
@@ -79,6 +82,8 @@ int main(int argc, char** argv) {
 					running = 0;
 				} break;
 				case SDL_MOUSEMOTION: {
+                    pos_val.mouse_x = event.button.x;
+                    pos_val.mouse_y = event.button.y;
 					if(touch_flag == 1) {
 						lz_obj_even(event.button.x, event.button.y, touch_flag);
 					}
@@ -87,12 +92,14 @@ int main(int argc, char** argv) {
 
 				} break;
 				case SDL_MOUSEBUTTONDOWN: {
+                    pos_val.is_mouse_down = 1;
 					if( event.button.button == SDL_BUTTON_LEFT ){
 						touch_flag = 1;
 						lz_obj_even(event.button.x, event.button.y, 2);
 					}
 				} break;
 				case SDL_MOUSEBUTTONUP: {
+                    pos_val.is_mouse_down = 0;
 					if( event.button.button == SDL_BUTTON_LEFT ){
 						touch_flag = 0;
 						lz_obj_even(event.button.x, event.button.y, touch_flag);
@@ -102,8 +109,7 @@ int main(int argc, char** argv) {
 		}
 		lui_loop();
 		display_sdl_up_data();
-        lz_tick_loop();
-		SDL_Delay(10);
+		SDL_Delay(5);
 	}
 	SDL_Quit();
 	return 0;

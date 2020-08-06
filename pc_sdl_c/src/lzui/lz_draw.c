@@ -44,7 +44,7 @@ int in_or_not(int poly_sides, int * poly_x, int * poly_y, int x, int y) {
 }
 
 void lz_draw_frame(int x, int y, int width, int length, lz_color5658_t color) {
-	if(color.alpha < LUI_COLOR_ALPHA_FALL) {
+	if(color.alpha < lz_color_ALPHA_FALL) {
 		int maxX1 = x + width;
 		int maxY1 = y + length;
 		int maxX2 = cache.coordinate.point.x + cache.coordinate.size.width;
@@ -84,9 +84,10 @@ void lz_draw_frame(int x, int y, int width, int length, lz_color5658_t color) {
 				if(maxY1 < maxY2) {
 					y2 = cache.coordinate.size.length-(maxY2-maxY1);
 				}
-				for(int y_i = y1*cache.coordinate.size.width; y_i < y2*cache.coordinate.size.width; y_i += cache.coordinate.size.width) {
+				uint16_t y_max = y2*cache.coordinate.size.width;
+				for(int y_i = y1*cache.coordinate.size.width; y_i < y_max; y_i += cache.coordinate.size.width) {
 					for(int x_j = x1; x_j < x2; x_j++) {
-						if(color.alpha == LUI_COLOR_ALPHA_NULL) {
+						if(color.alpha == lz_color_ALPHA_NULL) {
 							cache.array[y_i+x_j] = color.color.rgb565;
 						} else {
 							cache.array[y_i+x_j] = lz_color_alpha_blend(cache.array[y_i+x_j],color.color.rgb565,color.alpha);
@@ -634,11 +635,11 @@ static void l_point(int s_x, int s_y ,int m_x, int m_y, uint16_t color) {
 }
 
 static void lui_draw_point_clor5658(int s_x, int s_y ,int m_x, int m_y, lz_color5658_t color) {
-	if(color.alpha < LUI_COLOR_ALPHA_FALL) {
+	if(color.alpha < lz_color_ALPHA_FALL) {
 		if( ( s_x  >= cache.coordinate.point.x && s_x  < m_x ) &&
 		    (  s_y >= cache.coordinate.point.y && s_y < m_y ) ) {
 			uint32_t pos = (s_y-cache.coordinate.point.y)*cache.coordinate.size.width+(s_x-cache.coordinate.point.x);
-			if(color.alpha == LUI_COLOR_ALPHA_NULL) {
+			if(color.alpha == lz_color_ALPHA_NULL) {
 				cache.array[pos] = color.color.rgb565;
 			} else {
 				cache.array[pos] = lz_color_alpha_blend(cache.array[pos],color.color.rgb565,color.alpha);
@@ -688,7 +689,7 @@ uint8_t lui_draw_check_layout(int x, int y, int width, int length) {
 
 void lz_drawcache_size_set(int x, int y, int width, int length) {
 	for(int i = 0; i < CACHE_SIZE; i++) {
-		cache.array[i] = 0xffff;
+		cache.array[i] = 0x00;
 	}
 	cache.coordinate.point.x = x;
 	cache.coordinate.point.y = y;
