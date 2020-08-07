@@ -664,14 +664,6 @@ C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/begin_code.h
 close_code.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/close_code.h
 
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_easing.c
-lzui/lz_easing.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_easing.h
-math.h
--
-lzui/lz_types.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_types.h
-
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c
 stdio.h
 -

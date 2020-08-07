@@ -6,319 +6,319 @@
 #include <math.h>
 #include "lzui/lz_types.h"
 
-double linear(lz_leasing_t * e, double t)
+float lz_linear(lz_leasing_t * e, double t)
 {
-    return e->c * t / e->d + e->b;
+    return e->end_val * t / e->total_time + e->start_val;
 }
 
-double sine_in(lz_leasing_t * e, double t)
+double lz_sine_in(lz_leasing_t * e, double t)
 {
-    return -e->c * cos(t / e->d * M_PI_2) + e->c + e->b;
+    return -e->end_val * cos(t / e->total_time * M_PI_2) + e->end_val + e->start_val;
 }
 
-double sine_out(lz_leasing_t * e, double t)
+double lz_sine_out(lz_leasing_t * e, double t)
 {
-    return e->c * sin(t / e->d * M_PI_2) + e->b;
+    return e->end_val * sin(t / e->total_time * M_PI_2) + e->start_val;
 }
 
-double sine_in_out(lz_leasing_t * e, double t)
+double lz_sine_in_out(lz_leasing_t * e, double t)
 {
-    return -e->c / 2 * (cos(M_PI_1 * t / e->d) - 1) + e->b;
+    return -e->end_val / 2 * (cos(M_PI_1 * t / e->total_time) - 1) + e->start_val;
 }
 
-double quad_in(lz_leasing_t * e, double t)
+double lz_quad_in(lz_leasing_t * e, double t)
 {
-    t = t / e->d;
-    return e->c * pow(t, 2) + e->b;
+    t = t / e->total_time;
+    return e->end_val * pow(t, 2) + e->start_val;
 }
 
-double quad_out(lz_leasing_t * e, double t)
+double lz_quad_out(lz_leasing_t * e, double t)
 {
-    t = t / e->d;
-    return -e->c * t * (t - 2) + e->b;
+    t = t / e->total_time;
+    return -e->end_val * t * (t - 2) + e->start_val;
 }
 
-double quad_in_out(lz_leasing_t * e, double t)
+double lz_quad_in_out(lz_leasing_t * e, double t)
 {
     double r;
-    t = t / e->d * 2;
+    t = t / e->total_time * 2;
     if(t < 1)
-        r = e->c / 2 * pow(t, 2) + e->b;
+        r = e->end_val / 2 * pow(t, 2) + e->start_val;
     else
-        r = -e->c / 2 * ((t - 1) * (t - 3) - 1) + e->b;
+        r = -e->end_val / 2 * ((t - 1) * (t - 3) - 1) + e->start_val;
     return r;
 }
 
-double cubic_in(lz_leasing_t * e, double t)
+double lz_cubic_in(lz_leasing_t * e, double t)
 {
-    t = t / e->d;
-    return e->c * pow(t, 3) + e->b;
+    t = t / e->total_time;
+    return e->end_val * pow(t, 3) + e->start_val;
 }
 
-double cubic_out(lz_leasing_t * e, double t)
+double lz_cubic_out(lz_leasing_t * e, double t)
 {
-    t = t / e->d - 1;
-    return e->c * (pow(t, 3) + 1) + e->b;
+    t = t / e->total_time - 1;
+    return e->end_val * (pow(t, 3) + 1) + e->start_val;
 }
 
-double cubic_in_out(lz_leasing_t * e, double t)
+double lz_cubic_in_out(lz_leasing_t * e, double t)
 {
     double r;
-    t = t / e->d * 2;
+    t = t / e->total_time * 2;
     if(t < 1)
     {
-        r =  e->c / 2 * pow(t, 3) + e->b;
-    }
-    else
-    {
-        t = t - 2;
-        r = e->c / 2 * (pow(t, 3) + 2) + e->b;
-    }
-    return r;
-}
-
-double quart_in(lz_leasing_t * e, double t)
-{
-    t = t / e->d;
-    return e->c * pow(t, 4) + e->b;
-}
-
-double quart_out(lz_leasing_t * e, double t)
-{
-    t = t / e->d - 1;
-    return -e->c * (pow(t, 4) - 1) + e->b;
-}
-
-double quart_in_out(lz_leasing_t * e, double t)
-{
-    double r;
-    t = t / e->d * 2;
-    if(t < 1)
-    {
-        r =  e->c / 2 * pow(t, 4) + e->b;
+        r =  e->end_val / 2 * pow(t, 3) + e->start_val;
     }
     else
     {
         t = t - 2;
-        r = -e->c / 2 * (pow(t, 4) - 2) + e->b;
+        r = e->end_val / 2 * (pow(t, 3) + 2) + e->start_val;
     }
     return r;
 }
 
-double quint_in(lz_leasing_t * e, double t)
+double lz_quart_in(lz_leasing_t * e, double t)
 {
-    t = t / e->d;
-    return e->c * pow(t, 5) + e->b;
+    t = t / e->total_time;
+    return e->end_val * pow(t, 4) + e->start_val;
 }
 
-double quint_out(lz_leasing_t * e, double t)
+double lz_quart_out(lz_leasing_t * e, double t)
 {
-    t = t / e->d - 1;
-    return e->c * (pow(t, 5) + 1) + e->b;
+    t = t / e->total_time - 1;
+    return -e->end_val * (pow(t, 4) - 1) + e->start_val;
 }
 
-double quint_in_out(lz_leasing_t * e, double t)
+double lz_quart_in_out(lz_leasing_t * e, double t)
 {
     double r;
-    t = t / e->d * 2;
+    t = t / e->total_time * 2;
     if(t < 1)
     {
-        r = e->c / 2 * pow(t, 5) + e->b;
+        r =  e->end_val / 2 * pow(t, 4) + e->start_val;
     }
     else
     {
         t = t - 2;
-        r = e->c / 2 * (pow(t, 5) + 2) + e->b;
+        r = -e->end_val / 2 * (pow(t, 4) - 2) + e->start_val;
     }
     return r;
 }
 
-double expo_in(lz_leasing_t * e, double t)
+double lz_quint_in(lz_leasing_t * e, double t)
+{
+    t = t / e->total_time;
+    return e->end_val * pow(t, 5) + e->start_val;
+}
+
+double lz_quint_out(lz_leasing_t * e, double t)
+{
+    t = t / e->total_time - 1;
+    return e->end_val * (pow(t, 5) + 1) + e->start_val;
+}
+
+double lz_quint_in_out(lz_leasing_t * e, double t)
+{
+    double r;
+    t = t / e->total_time * 2;
+    if(t < 1)
+    {
+        r = e->end_val / 2 * pow(t, 5) + e->start_val;
+    }
+    else
+    {
+        t = t - 2;
+        r = e->end_val / 2 * (pow(t, 5) + 2) + e->start_val;
+    }
+    return r;
+}
+
+double lz_expo_in(lz_leasing_t * e, double t)
 {
     double r;
     if(t == 0)
-        r = e->b;
+        r = e->start_val;
     else
-        r = e->c * pow(2, 10 * (t / e->d - 1)) + e->b - e->c * 0.001;
+        r = e->end_val * pow(2, 10 * (t / e->total_time - 1)) + e->start_val - e->end_val * 0.001;
     return r;
 }
 
-double expo_out(lz_leasing_t * e, double t)
+double lz_expo_out(lz_leasing_t * e, double t)
 {
     double r;
-    if(t == e->d)
-        r = e->b + e->c;
+    if(t == e->total_time)
+        r = e->start_val + e->end_val;
     else
-        r = e->c * 1.001 * (-pow(2, -10 * t / e->d) + 1) + e->b;
+        r = e->end_val * 1.001 * (-pow(2, -10 * t / e->total_time) + 1) + e->start_val;
     return r;
 }
 
-double expo_in_out(lz_leasing_t * e, double t)
+double lz_expo_in_out(lz_leasing_t * e, double t)
 {
     double r;
     if(t == 0)
     {
-        r = e->b;
+        r = e->start_val;
     }
-    else if(t == e->d)
+    else if(t == e->total_time)
     {
-        r = e->b + e->c;
+        r = e->start_val + e->end_val;
     }
     else
     {
-        t = t / e->d * 2;
+        t = t / e->total_time * 2;
         if(t < 1)
         {
-            r = e->c / 2 * pow(2, 10 * (t - 1)) + e->b - e->c * 0.0005;
+            r = e->end_val / 2 * pow(2, 10 * (t - 1)) + e->start_val - e->end_val * 0.0005;
         }
         else
         {
             t = t - 1;
-            r = e->c / 2 * 1.0005 * (-pow(2, -10 * t) + 2) + e->b;
+            r = e->end_val / 2 * 1.0005 * (-pow(2, -10 * t) + 2) + e->start_val;
         }
     }
     return r;
 }
 
-double circ_in(lz_leasing_t * e, double t)
+double lz_circ_in(lz_leasing_t * e, double t)
 {
-    t = t / e->d;
-    return -e->c * (sqrt(1 - pow(t, 2)) - 1) + e->b;
+    t = t / e->total_time;
+    return -e->end_val * (sqrt(1 - pow(t, 2)) - 1) + e->start_val;
 }
 
-double circ_out(lz_leasing_t * e, double t)
+double lz_circ_out(lz_leasing_t * e, double t)
 {
-    t = t / e->d - 1;
-    return e->c * sqrt(1 - pow(t, 2)) + e->b;
+    t = t / e->total_time - 1;
+    return e->end_val * sqrt(1 - pow(t, 2)) + e->start_val;
 }
 
-double circ_in_out(lz_leasing_t * e, double t)
+double lz_circ_in_out(lz_leasing_t * e, double t)
 {
     double r;
-    t = t / e->d * 2;
+    t = t / e->total_time * 2;
     if(t < 1)
     {
-        r = -e->c / 2 * (sqrt(1 - t * t) - 1) + e->b;
+        r = -e->end_val / 2 * (sqrt(1 - t * t) - 1) + e->start_val;
     }
     else
     {
         t = t - 2;
-        r = e->c / 2 * (sqrt(1 - t * t) + 1) + e->b;
+        r = e->end_val / 2 * (sqrt(1 - t * t) + 1) + e->start_val;
     }
     return r;
 }
 
-double back_in(lz_leasing_t * e, double t)
+double lz_back_in(lz_leasing_t * e, double t)
 {
     double s = 1.70158;
-    t = t / e->d;
-    return e->c * t * t * ((s + 1) * t - s) + e->b;
+    t = t / e->total_time;
+    return e->end_val * t * t * ((s + 1) * t - s) + e->start_val;
 }
 
-double back_out(lz_leasing_t * e, double t)
+double lz_back_out(lz_leasing_t * e, double t)
 {
     double s = 1.70158;
-    t = t / e->d - 1;
-    return e->c * (t * t * ((s + 1) * t + s) + 1) + e->b;
+    t = t / e->total_time - 1;
+    return e->end_val * (t * t * ((s + 1) * t + s) + 1) + e->start_val;
 }
 
-double back_in_out(lz_leasing_t * e, double t)
+double lz_back_in_out(lz_leasing_t * e, double t)
 {
     double s = 1.70158;
     double r;
     s = s * 1.525;
-    t = t / e->d * 2;
+    t = t / e->total_time * 2;
     if(t < 1)
     {
-        r = e->c / 2 * (t * t * ((s + 1) * t - s)) + e->b;
+        r = e->end_val / 2 * (t * t * ((s + 1) * t - s)) + e->start_val;
     }
     else
     {
         t = t - 2;
-        r = e->c / 2 * (t * t * ((s + 1) * t + s) + 2) + e->b;
+        r = e->end_val / 2 * (t * t * ((s + 1) * t + s) + 2) + e->start_val;
     }
     return r;
 }
 
-double elastic_in(lz_leasing_t * e, double t)
+double lz_elastic_in(lz_leasing_t * e, double t)
 {
     double r;
     if(t == 0)
     {
-        r = e->b;
+        r = e->start_val;
     }
     else
     {
-        t = t / e->d;
+        t = t / e->total_time;
         if(t == 1)
         {
-            r = e->b + e->c;
+            r = e->start_val + e->end_val;
         }
         else
         {
-            double p = e->d * 0.3;
+            double p = e->total_time * 0.3;
             double s = p / 4;
-            double a = e->c;
+            double a = e->end_val;
             t = t - 1;
-            r = -(a * pow(2, 10 * t) * sin((t * e->d - s) * (2 * M_PI_1) / p)) + e->b;
+            r = -(a * pow(2, 10 * t) * sin((t * e->total_time - s) * (2 * M_PI_1) / p)) + e->start_val;
         }
     }
     return r;
 }
 
-double elastic_out(lz_leasing_t * e, double t)
+double lz_elastic_out(lz_leasing_t * e, double t)
 {
     double r;
     if(t == 0)
     {
-        r = e->b;
+        r = e->start_val;
     }
     else
     {
-        t = t / e->d;
+        t = t / e->total_time;
         if(t == 1)
         {
-            r = e->b + e->c;
+            r = e->start_val + e->end_val;
         }
         else
         {
-            double p = e->d * 0.3;
+            double p = e->total_time * 0.3;
             double s = p / 4;
-            double a = e->c;
-            r = a * pow(2, -10 * t) * sin((t * e->d - s) * (2 * M_PI_1) / p) + e->c + e->b;
+            double a = e->end_val;
+            r = a * pow(2, -10 * t) * sin((t * e->total_time - s) * (2 * M_PI_1) / p) + e->end_val + e->start_val;
         }
     }
     return r;
 }
 
-double elastic_in_out(lz_leasing_t * e, double t)
+double lz_elastic_in_out(lz_leasing_t * e, double t)
 {
     double r;
     if(t == 0)
     {
-        r = e->b;
+        r = e->start_val;
     }
     else
     {
-        t = t / e->d * 2;
+        t = t / e->total_time * 2;
         if(t == 2)
         {
-            r = e->b + e->c;
+            r = e->start_val + e->end_val;
         }
         else
         {
-            double p = e->d * (0.3 * 1.5);
-            double a = e->c;
+            double p = e->total_time * (0.3 * 1.5);
+            double a = e->end_val;
             double s = p / 4;
             if(t < 1)
             {
                 t = t - 1;
-                r = -0.5 * (a * pow(2, 10 * t) * sin((t * e->d - s) * (2 * M_PI_1) / p)) + e->b;
+                r = -0.5 * (a * pow(2, 10 * t) * sin((t * e->total_time - s) * (2 * M_PI_1) / p)) + e->start_val;
             }
             else
             {
                 t = t - 1;
-                r = a * pow(2, -10 * t) * sin((t * e->d - s) * (2 * M_PI_1) / p) * 0.5 + e->c	+ e->b;
+                r = a * pow(2, -10 * t) * sin((t * e->total_time - s) * (2 * M_PI_1) / p) * 0.5 + e->end_val	+ e->start_val;
             }
         }
     }
@@ -356,23 +356,23 @@ static inline double __bounce_in(double t, double b, double c, double d)
     return c - __bounce_out(d - t, 0, c, d) + b;
 }
 
-double bounce_in(lz_leasing_t * e, double t)
+double lz_bounce_in(lz_leasing_t * e, double t)
 {
-    return __bounce_in(t, e->b, e->c, e->d);
+    return __bounce_in(t, e->start_val, e->end_val, e->total_time);
 }
 
-double bounce_out(lz_leasing_t * e, double t)
+double lz_bounce_out(lz_leasing_t * e, double t)
 {
-    return __bounce_out(t, e->b, e->c, e->d);
+    return __bounce_out(t, e->start_val, e->end_val, e->total_time);
 }
 
-double bounce_in_out(lz_leasing_t * e, double t)
+double lz_bounce_in_out(lz_leasing_t * e, double t)
 {
     double r;
-    if (t < e->d / 2)
-        r = __bounce_in(t * 2, 0, e->c, e->d) * 0.5 + e->b;
+    if (t < e->total_time / 2)
+        r = __bounce_in(t * 2, 0, e->end_val, e->total_time) * 0.5 + e->start_val;
     else
-        r = __bounce_out(t * 2 - e->d, 0, e->c, e->d) * 0.5 + e->c * 0.5 + e->b;
+        r = __bounce_out(t * 2 - e->total_time, 0, e->end_val, e->total_time) * 0.5 + e->end_val * 0.5 + e->start_val;
     return r;
 }
 
@@ -423,7 +423,7 @@ static inline double solve_curve_x(lz_leasing_t * e, double t)
     return t2;
 }
 
-double cubic_bezier(lz_leasing_t * e, double t)
+double lz_cubic_bezier(lz_leasing_t * e, double t)
 {
     double r;
     if(t < 0.0)
@@ -432,7 +432,7 @@ double cubic_bezier(lz_leasing_t * e, double t)
         r = 1.0 + e->end * (t - 1.0);
     else
         r = sample_curve_y(e, solve_curve_x(e, t));
-    return e->c * r / e->d + e->b;
+    return e->end_val * r / e->total_time + e->start_val;
 }
 
 

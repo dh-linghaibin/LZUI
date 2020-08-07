@@ -19,10 +19,12 @@ static uint8_t running = 1;
 uint8_t touch_flag = 0;
 extern const struct png_t usb_in_png_v;
 
+
 lz_leasing_t leasing_v;
 float num = 0;
 uint16_t ix = 0;
 lz_obj_t * but;
+lz_obj_t * pngxx;
 
 static int tick_thread(void *data) {
     while(running) {
@@ -30,9 +32,10 @@ static int tick_thread(void *data) {
         lz_tick_inc(1);
         lz_tick_loop();
 
-        num = sine_in_out( &leasing_v, ix );
+        num = lz_sine_in_out( &leasing_v, ix );
 //        printf("%f,",num);
         lz_obj_set_width(but,num);
+        lz_obj_set_y(pngxx,num);
 
         ix++;
     }
@@ -64,47 +67,19 @@ int main(int argc, char** argv) {
 	display_sdl();
 	display_sdl_up_data();
 
-//    leasing_v.b = 5;
-//    leasing_v.c = 50;
-//    leasing_v.d = 100;
 
-    double x1, y1;
-    double x2, y2;
+    leasing_v.start_val = 50;
+    leasing_v.end_val = 200;
+    leasing_v.total_time = 100;
 
-    x1 = 0;
-    y1 = 0;
-    x2 = 20;
-    y2 =20;
-
-    leasing_v.b = 50;
-    leasing_v.c = 200;
-    leasing_v.d = 100;
-//    leasing_v.cx = 3.0 * x1;
-//    leasing_v.bx = 3.0 * (x2 - x1) - leasing_v.cx;
-//    leasing_v.ax = 1.0 - leasing_v.cx - leasing_v.bx;
-//    leasing_v.cy = 3.0 * y1;
-//    leasing_v.by = 3.0 * (y2 - y1) - leasing_v.cy;
-//    leasing_v.ay = 1.0 - leasing_v.cy - leasing_v.by;
-//    if(x1 > 0)
-//        leasing_v.start = y1 / x1;
-//    else if(!y1 && (x2 > 0))
-//        leasing_v.start = y2 / x2;
-//    else
-//        leasing_v.start = 0;
-//    if(x2 < 1)
-//        leasing_v.end = (y2 - 1) / (x2 - 1);
-//    else if((x2 == 1) && (x1 < 1))
-//        leasing_v.end = (y1 - 1) / (x1 - 1);
-//    else
-//        leasing_v.end = 0;
-    leasing_v.func = bounce_in;
+    leasing_v.func = lz_bounce_in;
 
 	lz_draw_set_updata(display_sdl_fill);
 
 //	lz_obj_t * bar = lz_create_bar(10,150);
 //	lz_obj_add_child(lz_get_root(),bar);
 
-    lz_obj_t * pngxx = lz_create_png(10,10);
+    pngxx = lz_create_png(10,10);
     lz_icon_set_val(pngxx, usb_in_png_v);
     lz_obj_add_child(lz_get_root(),pngxx);
 

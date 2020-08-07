@@ -12,17 +12,17 @@
  * d = duration (total time)
  * func = easing function will be invoked in '__call' method
  */
-typedef struct _lz_leasing_t {
-    double b;
-    double c;
-    double d;
+typedef struct lz_leasing_t {
+    double start_val;
+    double end_val;
+    double total_time;
     double ax, bx, cx;
     double ay, by, cy;
     double start, end;
-    double (*func)(struct _lz_leasing_t * e, double t);
+    double (*func)(struct lz_leasing_t * e, double t);
 } lz_leasing_t;
 
-double sine_in_out(lz_leasing_t * e, double t);
-double bounce_in(lz_leasing_t * e, double t);
+double lz_sine_in_out(lz_leasing_t * e, double t);
+double lz_bounce_in(lz_leasing_t * e, double t);
 
 #endif //LZUI_LZ_EASING_H
