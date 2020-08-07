@@ -142,13 +142,13 @@ void pos_drawer( pos_t * pos ) {
 }
 
 
-static void lui_design (struct _lz_obj_t * obj, lz_point_t *point);
-static void tick_event(struct _lz_tick_t * tick) {
+static void lui_design (lz_obj_t * obj, lz_point_t *point);
+static void tick_event(lz_obj_t * tick) {
     pos_calculate(&pos_val);
 }
 
 lz_obj_t * lz_create_chart(int x,int y) {
-    struct _lz_obj_chart_t * chart = lz_malloc(sizeof(struct _lz_obj_chart_t));
+    lz_obj_chart_t * chart = lz_malloc(sizeof(lz_obj_chart_t));
     for(int i =0; i < 20; i++) {
         chart->point[i] = i;
     }
@@ -160,7 +160,7 @@ lz_obj_t * lz_create_chart(int x,int y) {
     return obj;
 }
 
-static void lui_design (struct _lz_obj_t * obj, lz_point_t *point) {
+static void lui_design (lz_obj_t * obj, lz_point_t *point) {
 //    struct _lz_obj_chart_t  * chart = obj->val;
 //    lz_color5658_t color;
 //    color.color.rgb565 = 0x00;

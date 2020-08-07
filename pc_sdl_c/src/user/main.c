@@ -42,7 +42,7 @@ static int tick_thread(void *data) {
     return 0;
 }
 
-void bt_event(struct _lz_tick_t * tick) {
+void bt_event(lz_tick_t * tick) {
     static uint16_t x = 0;
     static uint16_t y = 0;
 //    lz_button_t * but = tick->obj->val;

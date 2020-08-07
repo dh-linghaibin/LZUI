@@ -8,7 +8,7 @@
 #include "lzui/lz_obj.h"
 #include "lzui/lz_color.h"
 
-typedef struct _lz_button_t {
+typedef struct lz_button_t {
 	lz_color5658_t color;
 	uint8_t state;
 	void (*on_click)(lz_obj_t * obj);

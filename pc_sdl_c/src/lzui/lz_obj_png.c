@@ -5,7 +5,7 @@
 #include "lzui/lz_obj_png.h"
 #include "lzui/lz_draw.h"
 
-static void lz_design (struct _lz_obj_t * obj, lz_point_t *point);
+static void lz_design (lz_obj_t * obj, lz_point_t *point);
 static void lz_event(lz_touch_val_t *val);
 
 lz_obj_t *lz_create_png(int x, int y) {
@@ -23,7 +23,7 @@ void lz_icon_set_val(lz_obj_t * obj, struct png_t val) {
     lz_obj_set_length(obj, icon->png.lenght );
 }
 
-static void lz_design(struct _lz_obj_t * obj, lz_point_t *point) {
+static void lz_design(lz_obj_t * obj, lz_point_t *point) {
     lz_icon_t * png = obj->val;
     lz_draw_png(point->x,point->y,png->png.width,png->png.lenght,png->png.data);
 

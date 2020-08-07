@@ -5,7 +5,7 @@
 #include "lzui/lz_obj_button.h"
 #include "lzui/lz_draw.h"
 
-static void lui_button_design (struct _lz_obj_t * obj, lz_point_t *point);
+static void lui_button_design (lz_obj_t * obj, lz_point_t *point);
 static void lui_button_event(lz_touch_val_t *val);
 
 lz_obj_t * lz_create_button(int x,int y) {
@@ -49,7 +49,7 @@ void lui_button_setonclicklistener_down(lz_obj_t * obj, void (*on_click_down)(lz
 	but->on_click_down = on_click_down;
 }
 
-static void lui_button_design (struct _lz_obj_t * obj, lz_point_t *point) {
+static void lui_button_design (lz_obj_t * obj, lz_point_t *point) {
 	lz_button_t * but = obj->val;
 	if(but->state == 0) {
 		lz_draw_frame(point->x,

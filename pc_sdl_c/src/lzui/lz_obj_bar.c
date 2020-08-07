@@ -6,7 +6,7 @@
 #include "lzui/lz_draw.h"
 
 
-static void lz_design (struct _lz_obj_t * obj, lz_point_t *point);
+static void lz_design (lz_obj_t * obj, lz_point_t *point);
 static void lz_event(lz_touch_val_t *val);
 
 lz_obj_t * lz_create_bar(int x, int y) {
@@ -32,7 +32,7 @@ void lz_bar_set_event(lz_obj_t * obj, void (*on_event)(lz_obj_t * obj)) {
 	bar->on_event = on_event;
 }
 
-static void lz_design (struct _lz_obj_t * obj, lz_point_t *point) {
+static void lz_design (lz_obj_t * obj, lz_point_t *point) {
 	lz_bar_t * bar = obj->val;
 	lz_draw_frame(point->x,
 	               point->y,

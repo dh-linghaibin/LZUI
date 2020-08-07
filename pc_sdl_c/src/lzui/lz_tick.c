@@ -6,7 +6,7 @@
 #include "lzui/lz_config.h"
 
 static uint32_t sys_time    = 0;
-static struct _lz_tick_t tick_head = {
+static lz_tick_t tick_head = {
         0,
         0,
         NULL,
@@ -34,14 +34,14 @@ uint32_t lz_tick_elaps(uint32_t prev_tick) {
     return prev_tick;
 }
 
-struct _lz_tick_t * lz_tick_create(lz_obj_t * obj, void (*event)(struct _lz_tick_t * tick), uint32_t time) {
+lz_tick_t * lz_tick_create(lz_obj_t * obj, void (*event)(struct lz_tick_t * tick), uint32_t time) {
     if(obj == NULL) return NULL;
-    struct _lz_tick_t * node;
+    lz_tick_t * node;
     node = &tick_head;
     while(node->nxet != NULL) {
         node = node->nxet;
     }
-    struct _lz_tick_t * new_node = lz_malloc(sizeof(struct _lz_tick_t));
+    lz_tick_t * new_node = lz_malloc(sizeof(lz_tick_t));
     if(new_node == NULL) {
         return NULL;
     }
@@ -55,14 +55,14 @@ struct _lz_tick_t * lz_tick_create(lz_obj_t * obj, void (*event)(struct _lz_tick
     return new_node;
 }
 
-void lz_tick_time_set(struct _lz_tick_t * tick, uint32_t time) {
+void lz_tick_time_set(lz_tick_t * tick, uint32_t time) {
     if(tick == NULL) return;
     tick->over_time = time;
 }
 
-void lz_tick_delet(struct _lz_tick_t * tick) {
+void lz_tick_delet(lz_tick_t * tick) {
     if(tick == NULL) return;
-    struct _lz_tick_t * node;
+    lz_tick_t * node;
     node = &tick_head;
     while(node != NULL) {
         if(node->nxet == tick) {
@@ -75,7 +75,7 @@ void lz_tick_delet(struct _lz_tick_t * tick) {
 }
 
 void lz_tick_loop(void) {
-    struct _lz_tick_t * node; /* 遍历时间链表 */
+    lz_tick_t * node; /* 遍历时间链表 */
     node = tick_head.nxet;
     while(node != NULL) {
         if(node->event != NULL) {

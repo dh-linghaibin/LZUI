@@ -26,7 +26,7 @@ struct png_t {
     uint32_t size;
 };
 
-typedef struct _lz_icon_t {
+typedef struct lz_icon_t {
     struct png_t png;
     uint8_t mesh;
 } lz_icon_t;

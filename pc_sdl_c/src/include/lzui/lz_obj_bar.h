@@ -8,7 +8,7 @@
 #include "lzui/lz_obj.h"
 #include "lzui/lz_color.h"
 
-typedef struct _lz_bar_t {
+typedef struct lz_bar_t {
 	uint8_t val;
 	lz_color5658_t b_color;
 	lz_color5658_t t_color;

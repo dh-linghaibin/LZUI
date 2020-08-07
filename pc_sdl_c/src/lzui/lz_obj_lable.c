@@ -5,7 +5,7 @@
 #include "lzui/lz_obj_lable.h"
 #include "lzui/lz_draw.h"
 
-static void lui_text_design (struct _lz_obj_t * obj, lz_point_t *point);
+static void lui_text_design (lz_obj_t * obj, lz_point_t *point);
 //static void lui_text_event(lz_touch_val_t *val);
 static int text_utf8_to_unicode(uint16_t * unicode, char *utf8);
 
@@ -21,7 +21,7 @@ lz_obj_t * lz_create_lable(int x,int y) {
 	return obj;
 }
 
-static void lui_text_design (struct _lz_obj_t * obj, lz_point_t *point) {
+static void lui_text_design (lz_obj_t * obj, lz_point_t *point) {
 	lz_text_t * obj_text = obj->val;
 	uint8_t type = 0;
 	uint16_t adr = 0;

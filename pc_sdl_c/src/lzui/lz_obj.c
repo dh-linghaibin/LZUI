@@ -39,7 +39,7 @@ lz_obj_t *lz_get_root(void) {
 }
 
 lz_obj_t *lz_create_obj( int x, int y, int width, int length, void * val,
-                           void (*design) (struct _lz_obj_t * obj,lz_point_t *point) ) {
+                           void (*design) (lz_obj_t * obj,lz_point_t *point) ) {
 	lz_obj_t * obj;
 	obj = (lz_obj_t *)lz_malloc(sizeof(lz_obj_t));
 	if( obj == NULL ) {

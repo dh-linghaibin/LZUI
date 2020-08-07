@@ -24,7 +24,7 @@ typedef union {
 	uint16_t rgb565;
 } lz_color565_u;
 
-typedef struct _lz_color5658_t {
+typedef struct lz_color5658_t {
 	lz_color565_u color;
 	uint8_t      alpha;
 } lz_color5658_t;

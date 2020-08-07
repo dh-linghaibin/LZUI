@@ -14,14 +14,14 @@
 #define	FRICTION	0.96f		// 摩擦力/阻尼系数
 
 // 定义小球结构
-typedef struct _mover_t {
+typedef struct mover_t {
     uint16_t color;			// 颜色
     float x,y;			// 坐标
     float v_x,v_y;			// 速度
     float radius;         // 半径
 } mover_t;
 
-typedef struct _pos_t {
+typedef struct pos_t {
     mover_t movers[NUM_MOVERS];// 小球数组
     int mouse_x, mouse_y;			// 当前鼠标坐标
     int prev_mouse_x, prev_mouse_y;		// 上次鼠标坐标
@@ -29,9 +29,9 @@ typedef struct _pos_t {
     int is_mouse_down;				// 鼠标左键是否按下
 } pos_t;
 
-struct _lz_obj_chart_t {
+typedef struct lz_obj_chart_t {
     uint16_t point[20];
-};
+} lz_obj_chart_t;
 
 lz_obj_t * lz_create_chart(int x,int y);
 

@@ -21,7 +21,7 @@ struct font_t {
 	const unsigned char * base_adr;
 };
 
-typedef struct _lz_text_t {
+typedef struct lz_text_t {
 	char text[30];
 	uint16_t color;
 	struct font_t font_val;
