@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/bsp/display_sdl.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_color.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_draw.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_easing.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_info.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_mem.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj"

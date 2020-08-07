@@ -10,6 +10,7 @@
 
 typedef struct _lz_button_t {
 	lz_color5658_t color;
+	uint8_t state;
 	void (*on_click)(lz_obj_t * obj);
 	void (*on_click_down)(lz_obj_t * obj);
 } lz_button_t;

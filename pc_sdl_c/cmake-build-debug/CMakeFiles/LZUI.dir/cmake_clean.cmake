@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_color.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj"
+  "CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_mem.c.obj"
   "CMakeFiles/LZUI.dir/src/lzui/lz_obj.c.obj"

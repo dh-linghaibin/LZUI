@@ -67,13 +67,8 @@ typedef uint32_t lz_uintptr_t;
 #endif
 
 
-/**********************
- * GLOBAL PROTOTYPES
- **********************/
-
-/**********************
- *      MACROS
- **********************/
+#define M_PI_1					3.14159265358979323846	/* pi */
+#define M_PI_2					1.57079632679489661923	/* pi/2 */
 
 #ifdef __cplusplus
 } /* extern "C" */

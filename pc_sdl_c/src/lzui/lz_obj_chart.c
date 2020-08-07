@@ -181,5 +181,5 @@ static void lui_design (struct _lz_obj_t * obj, lz_point_t *point) {
 //        lz_draw_line(point->x + 14 * (i - 1),point->y + obj->layout.size.length -chart->point[i-1],
 //                      point->x + 14 * i, point->y + obj->layout.size.length - chart->point[i],0x0505);
 //    }
-    pos_drawer(&pos_val);
+//    pos_drawer(&pos_val);
 }

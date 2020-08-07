@@ -510,6 +510,8 @@ lzui/lz_obj.h
 lzui/lz_config.h
 ../src/include/lzui/lzui/lz_config.h
 
+../src/include/lzui/lz_easing.h
+
 ../src/include/lzui/lz_mem.h
 stdint.h
 -
@@ -662,21 +664,13 @@ C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/begin_code.h
 close_code.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/include/SDL2/close_code.h
 
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.c
-lzui/lz_obj_chart.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_obj_chart.h
-lzui/lz_draw.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_draw.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_easing.c
+lzui/lz_easing.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_easing.h
 math.h
 -
-minmax.h
--
-lzui/lz_tick.h
--
-time.h
--
-lzui/lz_color.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_color.h
+lzui/lz_types.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_types.h
 
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c
 stdio.h
@@ -701,4 +695,6 @@ lzui/lz_obj_png.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/lzui/lz_obj_png.h
 lzui/lz_obj_chart.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/lzui/lz_obj_chart.h
+lzui/lz_easing.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/lzui/lz_easing.h
 

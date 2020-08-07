@@ -10,7 +10,7 @@
 
 #define WIDTH		320		// 屏幕宽
 #define HEIGHT		240			// 屏幕高
-#define NUM_MOVERS	2000			// 小球数量
+#define NUM_MOVERS	200			// 小球数量
 #define	FRICTION	0.96f		// 摩擦力/阻尼系数
 
 // 定义小球结构

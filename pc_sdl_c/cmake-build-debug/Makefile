@@ -203,6 +203,33 @@ src/lzui/lz_draw.c.s:
 	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.s
 .PHONY : src/lzui/lz_draw.c.s
 
+src/lzui/lz_easing.obj: src/lzui/lz_easing.c.obj
+
+.PHONY : src/lzui/lz_easing.obj
+
+# target to build an object file
+src/lzui/lz_easing.c.obj:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj
+.PHONY : src/lzui/lz_easing.c.obj
+
+src/lzui/lz_easing.i: src/lzui/lz_easing.c.i
+
+.PHONY : src/lzui/lz_easing.i
+
+# target to preprocess a source file
+src/lzui/lz_easing.c.i:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.i
+.PHONY : src/lzui/lz_easing.c.i
+
+src/lzui/lz_easing.s: src/lzui/lz_easing.c.s
+
+.PHONY : src/lzui/lz_easing.s
+
+# target to generate assembly for a file
+src/lzui/lz_easing.c.s:
+	$(MAKE) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.s
+.PHONY : src/lzui/lz_easing.c.s
+
 src/lzui/lz_info.obj: src/lzui/lz_info.c.obj
 
 .PHONY : src/lzui/lz_info.obj
@@ -491,6 +518,9 @@ help:
 	@echo ... src/lzui/lz_draw.obj
 	@echo ... src/lzui/lz_draw.i
 	@echo ... src/lzui/lz_draw.s
+	@echo ... src/lzui/lz_easing.obj
+	@echo ... src/lzui/lz_easing.i
+	@echo ... src/lzui/lz_easing.s
 	@echo ... src/lzui/lz_info.obj
 	@echo ... src/lzui/lz_info.i
 	@echo ... src/lzui/lz_info.s

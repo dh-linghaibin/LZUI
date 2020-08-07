@@ -61,6 +61,10 @@ CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: ../src/include/lzui/lz_types.h
 CMakeFiles/LZUI.dir/src/lzui/lz_draw.c.obj: ../src/lzui/lz_draw.c
 
+CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj: ../src/include/lzui/lz_easing.h
+CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj: ../src/include/lzui/lz_types.h
+CMakeFiles/LZUI.dir/src/lzui/lz_easing.c.obj: ../src/lzui/lz_easing.c
+
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_color.h
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/lzui/lz_info.c.obj: ../src/include/lzui/lz_obj_lable.h
@@ -170,6 +174,7 @@ CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/bsp/display_sdl.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_color.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_config.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_draw.h
+CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_easing.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_mem.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj.h
 CMakeFiles/LZUI.dir/src/user/main.c.obj: ../src/include/lzui/lz_obj_bar.h

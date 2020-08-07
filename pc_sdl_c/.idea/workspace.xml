@@ -12,17 +12,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_easing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/lz_easing.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_color.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_color.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj_chart.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_chart.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_draw.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_bar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +132,8 @@
       <workItem from="1596455629785" duration="2090000" />
       <workItem from="1596461415176" duration="12939000" />
       <workItem from="1596635001524" duration="11569000" />
-      <workItem from="1596719781072" duration="5593000" />
+      <workItem from="1596719781072" duration="7381000" />
+      <workItem from="1596770573850" duration="8191000" />
     </task>
     <servers />
   </component>
@@ -149,54 +162,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="269" y="90" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1596727031921" />
-    <state width="1228" height="110" key="GridCell.Tab.0.bottom" timestamp="1596727965112">
+    <state width="1495" height="110" key="GridCell.Tab.0.bottom" timestamp="1596814411671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="120" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596617346083" />
-    <state width="1228" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596727965112" />
-    <state width="1228" height="110" key="GridCell.Tab.0.center" timestamp="1596727965112">
+    <state width="1228" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596769450975" />
+    <state width="1495" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596814411671" />
+    <state width="1495" height="110" key="GridCell.Tab.0.center" timestamp="1596814411671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="120" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596617346083" />
-    <state width="1228" height="110" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596727965112" />
-    <state width="1228" height="110" key="GridCell.Tab.0.left" timestamp="1596727965112">
+    <state width="1228" height="110" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596769450975" />
+    <state width="1495" height="110" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596814411671" />
+    <state width="1495" height="110" key="GridCell.Tab.0.left" timestamp="1596814411671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="120" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596617346083" />
-    <state width="1228" height="110" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596727965112" />
-    <state width="1228" height="110" key="GridCell.Tab.0.right" timestamp="1596727965112">
+    <state width="1228" height="110" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596769450975" />
+    <state width="1495" height="110" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596814411671" />
+    <state width="1495" height="110" key="GridCell.Tab.0.right" timestamp="1596814411671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="120" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596617346083" />
-    <state width="1228" height="110" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596727965112" />
-    <state width="1228" height="259" key="GridCell.Tab.1.bottom" timestamp="1596719750809">
+    <state width="1228" height="110" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596769450975" />
+    <state width="1495" height="110" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596814411671" />
+    <state width="1495" height="138" key="GridCell.Tab.1.bottom" timestamp="1596807380318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
-    <state width="1228" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596719750809" />
-    <state width="1228" height="259" key="GridCell.Tab.1.center" timestamp="1596719750809">
+    <state width="1495" height="138" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596807380318" />
+    <state width="1495" height="138" key="GridCell.Tab.1.center" timestamp="1596807380318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="260" key="GridCell.Tab.1.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
-    <state width="1228" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596719750809" />
-    <state width="1228" height="259" key="GridCell.Tab.1.left" timestamp="1596719750809">
+    <state width="1495" height="138" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596807380318" />
+    <state width="1495" height="138" key="GridCell.Tab.1.left" timestamp="1596807380318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="260" key="GridCell.Tab.1.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
-    <state width="1228" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596719750809" />
-    <state width="1228" height="259" key="GridCell.Tab.1.right" timestamp="1596719750809">
+    <state width="1495" height="138" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596807380318" />
+    <state width="1495" height="138" key="GridCell.Tab.1.right" timestamp="1596807380318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1596424463929" />
-    <state width="1228" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596719750809" />
+    <state width="1495" height="138" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596807380318" />
     <state x="307" y="58" key="SettingsEditor" timestamp="1596464140088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="307" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596464140088" />
-    <state x="461" y="25" width="614" height="774" key="find.popup" timestamp="1596719975272">
+    <state x="461" y="25" width="614" height="774" key="find.popup" timestamp="1596814386328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="25" width="614" height="774" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596719975272" />
+    <state x="461" y="25" width="614" height="774" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596814386328" />
     <state x="299" y="189" key="run.anything.popup" timestamp="1596727391268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -210,6 +223,7 @@
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="movers" language="ObjectiveC" />
+        <watch expression="num" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

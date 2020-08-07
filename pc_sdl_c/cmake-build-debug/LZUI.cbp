@@ -96,6 +96,9 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_draw.h">
 			<Option target="LZUI"/>
 		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_easing.h">
+			<Option target="LZUI"/>
+		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_mem.h">
 			<Option target="LZUI"/>
 		</Unit>
@@ -127,6 +130,9 @@
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_draw.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_easing.c">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_info.c">
