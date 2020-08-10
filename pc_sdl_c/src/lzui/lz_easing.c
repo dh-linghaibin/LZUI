@@ -4,9 +4,36 @@
 
 #include "lzui/lz_easing.h"
 #include <math.h>
+#include <lzui/lz_config.h>
 #include "lzui/lz_types.h"
 
-float lz_linear(lz_leasing_t * e, double t)
+static void tick_event(lz_tick_t * tick);
+
+//leasing_v.start_val = 50;
+//leasing_v.end_val = 200;
+//leasing_v.total_time = 100;
+//leasing_v.func = lz_bounce_in;
+
+lz_leasing_t * lz_easing_create( void ) {
+    lz_leasing_t * leasing = lz_malloc(sizeof(lz_leasing_t));
+    leasing->tick = lz_tick_create(leasing, tick_event, 5);
+    return leasing;
+}
+
+static void tick_event(lz_tick_t * tick) {
+    lz_leasing_t * leasing = tick->obj;
+    if( ( leasing->func != NULL ) && ( leasing->func_c != NULL ) ) {
+        static uint16_t xx = 0;
+        leasing->func_c( leasing->func( leasing, xx ) );
+        xx++;
+    }
+}
+
+void lz_easing_delete( lz_leasing_t * leasing ) {
+    lz_free( leasing );
+}
+
+double lz_linear(lz_leasing_t * e, double t)
 {
     return e->end_val * t / e->total_time + e->start_val;
 }

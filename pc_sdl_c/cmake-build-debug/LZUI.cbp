@@ -117,7 +117,13 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_lable.h">
 			<Option target="LZUI"/>
 		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_mouse.h">
+			<Option target="LZUI"/>
+		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_png.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_obj_pos.h">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_tick.h">
@@ -156,7 +162,13 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c">
 			<Option target="LZUI"/>
 		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_mouse.c">
+			<Option target="LZUI"/>
+		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_png.c">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_pos.c">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_tick.c">

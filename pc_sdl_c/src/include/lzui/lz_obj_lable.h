@@ -29,5 +29,6 @@ typedef struct lz_text_t {
 
 
 lz_obj_t * lz_create_lable(int x,int y);
+void lz_lable_text_set( lz_obj_t * obj, char * val );
 
 #endif //LZUI_LZ_OBJ_LABLE_H

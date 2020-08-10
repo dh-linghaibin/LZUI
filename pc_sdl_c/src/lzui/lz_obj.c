@@ -54,9 +54,14 @@ lz_obj_t *lz_create_obj( int x, int y, int width, int length, void * val,
 	obj->father  = NULL;
 	obj->design  = design;
 	obj->val     = val;
+	obj->delete_val = NULL;
 	obj->event   = NULL;
 	obj->event_flag = 0;
 	return obj;
+}
+
+void lz_obj_set_delete_val_cb( lz_obj_t * obj, void (*cb) (  lz_obj_t * obj ) ) {
+    obj->delete_val = cb;
 }
 
 void lz_obj_set_event(lz_obj_t * obj, void (*event) (lz_touch_val_t *val)) {
@@ -144,6 +149,9 @@ static void _lz_obj_distroy(lz_obj_t ** obj) {
 		pr = (*obj)->brother;
 		(*obj)->child = NULL;
 		(*obj)->brother = NULL;
+		if( (*obj)->delete_val != NULL ) {
+            (*obj)->delete_val( obj );
+		}
 		lz_free((*obj)->val);
 		lz_free(*obj);
 		(*obj) = NULL;

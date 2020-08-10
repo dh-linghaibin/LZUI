@@ -34,7 +34,7 @@ uint32_t lz_tick_elaps(uint32_t prev_tick) {
     return prev_tick;
 }
 
-lz_tick_t * lz_tick_create(lz_obj_t * obj, void (*event)(struct lz_tick_t * tick), uint32_t time) {
+lz_tick_t * lz_tick_create(void * obj, void (*event)(struct lz_tick_t * tick), uint32_t time) {
     if(obj == NULL) return NULL;
     lz_tick_t * node;
     node = &tick_head;

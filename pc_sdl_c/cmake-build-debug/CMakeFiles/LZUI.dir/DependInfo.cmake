@@ -15,7 +15,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_button.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_button.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_chart.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_lable.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_lable.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_mouse.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_mouse.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_png.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_png.c.obj"
+  "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_pos.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_obj_pos.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_tick.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.obj"
   "C:/lhbspace/diy/LZUI/pc_sdl_c/src/user/main.c" "C:/lhbspace/diy/LZUI/pc_sdl_c/cmake-build-debug/CMakeFiles/LZUI.dir/src/user/main.c.obj"
   )

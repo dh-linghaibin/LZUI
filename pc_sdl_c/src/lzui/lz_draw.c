@@ -689,7 +689,7 @@ uint8_t lui_draw_check_layout(int x, int y, int width, int length) {
 
 void lz_drawcache_size_set(int x, int y, int width, int length) {
 	for(int i = 0; i < CACHE_SIZE; i++) {
-		cache.array[i] = 0x00;
+		cache.array[i] = 0xffff;
 	}
 	cache.coordinate.point.x = x;
 	cache.coordinate.point.y = y;
