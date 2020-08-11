@@ -20,6 +20,34 @@ lz_leasing_t * lz_easing_create( void ) {
     return leasing;
 }
 
+void lz_easing_set( lz_leasing_t * leasing, double (*func)(struct lz_leasing_t * e, double t), void (*func_c)( double val ), double start_val, double end_val, double total_time, lz_layout_t layout) {
+    leasing->start_val = start_val;
+    leasing->end_val = end_val;
+    leasing->total_time = total_time;
+    leasing->func = func;
+    leasing->func_c = func_c;
+
+    leasing->cx = 3.0 * layout.point.x;
+    leasing->bx = 3.0 * (layout.size.width - layout.point.x) - leasing->cx;
+    leasing->ax = 1.0 - leasing->cx - leasing->bx;
+    leasing->cy = 3.0 * layout.point.y;
+    leasing->by = 3.0 * (layout.size.length - layout.point.y) - leasing->cy;
+    leasing->ay = 1.0 - leasing->cy - leasing->by;
+    if(layout.point.x > 0)
+        leasing->start = layout.point.y / layout.point.x;
+    else if(!layout.point.y && (layout.size.width > 0))
+        leasing->start = layout.size.length / layout.size.width;
+    else
+        leasing->start = 0;
+    if(layout.size.width < 1)
+        leasing->end = (layout.size.length - 1) / (layout.size.width - 1);
+    else if((layout.size.width == 1) && (layout.point.x < 1))
+        leasing->end = (layout.point.y - 1) / (layout.point.x - 1);
+    else
+        leasing->end = 0;
+
+}
+
 static void tick_event(lz_tick_t * tick) {
     lz_leasing_t * leasing = tick->obj;
     if( ( leasing->func != NULL ) && ( leasing->func_c != NULL ) ) {

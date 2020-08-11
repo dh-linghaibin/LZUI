@@ -29,6 +29,7 @@ typedef struct lz_leasing_t {
 
 lz_leasing_t * lz_easing_create( void );
 void lz_easing_delete( lz_leasing_t * leasing );
+void lz_easing_set( lz_leasing_t * leasing, double (*func)(struct lz_leasing_t * e, double t), void (*func_c)( double val ), double start_val, double end_val, double total_time, lz_layout_t layout);
 
 double lz_linear(lz_leasing_t * e, double t);
 double lz_bounce_in(lz_leasing_t * e, double t);

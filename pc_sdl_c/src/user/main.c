@@ -34,7 +34,6 @@ lz_obj_t * pngxx;
 
 void amm( double val) {
     lz_obj_set_y( pngxx, (uint16_t)val );
-//    printf("%f,",val);
 }
 
 int main(int argc, char** argv) {
@@ -48,31 +47,24 @@ int main(int argc, char** argv) {
     pngxx = lz_create_png(10,10);
     lz_icon_set_val(pngxx, usb_in_png_v);
     lz_obj_add_child(lz_get_root(),pngxx);
-//
-//    but = lz_create_button(10,10);
-//    lz_obj_add_child(lz_get_root(),but);
 
-//    lz_obj_t * lable = lz_create_lable(0,0);
-//    lz_obj_add_child(but,lable);
-//    lz_lable_text_set(lable, "23");
+    lz_obj_t * but = lz_create_button(10,10);
+    lz_obj_add_child(lz_get_root(),but);
+
+    lz_obj_t * lable = lz_create_lable(0,0);
+    lz_obj_add_child(but,lable);
+    lz_lable_text_set(lable, "23");
 
     lz_obj_t * pos = lz_create_pos(0,0);
     lz_obj_add_child(lz_get_root(), pos);
 
     lz_leasing_t * le = lz_easing_create();
-    le->start_val = 10;
-    le->end_val = 80;
-    le->total_time = 40;
-    le->func = lz_sine_in_out;
-    le->func_c = amm;
+    lz_easing_set(le, lz_sine_in_out, amm, 50, 100, 50, pngxx->layout);
 
-//    lz_obj_t * chart = lz_create_chart(50,100);
-//    lz_obj_add_child(lz_get_root(),chart);
-
-//    lz_tick_create(but, bt_event, 50);
+    lz_obj_t * chart = lz_create_chart(50,100);
+    lz_obj_add_child(lz_get_root(),chart);
 
     SDL_CreateThread(tick_thread, "tick", NULL);
-
 	SDL_Event event;
 	while(running) {
 		if ( SDL_PollEvent( &event ) ) {

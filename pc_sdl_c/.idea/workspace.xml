@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="LZUI" targetName="LZUI" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -12,55 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_mouse.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_pos.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_mouse.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_pos.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_soft_3d.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/renderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/include/lzui/vector.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/lz_obj_soft_3d.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/renderer.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lzui/vector.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/includes_C.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_config.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_easing.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_easing.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj_chart.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_chart.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_lable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_tick.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_tick.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_draw.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lzui/lz_easing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_easing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_tick.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_tick.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +72,6 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -94,12 +87,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lzui" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\lhbspace\diy\LZUI\pc_sdl_c\src\include\lzui" />
       <recent name="C:\lhbspace\diy\LZUI\pc_sdl_c\src\lzui" />
@@ -108,18 +104,8 @@
       <recent name="C:\lhbspace\diy\LZUI\pc_sdl\src\include\bsp" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.LZUI">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="pcSdl" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="pcSdl">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LZUI" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LZUI" TARGET_NAME="LZUI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LZUI" RUN_TARGET_NAME="LZUI">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -134,10 +120,6 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="CMake Application.Build All" />
-      <item itemvalue="CMake Application.LZUI" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -173,7 +155,9 @@
       <workItem from="1596770573850" duration="12148000" />
       <workItem from="1596957468376" duration="14455000" />
       <workItem from="1596984794237" duration="96000" />
-      <workItem from="1596985229187" duration="5837000" />
+      <workItem from="1596985229187" duration="10196000" />
+      <workItem from="1597071277514" duration="1288000" />
+      <workItem from="1597148850388" duration="18000" />
     </task>
     <servers />
   </component>
@@ -218,26 +202,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="207" y="216" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596889804480" />
-    <state width="1495" height="110" key="GridCell.Tab.0.bottom" timestamp="1597045738396">
+    <state width="1495" height="108" key="GridCell.Tab.0.bottom" timestamp="1597148337350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597026391092" />
-    <state width="1495" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597045738396" />
-    <state width="1495" height="110" key="GridCell.Tab.0.center" timestamp="1597045738396">
+    <state width="1495" height="110" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597053942671" />
+    <state width="1495" height="108" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597148337350" />
+    <state width="1495" height="108" key="GridCell.Tab.0.center" timestamp="1597148337349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="110" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597026391092" />
-    <state width="1495" height="110" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597045738396" />
-    <state width="1495" height="110" key="GridCell.Tab.0.left" timestamp="1597045738395">
+    <state width="1495" height="110" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597053942671" />
+    <state width="1495" height="108" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597148337349" />
+    <state width="1495" height="108" key="GridCell.Tab.0.left" timestamp="1597148337349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="110" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597026391092" />
-    <state width="1495" height="110" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597045738395" />
-    <state width="1495" height="110" key="GridCell.Tab.0.right" timestamp="1597045738396">
+    <state width="1495" height="110" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597053942671" />
+    <state width="1495" height="108" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597148337349" />
+    <state width="1495" height="108" key="GridCell.Tab.0.right" timestamp="1597148337349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="110" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597026391092" />
-    <state width="1495" height="110" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597045738396" />
+    <state width="1495" height="110" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597053942671" />
+    <state width="1495" height="108" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597148337349" />
     <state width="1495" height="138" key="GridCell.Tab.1.bottom" timestamp="1596984520729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -276,15 +260,6 @@
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596727231769" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/lzui/lz_easing.c</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="movers" language="ObjectiveC" />

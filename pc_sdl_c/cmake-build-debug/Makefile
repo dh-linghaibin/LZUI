@@ -520,6 +520,33 @@ src/lzui/lz_obj_pos.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_pos.c.s
 .PHONY : src/lzui/lz_obj_pos.c.s
 
+src/lzui/lz_obj_soft_3d.obj: src/lzui/lz_obj_soft_3d.c.obj
+
+.PHONY : src/lzui/lz_obj_soft_3d.obj
+
+# target to build an object file
+src/lzui/lz_obj_soft_3d.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_soft_3d.c.obj
+.PHONY : src/lzui/lz_obj_soft_3d.c.obj
+
+src/lzui/lz_obj_soft_3d.i: src/lzui/lz_obj_soft_3d.c.i
+
+.PHONY : src/lzui/lz_obj_soft_3d.i
+
+# target to preprocess a source file
+src/lzui/lz_obj_soft_3d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_soft_3d.c.i
+.PHONY : src/lzui/lz_obj_soft_3d.c.i
+
+src/lzui/lz_obj_soft_3d.s: src/lzui/lz_obj_soft_3d.c.s
+
+.PHONY : src/lzui/lz_obj_soft_3d.s
+
+# target to generate assembly for a file
+src/lzui/lz_obj_soft_3d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_obj_soft_3d.c.s
+.PHONY : src/lzui/lz_obj_soft_3d.c.s
+
 src/lzui/lz_tick.obj: src/lzui/lz_tick.c.obj
 
 .PHONY : src/lzui/lz_tick.obj
@@ -546,6 +573,60 @@ src/lzui/lz_tick.s: src/lzui/lz_tick.c.s
 src/lzui/lz_tick.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_tick.c.s
 .PHONY : src/lzui/lz_tick.c.s
+
+src/lzui/renderer.obj: src/lzui/renderer.c.obj
+
+.PHONY : src/lzui/renderer.obj
+
+# target to build an object file
+src/lzui/renderer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/renderer.c.obj
+.PHONY : src/lzui/renderer.c.obj
+
+src/lzui/renderer.i: src/lzui/renderer.c.i
+
+.PHONY : src/lzui/renderer.i
+
+# target to preprocess a source file
+src/lzui/renderer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/renderer.c.i
+.PHONY : src/lzui/renderer.c.i
+
+src/lzui/renderer.s: src/lzui/renderer.c.s
+
+.PHONY : src/lzui/renderer.s
+
+# target to generate assembly for a file
+src/lzui/renderer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/renderer.c.s
+.PHONY : src/lzui/renderer.c.s
+
+src/lzui/vector.obj: src/lzui/vector.c.obj
+
+.PHONY : src/lzui/vector.obj
+
+# target to build an object file
+src/lzui/vector.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/vector.c.obj
+.PHONY : src/lzui/vector.c.obj
+
+src/lzui/vector.i: src/lzui/vector.c.i
+
+.PHONY : src/lzui/vector.i
+
+# target to preprocess a source file
+src/lzui/vector.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/vector.c.i
+.PHONY : src/lzui/vector.c.i
+
+src/lzui/vector.s: src/lzui/vector.c.s
+
+.PHONY : src/lzui/vector.s
+
+# target to generate assembly for a file
+src/lzui/vector.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/vector.c.s
+.PHONY : src/lzui/vector.c.s
 
 src/user/main.obj: src/user/main.c.obj
 
@@ -625,9 +706,18 @@ help:
 	@echo ... src/lzui/lz_obj_pos.obj
 	@echo ... src/lzui/lz_obj_pos.i
 	@echo ... src/lzui/lz_obj_pos.s
+	@echo ... src/lzui/lz_obj_soft_3d.obj
+	@echo ... src/lzui/lz_obj_soft_3d.i
+	@echo ... src/lzui/lz_obj_soft_3d.s
 	@echo ... src/lzui/lz_tick.obj
 	@echo ... src/lzui/lz_tick.i
 	@echo ... src/lzui/lz_tick.s
+	@echo ... src/lzui/renderer.obj
+	@echo ... src/lzui/renderer.i
+	@echo ... src/lzui/renderer.s
+	@echo ... src/lzui/vector.obj
+	@echo ... src/lzui/vector.i
+	@echo ... src/lzui/vector.s
 	@echo ... src/user/main.obj
 	@echo ... src/user/main.i
 	@echo ... src/user/main.s
