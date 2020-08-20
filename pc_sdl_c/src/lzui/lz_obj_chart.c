@@ -64,8 +64,8 @@ static void lui_design (lz_obj_t * obj, lz_point_t *point) {
     mask.y1 = 20;
     mask.y2 = 70;
 
-    style.body.radius = 360;
-    style.body.border.width = 1;
+    style.body.radius = 2;
+    style.body.border.width = 10;
     style.body.border.color.full = lz_color_888_to_565(lz_color_red);
     style.body.grad_color.full = lz_color_888_to_565(lz_color_red);
     style.body.main_color.full = lz_color_888_to_565(lz_color_red);
@@ -73,5 +73,15 @@ static void lui_design (lz_obj_t * obj, lz_point_t *point) {
     style.body.border.opa = 50;
     style.body.opa = 50;
     style.body.empty = 0;
-    lv_draw_rect(&coords, &mask, &style,50 );
+//    lv_draw_rect(&coords, &mask, &style,50 );
+
+    style.line.width = 10;
+    style.line.color.full = lz_color_888_to_565(lz_color_red);
+    static lv_point_t point1;
+    static lv_point_t point2;
+    point1.x = 20;
+    point1.y = 20;
+    point2.x = 70;
+    point2.y = 70;
+    lv_draw_line(&point1, &point2, &mask, &style, 50);
 }

@@ -29,7 +29,7 @@ void lz_draw_cache_to_lcd(int x, int y, int width, int length);
 
 
 #ifndef LV_ANTIALIAS
-#define LV_ANTIALIAS        1       /*1: Enable anti-aliasing*/
+#define LV_ANTIALIAS       1       /*1: Enable anti-aliasing*/
 #endif
 
 #define CIRCLE_AA_NON_LINEAR_OPA_THRESHOLD  5   /*Circle segment greater then this value will be anti-aliased by a non-linear (cos) opacity mapping*/
@@ -258,5 +258,16 @@ void lv_draw_rect_main_corner(const lv_area_t * coords, const lv_area_t * mask, 
 void lv_draw_rect_border_corner(const lv_area_t * coords, const lv_area_t * mask, const  lv_style_t * style, lv_opa_t opa_scale);
 
 void lv_draw_rect(const lv_area_t * coords, const lv_area_t * mask, const lv_style_t * style, lv_opa_t opa_scale);
+/**
+ * Draw a line
+ * @param point1 first point of the line
+ * @param point2 second point of the line
+ * @param mask the line will be drawn only on this area
+ * @param style pointer to a line's style
+ * @param opa_scale scale down all opacities by the factor
+ */
+void lv_draw_line(const lv_point_t * point1, const lv_point_t * point2, const lv_area_t * mask,
+                  const lv_style_t * style, lv_opa_t opa_scale);
+
 
 #endif //LZUI_LZ_DRAW_H

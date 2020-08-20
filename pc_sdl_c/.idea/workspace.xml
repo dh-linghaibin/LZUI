@@ -12,157 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d71dea03-7e70-409f-bada-6936ab46ba0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/include/lzui/lz_calculate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lzui/lz_calculate.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/SDL_Demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/Progress/7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/includes_C.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/includes_CXX.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/pcSdl.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/SDL_Demo.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/cmake-build-debug/pcSdl.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_assert.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_atomic.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_audio.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_bits.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_blendmode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_clipboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_cpuinfo.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_endian.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_error.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_events.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_filesystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_gamecontroller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_gesture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_haptic.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_hints.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_image.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_joystick.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_keyboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_keycode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_loadso.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_log.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_main.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_messagebox.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_mixer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_mouse.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_mutex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_name.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_opengl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_opengles.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_opengles2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_pixels.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_platform.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_power.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_quit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_rect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_render.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_revision.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_rwops.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_scancode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_shape.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_stdinc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_surface.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_system.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_syswm.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_assert.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_common.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_compare.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_crc32.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_font.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_fuzzer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_harness.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_images.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_log.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_md5.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_test_random.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_thread.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_timer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_touch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_ttf.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_version.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/SDL_video.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/begin_code.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/include/SDL2/close_code.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/lib/pkgconfig/sdl2.pc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/bsp/display_sdl.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/bsp/display_sdl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/lzui/lzui_core.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/lzui/lzui_draw.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/lzui/lzui_objx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/lzui/ugui.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/lzui/ugui_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/include/user/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/lzui/lzui_core.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/lzui/lzui_draw.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/lzui/lzui_objx.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/lzui/ugui.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pc_sdl_c++/src/user/main.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LZUI.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LZUI.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_draw.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_draw.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_easing.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_easing.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/lzui/lz_obj_button.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lzui/lz_draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_draw.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_easing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_easing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_button.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_chart.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lzui/lz_obj_lable.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +136,7 @@
       <workItem from="1597148850388" duration="18000" />
       <workItem from="1597413643676" duration="6112000" />
       <workItem from="1597736355430" duration="15594000" />
-      <workItem from="1597841840973" duration="8737000" />
+      <workItem from="1597841840973" duration="12428000" />
     </task>
     <servers />
   </component>
@@ -333,46 +187,50 @@
     </state>
     <state x="207" y="216" key="FileChooserDialogImpl/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597744080333" />
     <state x="207" y="216" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596889804480" />
-    <state width="1495" height="105" key="GridCell.Tab.0.bottom" timestamp="1597900829750">
+    <state width="1495" height="105" key="GridCell.Tab.0.bottom" timestamp="1597916208861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="105" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895809927" />
-    <state width="1495" height="105" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597900829750" />
-    <state width="1495" height="105" key="GridCell.Tab.0.center" timestamp="1597900829750">
+    <state width="1495" height="105" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597916208861" />
+    <state width="1879" height="105" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597911260749" />
+    <state width="1495" height="105" key="GridCell.Tab.0.center" timestamp="1597916208861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="105" key="GridCell.Tab.0.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895809927" />
-    <state width="1495" height="105" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597900829750" />
-    <state width="1495" height="105" key="GridCell.Tab.0.left" timestamp="1597900829750">
+    <state width="1495" height="105" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597916208861" />
+    <state width="1879" height="105" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597911260749" />
+    <state width="1495" height="105" key="GridCell.Tab.0.left" timestamp="1597916208861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="105" key="GridCell.Tab.0.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895809927" />
-    <state width="1495" height="105" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597900829750" />
-    <state width="1495" height="105" key="GridCell.Tab.0.right" timestamp="1597900829750">
+    <state width="1495" height="105" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597916208861" />
+    <state width="1879" height="105" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597911260749" />
+    <state width="1495" height="105" key="GridCell.Tab.0.right" timestamp="1597916208861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="105" key="GridCell.Tab.0.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895809927" />
-    <state width="1495" height="105" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597900829750" />
-    <state width="1495" height="229" key="GridCell.Tab.1.bottom" timestamp="1597898262972">
+    <state width="1495" height="105" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597916208861" />
+    <state width="1879" height="105" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597911260749" />
+    <state width="1495" height="229" key="GridCell.Tab.1.bottom" timestamp="1597910336234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="229" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895261641" />
-    <state width="1495" height="229" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597898262972" />
-    <state width="1495" height="229" key="GridCell.Tab.1.center" timestamp="1597898262972">
+    <state width="1495" height="229" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597910336234" />
+    <state width="1495" height="229" key="GridCell.Tab.1.center" timestamp="1597910336234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="229" key="GridCell.Tab.1.center/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895261641" />
-    <state width="1495" height="229" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597898262972" />
-    <state width="1495" height="229" key="GridCell.Tab.1.left" timestamp="1597898262972">
+    <state width="1495" height="229" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597910336234" />
+    <state width="1495" height="229" key="GridCell.Tab.1.left" timestamp="1597910336233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="229" key="GridCell.Tab.1.left/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895261641" />
-    <state width="1495" height="229" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597898262972" />
-    <state width="1495" height="229" key="GridCell.Tab.1.right" timestamp="1597898262972">
+    <state width="1495" height="229" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597910336233" />
+    <state width="1495" height="229" key="GridCell.Tab.1.right" timestamp="1597910336234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="229" key="GridCell.Tab.1.right/0.0.1536.824/1920.-1075.3072.1688@0.0.1536.824" timestamp="1597895261641" />
-    <state width="1495" height="229" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597898262972" />
+    <state width="1495" height="229" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597910336234" />
     <state x="307" y="58" width="1089" height="708" key="SettingsEditor" timestamp="1597413811683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -391,15 +249,6 @@
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596727231769" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/lzui/lz_draw.c</url>
-          <line>1711</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="movers" language="ObjectiveC" />

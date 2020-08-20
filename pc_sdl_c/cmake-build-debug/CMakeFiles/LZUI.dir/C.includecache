@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../src/include/lzui/lz_calculate.h
-lzui/lz_obj.h
-../src/include/lzui/lzui/lz_obj.h
-
 ../src/include/lzui/lz_color.h
 stdio.h
 -
@@ -50,37 +46,13 @@ stdarg.h
 stdint.h
 -
 
-../src/include/lzui/lz_obj_chart.h
-lzui/lz_obj.h
-../src/include/lzui/lzui/lz_obj.h
-lzui/lz_color.h
-../src/include/lzui/lzui/lz_color.h
-
-../src/include/lzui/lz_tick.h
-lzui/lz_types.h
-../src/include/lzui/lzui/lz_types.h
-lzui/lz_obj.h
-../src/include/lzui/lzui/lz_obj.h
-
 ../src/include/lzui/lz_types.h
 stdint.h
 -
 
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_obj_chart.c
-lzui/lz_obj_chart.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_obj_chart.h
+C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_draw.c
+stdbool.h
+-
 lzui/lz_draw.h
 C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_draw.h
-math.h
--
-minmax.h
--
-lzui/lz_tick.h
--
-time.h
--
-lzui/lz_calculate.h
--
-lzui/lz_color.h
-C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lzui/lz_color.h
 
