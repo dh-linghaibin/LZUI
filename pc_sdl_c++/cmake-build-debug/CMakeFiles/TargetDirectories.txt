@@ -1,3 +1,0 @@
-C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/pcSdl.dir
-C:/lhbspace/diy/LZUI/pc_sdl/cmake-build-debug/CMakeFiles/edit_cache.dir

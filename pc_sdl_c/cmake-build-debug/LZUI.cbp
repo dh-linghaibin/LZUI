@@ -87,6 +87,9 @@
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/bsp/display_sdl.c">
 			<Option target="LZUI"/>
 		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_calculate.h">
+			<Option target="LZUI"/>
+		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_color.h">
 			<Option target="LZUI"/>
 		</Unit>
@@ -133,6 +136,9 @@
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/include/lzui/lz_types.h">
+			<Option target="LZUI"/>
+		</Unit>
+		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_calculate.c">
 			<Option target="LZUI"/>
 		</Unit>
 		<Unit filename="C:/lhbspace/diy/LZUI/pc_sdl_c/src/lzui/lz_color.c">

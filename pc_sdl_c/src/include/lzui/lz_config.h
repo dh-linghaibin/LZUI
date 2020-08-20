@@ -10,8 +10,8 @@
 #define LCD_WIDTH  320
 #define LCD_LENGTH 240
 
-#define CACHE_WIDTH  10
-#define CACHE_LENGTH 10
+#define CACHE_WIDTH  320
+#define CACHE_LENGTH 240
 
 #define CACHE_SIZE   CACHE_LENGTH * CACHE_WIDTH
 

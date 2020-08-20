@@ -31,9 +31,34 @@ static int tick_thread(void *data) {
 }
 
 lz_obj_t * pngxx;
+lz_obj_t * but;
+lz_leasing_t * le;
+
+static uint8_t bit = 0;
 
 void amm( double val) {
-    lz_obj_set_y( pngxx, (uint16_t)val );
+//    lz_obj_set_y( pngxx, (uint16_t)val );
+    if(bit == 0) {
+        lz_obj_set_length(but, (uint16_t) val);
+    } else {
+        lz_obj_set_length(but, (uint16_t) 125-val);
+    }
+}
+
+void but_on_event( lz_obj_t * obj ) {
+    lz_button_t * but = obj->val;
+
+    if(but->state == 0) {
+        if( bit == 0 ) {
+            bit = 1;
+            lz_easing_set(le, lz_cubic_in, amm, 20, 100, 80, pngxx->layout);
+            lz_easing_start(le);
+        } else {
+            bit = 0;
+            lz_easing_set(le, lz_cubic_in, amm, 20, 100, 80, pngxx->layout);
+            lz_easing_start(le);
+        }
+    }
 }
 
 int main(int argc, char** argv) {
@@ -48,18 +73,19 @@ int main(int argc, char** argv) {
     lz_icon_set_val(pngxx, usb_in_png_v);
     lz_obj_add_child(lz_get_root(),pngxx);
 
-    lz_obj_t * but = lz_create_button(10,10);
+    but = lz_create_button(10,10);
     lz_obj_add_child(lz_get_root(),but);
+    lui_button_event_set( but, but_on_event );
 
-    lz_obj_t * lable = lz_create_lable(0,0);
-    lz_obj_add_child(but,lable);
-    lz_lable_text_set(lable, "23");
+//    lz_obj_t * lable = lz_create_lable(0,0);
+//    lz_obj_add_child(but,lable);
+//    lz_lable_text_set(lable, "23");
 
-    lz_obj_t * pos = lz_create_pos(0,0);
-    lz_obj_add_child(lz_get_root(), pos);
+//    lz_obj_t * pos = lz_create_pos(0,0);
+//    lz_obj_add_child(lz_get_root(), pos);
 
-    lz_leasing_t * le = lz_easing_create();
-    lz_easing_set(le, lz_sine_in_out, amm, 50, 100, 50, pngxx->layout);
+    le = lz_easing_create();
+    lz_easing_set(le, lz_sine_in_out, amm, 50, 100, 60, pngxx->layout);
 
     lz_obj_t * chart = lz_create_chart(50,100);
     lz_obj_add_child(lz_get_root(),chart);
@@ -95,7 +121,7 @@ int main(int argc, char** argv) {
 					running = 0;
 				} break;
 				case SDL_MOUSEMOTION: {
-                    lz_post_set_mouse_x_y( pos, event.button.x, event.button.y );
+//                    lz_post_set_mouse_x_y( pos, event.button.x, event.button.y );
 					if(touch_flag == 1) {
 						lz_obj_even(event.button.x, event.button.y, touch_flag);
 					}
@@ -104,14 +130,14 @@ int main(int argc, char** argv) {
 
 				} break;
 				case SDL_MOUSEBUTTONDOWN: {
-                    lz_post_set_is_mouse_down( pos, 1 );
+//                    lz_post_set_is_mouse_down( pos, 1 );
 					if( event.button.button == SDL_BUTTON_LEFT ){
 						touch_flag = 1;
 						lz_obj_even(event.button.x, event.button.y, 2);
 					}
 				} break;
 				case SDL_MOUSEBUTTONUP: {
-                    lz_post_set_is_mouse_down( pos, 0 );
+//                    lz_post_set_is_mouse_down( pos, 0 );
 					if( event.button.button == SDL_BUTTON_LEFT ){
 						touch_flag = 0;
 						lz_obj_even(event.button.x, event.button.y, touch_flag);
@@ -121,7 +147,7 @@ int main(int argc, char** argv) {
 		}
 		lui_loop();
 		display_sdl_up_data();
-		SDL_Delay(5);
+		SDL_Delay(10);
 	}
 	SDL_Quit();
 	return 0;

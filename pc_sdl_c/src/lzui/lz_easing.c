@@ -9,13 +9,9 @@
 
 static void tick_event(lz_tick_t * tick);
 
-//leasing_v.start_val = 50;
-//leasing_v.end_val = 200;
-//leasing_v.total_time = 100;
-//leasing_v.func = lz_bounce_in;
-
 lz_leasing_t * lz_easing_create( void ) {
     lz_leasing_t * leasing = lz_malloc(sizeof(lz_leasing_t));
+    leasing->state = 0;
     leasing->tick = lz_tick_create(leasing, tick_event, 5);
     return leasing;
 }
@@ -45,16 +41,35 @@ void lz_easing_set( lz_leasing_t * leasing, double (*func)(struct lz_leasing_t *
         leasing->end = (layout.point.y - 1) / (layout.point.x - 1);
     else
         leasing->end = 0;
+}
 
+void lz_easing_start( lz_leasing_t * leasing ) {
+    leasing->time = 0;
+    leasing->state = 1;
+}
+
+void lz_easing_end( lz_leasing_t * leasing ) {
+    leasing->state = 0;
 }
 
 static void tick_event(lz_tick_t * tick) {
     lz_leasing_t * leasing = tick->obj;
-    if( ( leasing->func != NULL ) && ( leasing->func_c != NULL ) ) {
-        static uint16_t xx = 0;
-        leasing->func_c( leasing->func( leasing, xx ) );
-        xx++;
+    if( leasing->state > 0 ) {
+        if ((leasing->func != NULL) && (leasing->func_c != NULL)) {
+            double out_val = leasing->func(leasing, leasing->time);
+            leasing->time++;
+            if (out_val >= leasing->end_val) {
+                leasing->state = 0;
+                out_val = leasing->end_val;
+            }
+//            printf("%f,",out_val);
+            leasing->func_c( out_val );
+        }
     }
+//    static double time_v = 0;
+//    time_v += 0.01;
+//    double vv = BounceEaseOut( time_v );
+//    printf( "%f,", vv);
 }
 
 void lz_easing_delete( lz_leasing_t * leasing ) {
@@ -489,5 +504,6 @@ double lz_cubic_bezier(lz_leasing_t * e, double t)
         r = sample_curve_y(e, solve_curve_x(e, t));
     return e->end_val * r / e->total_time + e->start_val;
 }
+
 
 

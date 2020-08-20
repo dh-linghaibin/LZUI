@@ -169,6 +169,33 @@ src/bsp/display_sdl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/bsp/display_sdl.c.s
 .PHONY : src/bsp/display_sdl.c.s
 
+src/lzui/lz_calculate.obj: src/lzui/lz_calculate.c.obj
+
+.PHONY : src/lzui/lz_calculate.obj
+
+# target to build an object file
+src/lzui/lz_calculate.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_calculate.c.obj
+.PHONY : src/lzui/lz_calculate.c.obj
+
+src/lzui/lz_calculate.i: src/lzui/lz_calculate.c.i
+
+.PHONY : src/lzui/lz_calculate.i
+
+# target to preprocess a source file
+src/lzui/lz_calculate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_calculate.c.i
+.PHONY : src/lzui/lz_calculate.c.i
+
+src/lzui/lz_calculate.s: src/lzui/lz_calculate.c.s
+
+.PHONY : src/lzui/lz_calculate.s
+
+# target to generate assembly for a file
+src/lzui/lz_calculate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LZUI.dir\build.make CMakeFiles/LZUI.dir/src/lzui/lz_calculate.c.s
+.PHONY : src/lzui/lz_calculate.c.s
+
 src/lzui/lz_color.obj: src/lzui/lz_color.c.obj
 
 .PHONY : src/lzui/lz_color.obj
@@ -667,6 +694,9 @@ help:
 	@echo ... src/bsp/display_sdl.obj
 	@echo ... src/bsp/display_sdl.i
 	@echo ... src/bsp/display_sdl.s
+	@echo ... src/lzui/lz_calculate.obj
+	@echo ... src/lzui/lz_calculate.i
+	@echo ... src/lzui/lz_calculate.s
 	@echo ... src/lzui/lz_color.obj
 	@echo ... src/lzui/lz_color.i
 	@echo ... src/lzui/lz_color.s

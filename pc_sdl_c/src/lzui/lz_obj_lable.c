@@ -4,6 +4,7 @@
 
 #include "lzui/lz_obj_lable.h"
 #include "lzui/lz_draw.h"
+#include "string.h"
 
 static void lui_text_design (lz_obj_t * obj, lz_point_t *point);
 //static void lui_text_event(lz_touch_val_t *val);
@@ -15,13 +16,15 @@ lz_obj_t * lz_create_lable(int x,int y) {
 	lz_text_t * obj_text = lz_malloc(sizeof(lz_text_t));
 	obj_text->color = lz_color_888_to_565(lz_color_red);
 	obj_text->font_val = mac_font_20_english;
-	lz_obj_t * obj = lz_create_obj(x,y,50,50,obj_text,lui_text_design);
+	lz_obj_t * obj = lz_create_obj(x,y,obj_text->font_val.h,0,obj_text,lui_text_design);
 	lz_obj_set_event(obj,NULL);
 	return obj;
 }
 
 void lz_lable_text_set( lz_obj_t * obj, char * val ) {
     lz_text_t * obj_text = obj->val;
+    uint16_t len = strlen( val );
+    lz_obj_set_width(obj,(len * obj_text->font_val.w) );
     sprintf(obj_text->text,"%s",val);
 }
 

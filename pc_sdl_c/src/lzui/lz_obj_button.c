@@ -13,8 +13,7 @@ lz_obj_t * lz_create_button(int x,int y) {
 	but->color.color.rgb565 = lz_color_888_to_565(0x07DBFF);
 	but->color.alpha = 0;
 	but->state = 0;
-	but->on_click = NULL;
-	but->on_click_down = NULL;
+	but->on_event = NULL;
 	lz_obj_t * obj = lz_create_obj(x,y,50,25,but,lui_button_design);
 	lz_obj_set_event(obj,lui_button_event);
 
@@ -39,14 +38,9 @@ void lui_button_set_size(lz_obj_t * obj, int width,int length) {
 	lz_obj_set_length(obj,length);
 }
 
-void lui_button_setonclicklistener(lz_obj_t * obj, void (*on_click)(lz_obj_t * obj)) {
+void lui_button_event_set(lz_obj_t * obj, void (*event)(lz_obj_t * obj)) {
 	lz_button_t * but = obj->val;
-	but->on_click = on_click;
-}
-
-void lui_button_setonclicklistener_down(lz_obj_t * obj, void (*on_click_down)(lz_obj_t * obj)) {
-	lz_button_t * but = obj->val;
-	but->on_click_down = on_click_down;
+	but->on_event = event;
 }
 
 static void lui_button_design (lz_obj_t * obj, lz_point_t *point) {
@@ -70,14 +64,14 @@ static void lui_button_event(lz_touch_val_t *val) {
 	lz_button_t * but = val->obj->val;
 	if(val->falg == 2) {
 		but->state = 1;
-		if(but->on_click_down != NULL) {
-			but->on_click_down(val->obj);
+		if(but->on_event != NULL) {
+			but->on_event(val->obj);
 		}
 	}
 	if(val->falg == 0) {
 		but->state = 0;
-		if(but->on_click != NULL) {
-			but->on_click(val->obj);
+		if(but->on_event != NULL) {
+			but->on_event(val->obj);
 		}
 	}
 }

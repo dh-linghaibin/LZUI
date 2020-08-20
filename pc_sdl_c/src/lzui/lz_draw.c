@@ -2,6 +2,7 @@
 // Created by a6735 on 2020/8/2.
 //
 
+#include <stdbool.h>
 #include "lzui/lz_draw.h"
 
 
@@ -705,4 +706,1197 @@ void lz_draw_cache_to_lcd(int x, int y, int width, int length) {
 	if(updata != NULL) {
 		updata(x,y,width,length,cache.array);
 	}
+}
+
+
+
+
+
+
+
+
+
+
+static uint16_t lv_draw_cont_radius_corr(uint16_t r, lv_coord_t w, lv_coord_t h)
+{
+    if(r >= (w >> 1)) {
+        r = (w >> 1);
+        if(r != 0) r--;
+    }
+    if(r >= (h >> 1)) {
+        r = (h >> 1);
+        if(r != 0) r--;
+    }
+
+    if(r > 0) r -= LV_ANTIALIAS;
+
+    return r;
+}
+
+void lv_circ_init(lv_point_t * c, lv_coord_t * tmp, lv_coord_t radius)
+{
+    c->x = radius;
+    c->y = 0;
+    *tmp = 1 - radius;
+}
+
+/**
+ * Approximate the opacity for anti-aliasing.
+ * Used  the first segment of a circle which is the longest and have the most non-linearity (cos)
+ * @param seg length of the line segment
+ * @param px_id index of pixel on the line segment
+ * @param line_opa opacity of the lien (it will be the max opacity)
+ * @return the desired opacity of the pixel
+ */
+static lv_opa_t antialias_get_opa_circ(lv_coord_t seg, lv_coord_t px_id, lv_opa_t opa)
+{
+    static const  lv_opa_t opa_map[8] = {250, 242, 221, 196, 163, 122, 74, 18};
+    if(seg == 0) return LV_OPA_TRANSP;
+    else if(seg == 1) return LV_OPA_80;
+    else {
+        uint8_t id = (uint32_t)((uint32_t)px_id * (sizeof(opa_map) - 1)) / (seg - 1);
+        return (uint32_t)((uint32_t) opa_map[id] * opa) >> 8;
+    }
+}
+
+/**
+ * Get the opacity of a pixel based it's position in a line segment
+ * @param seg segment length
+ * @param px_id position of  of a pixel which opacity should be get [0..seg-1]
+ * @param base_opa the base opacity
+ * @return the opacity of the given pixel
+ */
+lv_opa_t lv_draw_aa_get_opa(lv_coord_t seg, lv_coord_t px_id, lv_opa_t base_opa)
+{
+    /* How to calculate the opacity of pixels on the edges which makes the anti-aliasing?
+     * For example we have a line like this (y = -0.5 * x):
+     *
+     *  | _ _
+     *    * * |
+     *
+     * Anti-aliased pixels come to the '*' characters
+     * Calculate what percentage of the pixels should be covered if real line (not rasterized) would be drawn:
+     * 1. A real line should start on (0;0) and end on (2;1)
+     * 2. So the line intersection coordinates on the first pixel: (0;0) (1;0.5) -> 25% covered pixel in average
+     * 3. For the second pixel: (1;0.5) (2;1) -> 75% covered pixel in average
+     * 4. The equation: (px_id * 2 + 1) / (segment_width * 2)
+     *                   segment_width: the line segment which is being anti-aliased (was 2 in the example)
+     *                   px_id: pixel ID from 0 to  (segment_width - 1)
+     *                   result: [0..1] coverage of the pixel
+     */
+
+    /*Accelerate the common segment sizes to avoid division*/
+    static const  lv_opa_t seg1[1] = {128};
+    static const  lv_opa_t seg2[2] = {64, 192};
+    static const  lv_opa_t seg3[3] = {42, 128, 212};
+    static const  lv_opa_t seg4[4] = {32, 96, 159, 223};
+    static const  lv_opa_t seg5[5] = {26,  76, 128, 178, 230};
+    static const  lv_opa_t seg6[6] = {21,  64, 106, 148, 191, 234};
+    static const  lv_opa_t seg7[7] = {18,  55, 91, 128, 164, 200, 237};
+    static const  lv_opa_t seg8[8] = {16,  48, 80, 112, 143, 175, 207, 239};
+
+    static const lv_opa_t * seg_map[] = {seg1, seg2, seg3, seg4,
+                                         seg5, seg6, seg7, seg8
+    };
+
+    if(seg == 0) return LV_OPA_TRANSP;
+    else if(seg < 8) return (uint32_t)((uint32_t)seg_map[seg - 1][px_id] * base_opa) >> 8;
+    else {
+        return ((px_id * 2 + 1) * base_opa) / (2 * seg);
+    }
+
+}
+
+/**
+ * Test the circle drawing is ready or not
+ * @param c same as in circ_init
+ * @return true if the circle is not ready yet
+ */
+bool lv_circ_cont(lv_point_t * c)
+{
+    return c->y <= c->x ? true : false;
+}
+
+/**
+ * Get the next point from the circle
+ * @param c same as in circ_init. The next point stored here.
+ * @param tmp same as in circ_init.
+ */
+void lv_circ_next(lv_point_t * c, lv_coord_t * tmp)
+{
+    c->y++;
+
+    if(*tmp <= 0) {
+        (*tmp) += 2 * c->y + 1;   // Change in decision criterion for y -> y+1
+    } else {
+        c->x--;
+        (*tmp) += 2 * (c->y - c->x) + 1;   // Change for y -> y+1, x -> x-1
+    }
+}
+
+/**
+ * Initialize an area
+ * @param area_p pointer to an area
+ * @param x1 left coordinate of the area
+ * @param y1 top coordinate of the area
+ * @param x2 right coordinate of the area
+ * @param y2 bottom coordinate of the area
+ */
+void lv_area_set(lv_area_t * area_p, lv_coord_t x1, lv_coord_t y1, lv_coord_t x2, lv_coord_t y2)
+{
+    area_p->x1 = x1;
+    area_p->y1 = y1;
+    area_p->x2 = x2;
+    area_p->y2 = y2;
+}
+
+/**
+ * Get the common parts of two areas
+ * @param res_p pointer to an area, the result will be stored here
+ * @param a1_p pointer to the first area
+ * @param a2_p pointer to the second area
+ * @return false: the two area has NO common parts, res_p is invalid
+ */
+bool lv_area_intersect(lv_area_t * res_p, const lv_area_t * a1_p, const lv_area_t * a2_p)
+{
+    /* Get the smaller area from 'a1_p' and 'a2_p' */
+    res_p->x1 = LV_MATH_MAX(a1_p->x1, a2_p->x1);
+    res_p->y1 = LV_MATH_MAX(a1_p->y1, a2_p->y1);
+    res_p->x2 = LV_MATH_MIN(a1_p->x2, a2_p->x2);
+    res_p->y2 = LV_MATH_MIN(a1_p->y2, a2_p->y2);
+
+    /*If x1 or y1 greater then x2 or y2 then the areas union is empty*/
+    bool union_ok = true;
+    if((res_p->x1 > res_p->x2) ||
+       (res_p->y1 > res_p->y2)) {
+        union_ok = false;
+    }
+
+    return union_ok;
+}
+
+void fill_fp(const lv_area_t * coords, const lv_area_t * mask, lv_color_t color, lv_opa_t opa);
+/**
+ * Put a pixel to the display
+ * @param x x coordinate of the pixel
+ * @param y y coordinate of the pixel
+ * @param mask_p the pixel will be drawn on this area
+ * @param color color of the pixel
+ * @param opa opacity (ignored, only for compatibility with lv_vpx)
+ */
+void px_fp(lv_coord_t x, lv_coord_t y, const lv_area_t * mask, lv_color_t color, lv_opa_t opa)  {
+    lz_color5658_t colorx;
+    colorx.alpha = opa;
+    colorx.color.rgb565 = color.full;
+    lz_draw_frame(x, y, 1, 1, colorx);
+
+//    (void)opa;      /*Opa is used only for compatibility with lv_vpx*/
+//
+//    lv_area_t area;
+//    area.x1 = x;
+//    area.y1 = y;
+//    area.x2 = x;
+//    area.y2 = y;
+//
+//    fill_fp(&area, mask, color, LV_OPA_COVER);
+}
+
+/**
+ * Fill an area on the display
+ * @param cords_p coordinates of the area to fill
+ * @param mask_p fill only o this mask
+ * @param color fill color
+ * @param opa opacity (ignored, only for compatibility with lv_vfill)
+ */
+void fill_fp(const lv_area_t * coords, const lv_area_t * mask, lv_color_t color, lv_opa_t opa) {
+    lz_color5658_t colorx;
+    colorx.alpha = opa;
+    colorx.color.rgb565 = color.full;
+    lz_draw_frame(coords->x1, coords->y1, coords->x2 - coords->x1 + 1, coords->y2 - coords->y1 + 1, colorx);
+
+//    (void)opa;      /*Opa is used only for compatibility with lv_vfill*/
+//
+//    lv_area_t masked_area;
+//    bool union_ok = true;
+//
+//    if(mask != NULL) {
+//        union_ok = lv_area_intersect(&masked_area, coords, mask);
+//    } else {
+//        lv_area_t scr_area;
+//        lv_area_set(&scr_area, 0, 0, LV_HOR_RES - 1, LV_VER_RES - 1);
+//        union_ok = lv_area_intersect(&masked_area, coords, &scr_area);
+//    }
+//
+//    if(union_ok != false) {
+//        lz_color5658_t colorx;
+//        colorx.alpha = opa;
+//        colorx.color.rgb565 = color.full;
+//        lz_draw_frame(masked_area.x1, masked_area.y1, masked_area.x2 - masked_area.x1, masked_area.y2 - masked_area.y1, colorx);
+////        lv_disp_fill(masked_area.x1, masked_area.y1, masked_area.x2, masked_area.y2, color);
+//    }
+}
+
+/**
+ * Draw the top and bottom parts (corners) of a rectangle
+ * @param coords the coordinates of the original rectangle
+ * @param mask the rectangle will be drawn only  on this area
+ * @param rects_p pointer to a rectangle style
+ * @param opa_scale scale down all opacities by the factor
+ */
+void lv_draw_rect_main_corner(const lv_area_t * coords, const lv_area_t * mask, const lv_style_t * style, lv_opa_t opa_scale)
+{
+    uint16_t radius = style->body.radius;
+
+    lv_color_t mcolor = style->body.main_color;
+    lv_color_t gcolor = style->body.grad_color;
+    lv_color_t act_color;
+    lv_opa_t opa = opa_scale == LV_OPA_COVER ? style->body.opa : (uint16_t)((uint16_t) style->body.opa * opa_scale) >> 8;
+    uint8_t mix;
+    lv_coord_t height = lv_area_get_height(coords);
+    lv_coord_t width = lv_area_get_width(coords);
+
+    radius = lv_draw_cont_radius_corr(radius, width, height);
+
+    lv_point_t lt_origo;   /*Left  Top    origo*/
+    lv_point_t lb_origo;   /*Left  Bottom origo*/
+    lv_point_t rt_origo;   /*Right Top    origo*/
+    lv_point_t rb_origo;   /*Left  Bottom origo*/
+
+    lt_origo.x = coords->x1 + radius + LV_ANTIALIAS;
+    lt_origo.y = coords->y1 + radius + LV_ANTIALIAS;
+
+    lb_origo.x = coords->x1 + radius + LV_ANTIALIAS;
+    lb_origo.y = coords->y2 - radius - LV_ANTIALIAS;
+
+    rt_origo.x = coords->x2 - radius - LV_ANTIALIAS;
+    rt_origo.y = coords->y1 + radius + LV_ANTIALIAS;
+
+    rb_origo.x = coords->x2 - radius - LV_ANTIALIAS;
+    rb_origo.y = coords->y2 - radius - LV_ANTIALIAS;
+
+    lv_area_t edge_top_area;
+    lv_area_t mid_top_area;
+    lv_area_t mid_bot_area;
+    lv_area_t edge_bot_area;
+
+    lv_point_t cir;
+    lv_coord_t cir_tmp;
+    lv_circ_init(&cir, &cir_tmp, radius);
+
+    /*Init the areas*/
+    lv_area_set(&mid_bot_area,  lb_origo.x + LV_CIRC_OCT4_X(cir),
+                lb_origo.y + LV_CIRC_OCT4_Y(cir),
+                rb_origo.x + LV_CIRC_OCT1_X(cir),
+                rb_origo.y + LV_CIRC_OCT1_Y(cir));
+
+    lv_area_set(&edge_bot_area, lb_origo.x + LV_CIRC_OCT3_X(cir),
+                lb_origo.y + LV_CIRC_OCT3_Y(cir),
+                rb_origo.x + LV_CIRC_OCT2_X(cir),
+                rb_origo.y + LV_CIRC_OCT2_Y(cir));
+
+    lv_area_set(&mid_top_area,  lt_origo.x + LV_CIRC_OCT5_X(cir),
+                lt_origo.y + LV_CIRC_OCT5_Y(cir),
+                rt_origo.x + LV_CIRC_OCT8_X(cir),
+                rt_origo.y + LV_CIRC_OCT8_Y(cir));
+
+    lv_area_set(&edge_top_area, lt_origo.x + LV_CIRC_OCT6_X(cir),
+                lt_origo.y + LV_CIRC_OCT6_Y(cir),
+                rt_origo.x + LV_CIRC_OCT7_X(cir),
+                rt_origo.y + LV_CIRC_OCT7_Y(cir));
+#if LV_ANTIALIAS
+    /*Store some internal states for anti-aliasing*/
+    lv_coord_t out_y_seg_start = 0;
+    lv_coord_t out_y_seg_end = 0;
+    lv_coord_t out_x_last = radius;
+
+    lv_color_t aa_color_hor_top;
+    lv_color_t aa_color_hor_bottom;
+    lv_color_t aa_color_ver;
+#endif
+
+    while(lv_circ_cont(&cir)) {
+#if LV_ANTIALIAS != 0
+        /*New step in y on the outter circle*/
+        if(out_x_last != cir.x) {
+            out_y_seg_end = cir.y;
+            lv_coord_t seg_size = out_y_seg_end - out_y_seg_start;
+            lv_point_t aa_p;
+
+            aa_p.x = out_x_last;
+            aa_p.y = out_y_seg_start;
+
+            mix = (uint32_t)((uint32_t)(radius - out_x_last) * 255) / height;
+            aa_color_hor_top = lv_color_mix(gcolor, mcolor, mix);
+            aa_color_hor_bottom = lv_color_mix(mcolor, gcolor, mix);
+
+            lv_coord_t i;
+            for(i = 0; i  < seg_size; i++) {
+                lv_opa_t aa_opa;
+                if(seg_size > CIRCLE_AA_NON_LINEAR_OPA_THRESHOLD) {    /*Use non-linear opa mapping on the first segment*/
+                    aa_opa = antialias_get_opa_circ(seg_size, i, opa);
+                } else {
+                    aa_opa = opa - lv_draw_aa_get_opa(seg_size, i, opa);
+                }
+
+                px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) + 1, mask, aa_color_hor_bottom, aa_opa);
+                px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) + 1, mask, aa_color_hor_bottom, aa_opa);
+                px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) - 1, mask, aa_color_hor_top, aa_opa);
+                px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) - 1, mask, aa_color_hor_top, aa_opa);
+
+                mix = (uint32_t)((uint32_t)(radius - out_y_seg_start + i) * 255) / height;
+                aa_color_ver = lv_color_mix(mcolor, gcolor, mix);
+                px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) + 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, aa_color_ver, aa_opa);
+                px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) - 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, aa_color_ver, aa_opa);
+
+                aa_color_ver = lv_color_mix(gcolor, mcolor, mix);
+                px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) - 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, aa_color_ver, aa_opa);
+                px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) + 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, aa_color_ver, aa_opa);
+            }
+
+            out_x_last = cir.x;
+            out_y_seg_start = out_y_seg_end;
+        }
+#endif
+        uint8_t edge_top_refr = 0;
+        uint8_t mid_top_refr = 0;
+        uint8_t mid_bot_refr = 0;
+        uint8_t edge_bot_refr = 0;
+
+        /* If a new row coming draw the previous
+         * The y coordinate can remain the same so wait for a new*/
+        if(mid_bot_area.y1 != LV_CIRC_OCT4_Y(cir) + lb_origo.y) mid_bot_refr = 1;
+
+        if(edge_bot_area.y1 != LV_CIRC_OCT2_Y(cir) + lb_origo.y) edge_bot_refr = 1;
+
+        if(mid_top_area.y1 != LV_CIRC_OCT8_Y(cir) + lt_origo.y) mid_top_refr = 1;
+
+        if(edge_top_area.y1 != LV_CIRC_OCT7_Y(cir) + lt_origo.y) edge_top_refr = 1;
+
+        /*Draw the areas which are not disabled*/
+        if(edge_top_refr != 0) {
+            if(mcolor.full == gcolor.full) act_color = mcolor;
+            else {
+                mix = (uint32_t)((uint32_t)(coords->y2 - edge_top_area.y1)  * 255) / height;
+                act_color = lv_color_mix(mcolor, gcolor, mix);
+            }
+            fill_fp(&edge_top_area, mask, act_color, opa);
+        }
+
+        if(mid_top_refr != 0) {
+            if(mcolor.full == gcolor.full) act_color = mcolor;
+            else {
+                mix = (uint32_t)((uint32_t)(coords->y2 - mid_top_area.y1) * 255) / height;
+                act_color = lv_color_mix(mcolor, gcolor, mix);
+            }
+            fill_fp(&mid_top_area, mask, act_color, opa);
+        }
+
+        if(mid_bot_refr != 0) {
+            if(mcolor.full == gcolor.full) act_color = mcolor;
+            else {
+                mix = (uint32_t)((uint32_t)(coords->y2 - mid_bot_area.y1) * 255) / height;
+                act_color = lv_color_mix(mcolor, gcolor, mix);
+            }
+            fill_fp(&mid_bot_area, mask, act_color, opa);
+        }
+
+        if(edge_bot_refr != 0) {
+
+            if(mcolor.full == gcolor.full) act_color = mcolor;
+            else {
+                mix = (uint32_t)((uint32_t)(coords->y2 - edge_bot_area.y1) * 255) / height;
+                act_color = lv_color_mix(mcolor, gcolor, mix);
+            }
+            fill_fp(&edge_bot_area, mask, act_color, opa);
+        }
+
+        /*Save the current coordinates*/
+        lv_area_set(&mid_bot_area,  lb_origo.x + LV_CIRC_OCT4_X(cir),
+                    lb_origo.y + LV_CIRC_OCT4_Y(cir),
+                    rb_origo.x + LV_CIRC_OCT1_X(cir),
+                    rb_origo.y + LV_CIRC_OCT1_Y(cir));
+
+        lv_area_set(&edge_bot_area, lb_origo.x + LV_CIRC_OCT3_X(cir),
+                    lb_origo.y + LV_CIRC_OCT3_Y(cir),
+                    rb_origo.x + LV_CIRC_OCT2_X(cir),
+                    rb_origo.y + LV_CIRC_OCT2_Y(cir));
+
+        lv_area_set(&mid_top_area,  lt_origo.x + LV_CIRC_OCT5_X(cir),
+                    lt_origo.y + LV_CIRC_OCT5_Y(cir),
+                    rt_origo.x + LV_CIRC_OCT8_X(cir),
+                    rt_origo.y + LV_CIRC_OCT8_Y(cir));
+
+        lv_area_set(&edge_top_area, lt_origo.x + LV_CIRC_OCT6_X(cir),
+                    lt_origo.y + LV_CIRC_OCT6_Y(cir),
+                    rt_origo.x + LV_CIRC_OCT7_X(cir),
+                    rt_origo.y + LV_CIRC_OCT7_Y(cir));
+
+        lv_circ_next(&cir, &cir_tmp);
+    }
+
+    if(mcolor.full == gcolor.full) act_color = mcolor;
+    else {
+        mix = (uint32_t)((uint32_t)(coords->y2 - edge_top_area.y1)  * 255) / height;
+        act_color = lv_color_mix(mcolor, gcolor, mix);
+    }
+    fill_fp(&edge_top_area, mask, act_color, opa);
+
+    if(edge_top_area.y1 != mid_top_area.y1) {
+
+        if(mcolor.full == gcolor.full) act_color = mcolor;
+        else {
+            mix = (uint32_t)((uint32_t)(coords->y2 - mid_top_area.y1) * 255) / height;
+            act_color = lv_color_mix(mcolor, gcolor, mix);
+        }
+        fill_fp(&mid_top_area, mask, act_color, opa);
+    }
+
+    if(mcolor.full == gcolor.full) act_color = mcolor;
+    else {
+        mix = (uint32_t)((uint32_t)(coords->y2 - mid_bot_area.y1) * 255) / height;
+        act_color = lv_color_mix(mcolor, gcolor, mix);
+    }
+    fill_fp(&mid_bot_area, mask, act_color, opa);
+
+    if(edge_bot_area.y1 != mid_bot_area.y1) {
+
+        if(mcolor.full == gcolor.full) act_color = mcolor;
+        else {
+            mix = (uint32_t)((uint32_t)(coords->y2 - edge_bot_area.y1) * 255) / height;
+            act_color = lv_color_mix(mcolor, gcolor, mix);
+        }
+        fill_fp(&edge_bot_area, mask, act_color, opa);
+    }
+
+
+#if LV_ANTIALIAS
+    /*The first and the last line is not drawn*/
+    edge_top_area.x1 = coords->x1 + radius + 2;
+    edge_top_area.x2 = coords->x2 - radius - 2;
+    edge_top_area.y1 = coords->y1;
+    edge_top_area.y2 = coords->y1;
+    fill_fp(&edge_top_area, mask, style->body.main_color, opa);
+
+    edge_top_area.y1 = coords->y2;
+    edge_top_area.y2 = coords->y2;
+    fill_fp(&edge_top_area, mask, style->body.grad_color, opa);
+
+    /*Last parts of the anti-alias*/
+    out_y_seg_end = cir.y;
+    lv_coord_t seg_size = out_y_seg_end - out_y_seg_start;
+    lv_point_t aa_p;
+
+    aa_p.x = out_x_last;
+    aa_p.y = out_y_seg_start;
+
+    mix = (uint32_t)((uint32_t)(radius - out_x_last) * 255) / height;
+    aa_color_hor_bottom = lv_color_mix(gcolor, mcolor, mix);
+    aa_color_hor_top = lv_color_mix(mcolor, gcolor, mix);
+
+    lv_coord_t i;
+    for(i = 0; i  < seg_size; i++) {
+        lv_opa_t aa_opa = opa - lv_draw_aa_get_opa(seg_size, i, opa);
+        px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) + 1, mask, aa_color_hor_top, aa_opa);
+        px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) + 1, mask, aa_color_hor_top, aa_opa);
+        px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) - 1, mask, aa_color_hor_bottom, aa_opa);
+        px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) - 1, mask, aa_color_hor_bottom, aa_opa);
+
+        mix = (uint32_t)((uint32_t)(radius - out_y_seg_start + i) * 255) / height;
+        aa_color_ver = lv_color_mix(mcolor, gcolor, mix);
+        px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) + 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, aa_color_ver, aa_opa);
+        px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) - 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, aa_color_ver, aa_opa);
+
+        aa_color_ver = lv_color_mix(gcolor, mcolor, mix);
+        px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) - 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, aa_color_ver, aa_opa);
+        px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) + 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, aa_color_ver, aa_opa);
+    }
+
+    /*In some cases the last pixel is not drawn*/
+    if(LV_MATH_ABS(aa_p.x - aa_p.y) == seg_size) {
+        aa_p.x = out_x_last;
+        aa_p.y = out_x_last;
+
+        mix = (uint32_t)((uint32_t)(out_x_last) * 255) / height;
+        aa_color_hor_top = lv_color_mix(gcolor, mcolor, mix);
+        aa_color_hor_bottom = lv_color_mix(mcolor, gcolor, mix);
+
+        lv_opa_t aa_opa = opa >> 1;
+        px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p), rb_origo.y + LV_CIRC_OCT2_Y(aa_p), mask, aa_color_hor_bottom, aa_opa);
+        px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p), lb_origo.y + LV_CIRC_OCT4_Y(aa_p), mask, aa_color_hor_bottom, aa_opa);
+        px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p), lt_origo.y + LV_CIRC_OCT6_Y(aa_p), mask, aa_color_hor_top, aa_opa);
+        px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p), rt_origo.y + LV_CIRC_OCT8_Y(aa_p), mask, aa_color_hor_top, aa_opa);
+    }
+#endif
+}
+
+/**
+ * Draw the corners of a rectangle border
+ * @param coords the coordinates of the original rectangle
+ * @param mask the rectangle will be drawn only  on this area
+ * @param style pointer to a style
+ * @param opa_scale scale down all opacities by the factor
+ */
+void lv_draw_rect_border_corner(const lv_area_t * coords, const lv_area_t * mask, const  lv_style_t * style, lv_opa_t opa_scale)
+{
+    uint16_t radius = style->body.radius ;
+    uint16_t bwidth = style->body.border.width;
+    lv_color_t color = style->body.border.color;
+    lv_border_part_t part = style->body.border.part;
+    lv_opa_t opa = opa_scale == LV_OPA_COVER ? style->body.border.opa : (uint16_t)((uint16_t) style->body.border.opa * opa_scale) >> 8;
+    /*0 px border width drawn as 1 px, so decrement the bwidth*/
+    bwidth--;
+
+#if LV_ANTIALIAS
+    bwidth--;    /*Because of anti-aliasing the border seems one pixel ticker*/
+#endif
+
+    lv_coord_t width = lv_area_get_width(coords);
+    lv_coord_t height = lv_area_get_height(coords);
+
+    radius = lv_draw_cont_radius_corr(radius, width, height);
+
+    lv_point_t lt_origo;   /*Left  Top    origo*/
+    lv_point_t lb_origo;   /*Left  Bottom origo*/
+    lv_point_t rt_origo;   /*Right Top    origo*/
+    lv_point_t rb_origo;   /*Left  Bottom origo*/
+
+    lt_origo.x = coords->x1 + radius + LV_ANTIALIAS;
+    lt_origo.y = coords->y1 + radius + LV_ANTIALIAS;
+
+    lb_origo.x = coords->x1 + radius + LV_ANTIALIAS;
+    lb_origo.y = coords->y2 - radius - LV_ANTIALIAS;
+
+    rt_origo.x = coords->x2 - radius - LV_ANTIALIAS;
+    rt_origo.y = coords->y1 + radius + LV_ANTIALIAS;
+
+    rb_origo.x = coords->x2 - radius - LV_ANTIALIAS;
+    rb_origo.y = coords->y2 - radius - LV_ANTIALIAS;
+
+    lv_point_t cir_out;
+    lv_coord_t tmp_out;
+    lv_circ_init(&cir_out, &tmp_out, radius);
+
+    lv_point_t cir_in;
+    lv_coord_t tmp_in;
+    lv_coord_t radius_in = radius - bwidth;
+
+    if(radius_in < 0) {
+        radius_in = 0;
+    }
+
+    lv_circ_init(&cir_in, &tmp_in, radius_in);
+
+    lv_area_t circ_area;
+    lv_coord_t act_w1;
+    lv_coord_t act_w2;
+
+#if LV_ANTIALIAS
+    /*Store some internal states for anti-aliasing*/
+    lv_coord_t out_y_seg_start = 0;
+    lv_coord_t out_y_seg_end = 0;
+    lv_coord_t out_x_last = radius;
+
+
+    lv_coord_t in_y_seg_start = 0;
+    lv_coord_t in_y_seg_end = 0;
+    lv_coord_t in_x_last = radius - bwidth;
+#endif
+
+    while(cir_out.y <= cir_out.x) {
+
+        /*Calculate the actual width to avoid overwriting pixels*/
+        if(cir_in.y < cir_in.x) {
+            act_w1 = cir_out.x - cir_in.x;
+            act_w2 = act_w1;
+        } else {
+            act_w1 = cir_out.x - cir_out.y;
+            act_w2 = act_w1 - 1;
+        }
+
+#if LV_ANTIALIAS != 0
+        /*New step in y on the outter circle*/
+        if(out_x_last != cir_out.x) {
+            out_y_seg_end = cir_out.y;
+            lv_coord_t seg_size = out_y_seg_end - out_y_seg_start;
+            lv_point_t aa_p;
+
+            aa_p.x = out_x_last;
+            aa_p.y = out_y_seg_start;
+
+            lv_coord_t i;
+            for(i = 0; i  < seg_size; i++) {
+                lv_opa_t aa_opa;
+
+                if(seg_size > CIRCLE_AA_NON_LINEAR_OPA_THRESHOLD) {    /*Use non-linear opa mapping on the first segment*/
+                    aa_opa = antialias_get_opa_circ(seg_size, i, opa);
+                } else {
+                    aa_opa = opa - lv_draw_aa_get_opa(seg_size, i, opa);
+                }
+
+                if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+                    px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) + 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+                    px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+                }
+
+                if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+                    px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+                    px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) - 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+                }
+
+
+                if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+                    px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) - 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+                    px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+                }
+
+                if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+                    px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+                    px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) + 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+                }
+            }
+
+            out_x_last = cir_out.x;
+            out_y_seg_start = out_y_seg_end;
+        }
+
+        /*New step in y on the inner circle*/
+        if(in_x_last != cir_in.x) {
+            in_y_seg_end = cir_out.y;
+            lv_coord_t seg_size = in_y_seg_end - in_y_seg_start;
+            lv_point_t aa_p;
+
+            aa_p.x = in_x_last;
+            aa_p.y = in_y_seg_start;
+
+            lv_coord_t i;
+            for(i = 0; i  < seg_size; i++) {
+                lv_opa_t aa_opa;
+
+                if(seg_size > CIRCLE_AA_NON_LINEAR_OPA_THRESHOLD) {    /*Use non-linear opa mapping on the first segment*/
+                    aa_opa = opa - antialias_get_opa_circ(seg_size, i, opa);
+                } else {
+                    aa_opa = lv_draw_aa_get_opa(seg_size, i, opa);
+                }
+
+                if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+                    px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) - 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+                }
+
+                if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+                    px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+                }
+
+                if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+                    px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) + 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+                }
+
+                if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+                    px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+                }
+
+                /*Be sure the pixels on the middle are not drawn twice*/
+                if(LV_CIRC_OCT1_X(aa_p) - 1 != LV_CIRC_OCT2_X(aa_p) + i) {
+                    if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+                        px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+                    }
+
+                    if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+                        px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) + 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+                    }
+
+                    if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+                        px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+                    }
+
+                    if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+                        px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) - 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+                    }
+                }
+
+            }
+
+            in_x_last = cir_in.x;
+            in_y_seg_start = in_y_seg_end;
+
+        }
+
+#endif
+
+
+        /*Draw the octets to the right bottom corner*/
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+            circ_area.x1 = rb_origo.x + LV_CIRC_OCT1_X(cir_out) - act_w2;
+            circ_area.x2 = rb_origo.x + LV_CIRC_OCT1_X(cir_out);
+            circ_area.y1 = rb_origo.y + LV_CIRC_OCT1_Y(cir_out);
+            circ_area.y2 = rb_origo.y + LV_CIRC_OCT1_Y(cir_out);
+            fill_fp(&circ_area, mask, color, opa);
+
+            circ_area.x1 = rb_origo.x + LV_CIRC_OCT2_X(cir_out);
+            circ_area.x2 = rb_origo.x + LV_CIRC_OCT2_X(cir_out);
+            circ_area.y1 = rb_origo.y + LV_CIRC_OCT2_Y(cir_out) - act_w1;
+            circ_area.y2 = rb_origo.y + LV_CIRC_OCT2_Y(cir_out);
+            fill_fp(&circ_area, mask, color, opa);
+        }
+
+        /*Draw the octets to the left bottom corner*/
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+            circ_area.x1 = lb_origo.x + LV_CIRC_OCT3_X(cir_out);
+            circ_area.x2 = lb_origo.x + LV_CIRC_OCT3_X(cir_out);
+            circ_area.y1 = lb_origo.y + LV_CIRC_OCT3_Y(cir_out) - act_w2;
+            circ_area.y2 = lb_origo.y + LV_CIRC_OCT3_Y(cir_out);
+            fill_fp(&circ_area, mask, color, opa);
+
+            circ_area.x1 = lb_origo.x + LV_CIRC_OCT4_X(cir_out);
+            circ_area.x2 = lb_origo.x + LV_CIRC_OCT4_X(cir_out) + act_w1;
+            circ_area.y1 = lb_origo.y + LV_CIRC_OCT4_Y(cir_out);
+            circ_area.y2 = lb_origo.y + LV_CIRC_OCT4_Y(cir_out);
+            fill_fp(&circ_area, mask, color, opa);
+        }
+
+        /*Draw the octets to the left top corner*/
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+            if(lb_origo.y + LV_CIRC_OCT4_Y(cir_out) > lt_origo.y + LV_CIRC_OCT5_Y(cir_out)) {
+                /*Don't draw if the lines are common in the middle*/
+                circ_area.x1 = lt_origo.x + LV_CIRC_OCT5_X(cir_out);
+                circ_area.x2 = lt_origo.x + LV_CIRC_OCT5_X(cir_out) + act_w2;
+                circ_area.y1 = lt_origo.y + LV_CIRC_OCT5_Y(cir_out);
+                circ_area.y2 = lt_origo.y + LV_CIRC_OCT5_Y(cir_out);
+                fill_fp(&circ_area, mask, color, opa);
+            }
+
+            circ_area.x1 = lt_origo.x + LV_CIRC_OCT6_X(cir_out);
+            circ_area.x2 = lt_origo.x + LV_CIRC_OCT6_X(cir_out);
+            circ_area.y1 = lt_origo.y + LV_CIRC_OCT6_Y(cir_out);
+            circ_area.y2 = lt_origo.y + LV_CIRC_OCT6_Y(cir_out) + act_w1;
+            fill_fp(&circ_area, mask, color, opa);
+        }
+
+        /*Draw the octets to the right top corner*/
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+            circ_area.x1 = rt_origo.x + LV_CIRC_OCT7_X(cir_out);
+            circ_area.x2 = rt_origo.x + LV_CIRC_OCT7_X(cir_out);
+            circ_area.y1 = rt_origo.y + LV_CIRC_OCT7_Y(cir_out);
+            circ_area.y2 = rt_origo.y + LV_CIRC_OCT7_Y(cir_out) + act_w2;
+            fill_fp(&circ_area, mask, color, opa);
+
+            /*Don't draw if the lines are common in the middle*/
+            if(rb_origo.y + LV_CIRC_OCT1_Y(cir_out) > rt_origo.y + LV_CIRC_OCT8_Y(cir_out)) {
+                circ_area.x1 = rt_origo.x + LV_CIRC_OCT8_X(cir_out) - act_w1;
+                circ_area.x2 = rt_origo.x + LV_CIRC_OCT8_X(cir_out);
+                circ_area.y1 = rt_origo.y + LV_CIRC_OCT8_Y(cir_out);
+                circ_area.y2 = rt_origo.y + LV_CIRC_OCT8_Y(cir_out);
+                fill_fp(&circ_area, mask, color, opa);
+            }
+        }
+        lv_circ_next(&cir_out, &tmp_out);
+
+        /*The internal circle will be ready faster
+         * so check it! */
+        if(cir_in.y < cir_in.x) {
+            lv_circ_next(&cir_in, &tmp_in);
+        }
+    }
+
+
+#if LV_ANTIALIAS != 0
+
+    /*Last parts of the outer anti-alias*/
+    out_y_seg_end = cir_out.y;
+    lv_coord_t seg_size = out_y_seg_end - out_y_seg_start;
+    lv_point_t aa_p;
+
+    aa_p.x = out_x_last;
+    aa_p.y = out_y_seg_start;
+
+    lv_coord_t i;
+    for(i = 0; i  < seg_size; i++) {
+        lv_opa_t aa_opa = opa - lv_draw_aa_get_opa(seg_size, i, opa);
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) + 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+            px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+            px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+            px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) - 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+            px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) - 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+            px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+            px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) + 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+        }
+    }
+
+    /*In some cases the last pixel in the outer middle is not drawn*/
+    if(LV_MATH_ABS(aa_p.x - aa_p.y) == seg_size) {
+        aa_p.x = out_x_last;
+        aa_p.y = out_x_last;
+
+        lv_opa_t aa_opa = opa >> 1;
+
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p), rb_origo.y + LV_CIRC_OCT2_Y(aa_p), mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+            px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p), lb_origo.y + LV_CIRC_OCT4_Y(aa_p), mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+            px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p), lt_origo.y + LV_CIRC_OCT6_Y(aa_p), mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p), rt_origo.y + LV_CIRC_OCT8_Y(aa_p), mask, style->body.border.color, aa_opa);
+        }
+    }
+
+    /*Last parts of the inner anti-alias*/
+    in_y_seg_end = cir_in.y;
+    aa_p.x = in_x_last;
+    aa_p.y = in_y_seg_start;
+    seg_size = in_y_seg_end - in_y_seg_start;
+
+    for(i = 0; i  < seg_size; i++) {
+        lv_opa_t aa_opa =  lv_draw_aa_get_opa(seg_size, i, opa);
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rb_origo.x + LV_CIRC_OCT1_X(aa_p) - 1, rb_origo.y + LV_CIRC_OCT1_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+            px_fp(lb_origo.x + LV_CIRC_OCT3_X(aa_p) - i, lb_origo.y + LV_CIRC_OCT3_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+            px_fp(lt_origo.x + LV_CIRC_OCT5_X(aa_p) + 1, lt_origo.y + LV_CIRC_OCT5_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+        }
+
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+            px_fp(rt_origo.x + LV_CIRC_OCT7_X(aa_p) + i, rt_origo.y + LV_CIRC_OCT7_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+        }
+
+        if(LV_CIRC_OCT1_X(aa_p) - 1 != LV_CIRC_OCT2_X(aa_p) + i) {
+            if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+                px_fp(rb_origo.x + LV_CIRC_OCT2_X(aa_p) + i, rb_origo.y + LV_CIRC_OCT2_Y(aa_p) - 1, mask, style->body.border.color, aa_opa);
+            }
+
+            if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+                px_fp(lb_origo.x + LV_CIRC_OCT4_X(aa_p) + 1, lb_origo.y + LV_CIRC_OCT4_Y(aa_p) + i, mask, style->body.border.color, aa_opa);
+            }
+
+            if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+                px_fp(lt_origo.x + LV_CIRC_OCT6_X(aa_p) - i, lt_origo.y + LV_CIRC_OCT6_Y(aa_p) + 1, mask, style->body.border.color, aa_opa);
+            }
+
+            if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+                px_fp(rt_origo.x + LV_CIRC_OCT8_X(aa_p) - 1, rt_origo.y + LV_CIRC_OCT8_Y(aa_p) - i, mask, style->body.border.color, aa_opa);
+            }
+        }
+    }
+
+#endif
+
+}
+
+
+/**
+ * Draw the middle part (rectangular) of a rectangle
+ * @param coords the coordinates of the original rectangle
+ * @param mask the rectangle will be drawn only  on this area
+ * @param rects_p pointer to a rectangle style
+ * @param opa_scale scale down all opacities by the factor
+ */
+static void lv_draw_rect_main_mid(const lv_area_t * coords, const lv_area_t * mask, const lv_style_t * style, lv_opa_t opa_scale)
+{
+    uint16_t radius = style->body.radius;
+
+    lv_color_t mcolor = style->body.main_color;
+    lv_color_t gcolor = style->body.grad_color;
+    uint8_t mix;
+    lv_coord_t height = lv_area_get_height(coords);
+    lv_coord_t width = lv_area_get_width(coords);
+    lv_opa_t opa = opa_scale == LV_OPA_COVER ? style->body.opa : (uint16_t)((uint16_t) style->body.opa * opa_scale) >> 8;
+
+    radius = lv_draw_cont_radius_corr(radius, width, height);
+
+    /*If the radius is too big then there is no body*/
+    if(radius > height / 2)  return;
+
+    lv_area_t work_area;
+    work_area.x1 = coords->x1;
+    work_area.x2 = coords->x2;
+
+    if(mcolor.full == gcolor.full) {
+        work_area.y1 = coords->y1 + radius;
+        work_area.y2 = coords->y2 - radius;
+
+        if(style->body.radius != 0) {
+#if LV_ANTIALIAS
+            work_area.y1 += 2;
+            work_area.y2 -= 2;
+#else
+            work_area.y1 += 1;
+            work_area.y2 -= 1;
+#endif
+        }
+
+        fill_fp(&work_area, mask, mcolor, opa);
+    } else {
+        lv_coord_t row;
+        lv_coord_t row_start = coords->y1 + radius;
+        lv_coord_t row_end = coords->y2 - radius;
+        lv_color_t act_color;
+
+        if(style->body.radius != 0) {
+#if LV_ANTIALIAS
+            row_start += 2;
+            row_end -= 2;
+#else
+            row_start += 1;
+            row_end -= 1;
+#endif
+        }
+        if(row_start < 0) row_start = 0;
+
+        for(row = row_start; row <= row_end; row ++) {
+            work_area.y1 = row;
+            work_area.y2 = row;
+            mix = (uint32_t)((uint32_t)(coords->y2 - work_area.y1) * 255) / height;
+            act_color = lv_color_mix(mcolor, gcolor, mix);
+
+            fill_fp(&work_area, mask, act_color, opa);
+        }
+    }
+}
+
+
+/**
+ * Draw the straight parts of a rectangle border
+ * @param coords the coordinates of the original rectangle
+ * @param mask_ the rectangle will be drawn only  on this area
+ * @param rstyle pointer to a rectangle style
+ * @param opa_scale scale down all opacities by the factor
+ */
+static void lv_draw_rect_border_straight(const lv_area_t * coords, const lv_area_t * mask, const lv_style_t * style, lv_opa_t opa_scale)
+{
+    uint16_t radius = style->body.radius;
+
+    lv_coord_t width = lv_area_get_width(coords);
+    lv_coord_t height = lv_area_get_height(coords);
+    uint16_t bwidth = style->body.border.width;
+    lv_opa_t opa = opa_scale == LV_OPA_COVER ? style->body.border.opa : (uint16_t)((uint16_t) style->body.border.opa * opa_scale) >> 8;
+    lv_border_part_t part = style->body.border.part;
+    lv_color_t color = style->body.border.color;
+    lv_area_t work_area;
+    lv_coord_t length_corr = 0;
+    lv_coord_t corner_size = 0;
+
+    /*the 0 px border width drawn as 1 px, so decrement the b_width*/
+    bwidth--;
+
+    radius = lv_draw_cont_radius_corr(radius, width, height);
+
+    if(radius < bwidth) {
+        length_corr = bwidth - radius - LV_ANTIALIAS;
+        corner_size = bwidth;
+    } else {
+        corner_size = radius + LV_ANTIALIAS;
+    }
+
+    /*If radius == 0 is a special case*/
+    if(style->body.radius == 0) {
+        /*Left top corner*/
+        if(part & LV_BORDER_TOP) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y1;
+            work_area.y2 = coords->y1 + bwidth;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right top corner*/
+        if(part & LV_BORDER_RIGHT) {
+            work_area.x1 = coords->x2 - bwidth;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y1 + (part & LV_BORDER_TOP ? bwidth + 1 : 0);
+            work_area.y2 = coords->y2 - (part & LV_BORDER_BOTTOM ? bwidth + 1 : 0);
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Left bottom corner*/
+        if(part & LV_BORDER_LEFT) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x1 + bwidth;
+            work_area.y1 = coords->y1 + (part & LV_BORDER_TOP ? bwidth + 1 : 0);
+            work_area.y2 = coords->y2 - (part & LV_BORDER_BOTTOM ? bwidth + 1 : 0);
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right bottom corner*/
+        if(part & LV_BORDER_BOTTOM) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y2 - bwidth;
+            work_area.y2 = coords->y2;
+            fill_fp(&work_area, mask, color, opa);
+        }
+        return;
+    }
+
+    /* Modify the corner_size if corner is drawn */
+    corner_size ++;
+
+    /*Depending one which part's are drawn modify the area lengths */
+    if(part & LV_BORDER_TOP) work_area.y1 = coords->y1 + corner_size;
+    else  work_area.y1 = coords->y1 + radius;
+
+    if(part & LV_BORDER_BOTTOM) work_area.y2 = coords->y2 - corner_size;
+    else work_area.y2 = coords->y2 - radius;
+
+    /*Left border*/
+    if(part & LV_BORDER_LEFT) {
+        work_area.x1 = coords->x1;
+        work_area.x2 = work_area.x1 + bwidth;
+        fill_fp(&work_area, mask, color, opa);
+    }
+
+    /*Right border*/
+    if(part & LV_BORDER_RIGHT) {
+        work_area.x2 = coords->x2;
+        work_area.x1 = work_area.x2 - bwidth;
+        fill_fp(&work_area, mask, color, opa);
+    }
+
+    work_area.x1 = coords->x1 + corner_size - length_corr;
+    work_area.x2 = coords->x2 - corner_size + length_corr;
+
+    /*Upper border*/
+    if(part & LV_BORDER_TOP) {
+        work_area.y1 = coords->y1;
+        work_area.y2 = coords->y1 + bwidth;
+        fill_fp(&work_area, mask, color, opa);
+    }
+
+    /*Lower border*/
+    if(part & LV_BORDER_BOTTOM) {
+        work_area.y2 = coords->y2;
+        work_area.y1 = work_area.y2 - bwidth;
+        fill_fp(&work_area, mask, color, opa);
+    }
+
+    /*Draw the a remaining rectangles if the radius is smaller then bwidth */
+    if(length_corr != 0) {
+        /*Left top correction*/
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_LEFT)) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x1 + radius + LV_ANTIALIAS;
+            work_area.y1 = coords->y1 + radius + 1 + LV_ANTIALIAS;
+            work_area.y2 = coords->y1 + bwidth;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right top correction*/
+        if((part & LV_BORDER_TOP) && (part & LV_BORDER_RIGHT)) {
+            work_area.x1 = coords->x2 - radius - LV_ANTIALIAS;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y1 + radius + 1 + LV_ANTIALIAS;
+            work_area.y2 = coords->y1 + bwidth;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Left bottom correction*/
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_LEFT)) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x1 + radius + LV_ANTIALIAS;
+            work_area.y1 = coords->y2 - bwidth;
+            work_area.y2 = coords->y2 - radius - 1 - LV_ANTIALIAS;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right bottom correction*/
+        if((part & LV_BORDER_BOTTOM) && (part & LV_BORDER_RIGHT)) {
+            work_area.x1 = coords->x2 - radius - LV_ANTIALIAS;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y2 - bwidth;
+            work_area.y2 = coords->y2 - radius - 1 - LV_ANTIALIAS;
+            fill_fp(&work_area, mask, color, opa);
+        }
+    }
+
+    /*If radius == 0 one px on the corners are not drawn by main drawer*/
+    if(style->body.radius == 0) {
+        /*Left top corner*/
+        if(part & (LV_BORDER_TOP | LV_BORDER_LEFT)) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x1 + LV_ANTIALIAS;
+            work_area.y1 = coords->y1;
+            work_area.y2 = coords->y1 + LV_ANTIALIAS;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right top corner*/
+        if(part & (LV_BORDER_TOP | LV_BORDER_RIGHT)) {
+            work_area.x1 = coords->x2 - LV_ANTIALIAS;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y1;
+            work_area.y2 = coords->y1 + LV_ANTIALIAS;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Left bottom corner*/
+        if(part & (LV_BORDER_BOTTOM | LV_BORDER_LEFT)) {
+            work_area.x1 = coords->x1;
+            work_area.x2 = coords->x1 + LV_ANTIALIAS;
+            work_area.y1 = coords->y2 - LV_ANTIALIAS;
+            work_area.y2 = coords->y2;
+            fill_fp(&work_area, mask, color, opa);
+        }
+
+        /*Right bottom corner*/
+        if(part & (LV_BORDER_BOTTOM | LV_BORDER_RIGHT)) {
+            work_area.x1 = coords->x2 - LV_ANTIALIAS;
+            work_area.x2 = coords->x2;
+            work_area.y1 = coords->y2 - LV_ANTIALIAS;
+            work_area.y2 = coords->y2;
+            fill_fp(&work_area, mask, color, opa);
+        }
+    }
+}
+
+/**
+ * Draw a rectangle
+ * @param coords the coordinates of the rectangle
+ * @param mask the rectangle will be drawn only in this mask
+ * @param style pointer to a style
+ * @param opa_scale scale down all opacities by the factor
+ */
+void lv_draw_rect(const lv_area_t * coords, const lv_area_t * mask, const lv_style_t * style, lv_opa_t opa_scale)
+{
+    if(lv_area_get_height(coords) < 1 || lv_area_get_width(coords) < 1) return;
+
+#if USE_LV_SHADOW && LV_VDB_SIZE
+    if(style->body.shadow.width != 0) {
+        lv_draw_shadow(coords, mask, style, opa_scale);
+    }
+#endif
+    if(style->body.empty == 0 && style->body.opa >= LV_OPA_MIN) {
+        lv_draw_rect_main_mid(coords, mask, style, opa_scale);
+
+        if(style->body.radius != 0) {
+            lv_draw_rect_main_corner(coords, mask, style, opa_scale);
+        }
+    }
+
+    if(style->body.border.width != 0 && style->body.border.part != LV_BORDER_NONE && style->body.border.opa >= LV_OPA_MIN) {
+        lv_draw_rect_border_straight(coords, mask, style, opa_scale);
+
+        if(style->body.radius != 0) {
+//            lv_draw_rect_border_corner(coords, mask, style, opa_scale);
+        }
+    }
 }
