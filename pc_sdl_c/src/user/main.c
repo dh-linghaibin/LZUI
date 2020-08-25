@@ -92,6 +92,8 @@ int main(int argc, char** argv) {
 
     SDL_CreateThread(tick_thread, "tick", NULL);
 	SDL_Event event;
+
+    lui_loop();
 	while(running) {
 		if ( SDL_PollEvent( &event ) ) {
             switch( event.key.keysym.sym ) {
@@ -147,7 +149,7 @@ int main(int argc, char** argv) {
 		}
 		lui_loop();
 		display_sdl_up_data();
-		SDL_Delay(10);
+		SDL_Delay(5);
 	}
 	SDL_Quit();
 	return 0;
